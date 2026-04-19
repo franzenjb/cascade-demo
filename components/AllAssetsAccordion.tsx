@@ -4,49 +4,39 @@ import { useEffect, useState } from "react";
 import type { FeatureRow } from "@/lib/types";
 import { configFor } from "./AssetPanel";
 
-type CategoryId = "mobile_home_park" | "school" | "medical" | "red_cross";
-
-const SECTIONS: { id: CategoryId; label: string; dot: string }[] = [
-  { id: "mobile_home_park", label: "Mobile Home Parks", dot: "#ED1B2E" },
-  { id: "school", label: "Schools", dot: "#1E4A6D" },
-  { id: "medical", label: "Medical Facilities", dot: "#2D2D2D" },
-  { id: "red_cross", label: "Red Cross Assets", dot: "#ED1B2E" },
-];
+interface SectionDef {
+  id: string;
+  label: string;
+  dot: string;
+}
 
 interface AllAssetsAccordionProps {
-  features: Record<CategoryId, FeatureRow[]>;
+  sections: SectionDef[];
+  features: Record<string, FeatureRow[]>;
   onSelect: (row: FeatureRow) => void;
   resetSignal?: number;
 }
 
 export default function AllAssetsAccordion({
+  sections,
   features,
   onSelect,
   resetSignal,
 }: AllAssetsAccordionProps) {
-  const [open, setOpen] = useState<Record<CategoryId, boolean>>(() =>
-    Object.fromEntries(SECTIONS.map((s) => [s.id, true])) as Record<
-      CategoryId,
-      boolean
-    >
+  const [open, setOpen] = useState<Record<string, boolean>>(() =>
+    Object.fromEntries(sections.map((s) => [s.id, true]))
   );
 
   useEffect(() => {
-    if (resetSignal === undefined) return;
-    setOpen(
-      Object.fromEntries(SECTIONS.map((s) => [s.id, true])) as Record<
-        CategoryId,
-        boolean
-      >
-    );
-  }, [resetSignal]);
+    setOpen(Object.fromEntries(sections.map((s) => [s.id, true])));
+  }, [resetSignal, sections]);
 
-  const toggle = (id: CategoryId) =>
+  const toggle = (id: string) =>
     setOpen((prev) => ({ ...prev, [id]: !prev[id] }));
 
   return (
     <div className="flex-1 overflow-y-auto">
-      {SECTIONS.map((section) => {
+      {sections.map((section) => {
         const rows = features[section.id] ?? [];
         const isOpen = open[section.id];
         const cfg = configFor(section.id, rows);

@@ -41,9 +41,9 @@
       "narrative_notes": "These numbers are baked into the synthetic data. The generate_cascade_data.py script places mobile home parks, schools, and facilities specifically to produce these exact counts when the warning polygon is applied. Every number matches the Buncombe scene in the white paper."
     },
     {
-      "id": "fire_laurel_ridge",
-      "name": "Laurel Ridge Fire Perimeter",
-      "description": "Active wildfire along the Laurel Ridge corridor in south-central Cascade County. Organic perimeter shape represents the current fire footprint at the top of the response. Every figure Claude reports is pulled live from Cascade County layers intersected with the fire perimeter.",
+      "id": "fire_shasta_redding",
+      "name": "Shasta County · Redding Fire Perimeter",
+      "description": "Active wildfire in western Shasta County, California — fire footprint northwest of Redding near the Whiskeytown / Buckhorn corridor. Every figure Claude reports is pulled live from the DEMO_FireArea_* layers intersected with the fire perimeter.",
       "warning_type": "wildfire",
       "nws_event_id": "DEMO-FIRE-2026-0001",
       "issued_offset_seconds": 0,
@@ -52,24 +52,23 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [-81.720, 35.895],
-            [-81.700, 35.886],
-            [-81.665, 35.887],
-            [-81.625, 35.892],
-            [-81.590, 35.903],
-            [-81.580, 35.923],
-            [-81.590, 35.945],
-            [-81.615, 35.958],
-            [-81.650, 35.956],
-            [-81.685, 35.945],
-            [-81.708, 35.928],
-            [-81.720, 35.910],
-            [-81.720, 35.895]
+            [-122.638, 40.660],
+            [-122.625, 40.675],
+            [-122.608, 40.682],
+            [-122.588, 40.680],
+            [-122.570, 40.672],
+            [-122.558, 40.658],
+            [-122.560, 40.640],
+            [-122.572, 40.625],
+            [-122.590, 40.620],
+            [-122.612, 40.625],
+            [-122.630, 40.640],
+            [-122.638, 40.660]
           ]
         ]
       },
-      "trigger_directive": "[SYSTEM EVENT] An evacuation warning has just been issued for an active wildfire along the Laurel Ridge corridor in south-central Cascade County — the Laurel Ridge Fire. The active warning layer now shows the current fire perimeter. Produce the proactive situational briefing for this event following your wildfire playbook. Under 120 words. Use tool calls for every number — population inside the perimeter, mobile home parks, schools, medical facilities, and nearest Red Cross shelters.",
-      "narrative_notes": "Numbers are not baked. The perimeter sits in western Cascade County, entirely separate from the tornado scenario in the east, so features (tracts, mobile home parks, schools, medical facilities, Red Cross assets) intersected here are different from the tornado scene. Every figure Claude reports is pulled live."
+      "trigger_directive": "[SYSTEM EVENT] An evacuation warning has just been issued for an active wildfire in western Shasta County, California, northwest of Redding. The active warning layer now shows the current fire perimeter. Produce the proactive situational briefing for this event following your wildfire playbook. Under 120 words. Use tool calls for every number — population inside the perimeter (DEMO_FireArea_Census_Tracts), fire stations (DEMO_FireArea_Fire_Stations), police stations (DEMO_FireArea_Police_Stations), hospitals (DEMO_FireArea_Hospitals), dialysis clinics (DEMO_FireArea_Dialysis_Clinics), and Red Cross shelters (DEMO_FireArea_Red_Cross_Shelters).",
+      "narrative_notes": "Numbers are not baked. The perimeter sits in western Shasta County CA, entirely separate from the Cascade County tornado scenario. Fire-scenario layers (DEMO_FireArea_*) have real facility names — Mercy Medical Center Redding, Shasta Regional, DaVita dialysis, etc. — to support a concrete briefing."
     }
   ]
 }

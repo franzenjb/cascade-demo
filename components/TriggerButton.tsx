@@ -27,11 +27,11 @@ const SCENARIOS: ScenarioOption[] = [
     warningType: "tornado",
   },
   {
-    id: "fire_laurel_ridge",
+    id: "fire_shasta_redding",
     label: "Wildfire Evacuation",
-    headline: "Cascade County · Laurel Ridge Fire",
+    headline: "Shasta County · Redding Fire",
     summary:
-      "Active fire perimeter along the Laurel Ridge corridor — evacuation warning in effect.",
+      "Active fire perimeter northwest of Redding — evacuation warning in effect.",
     accent: "#E85D04",
     iconPath:
       "M12 2 C8 6 8 10 10 12 C9 9 11 8 12 10 C13 7 16 8 16 12 C18 10 18 6 12 2 Z M8 14 C7 16 8 19 12 22 C16 19 17 16 16 14 C15 16 13 17 12 15 C11 17 9 16 8 14 Z",

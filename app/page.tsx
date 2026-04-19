@@ -10,7 +10,22 @@ import ThemeToggle from "@/components/ThemeToggle";
 import HelpModal from "@/components/HelpModal";
 import type { ChatMessage, FeatureRow, MapInstruction } from "@/lib/types";
 
-type CategoryId = "mobile_home_park" | "school" | "medical" | "red_cross";
+type TornadoCategory =
+  | "mobile_home_park"
+  | "school"
+  | "medical"
+  | "red_cross";
+
+type FireCategory =
+  | "fire_station"
+  | "police"
+  | "hospital"
+  | "dialysis"
+  | "shelter";
+
+type CategoryId = TornadoCategory | FireCategory;
+
+type WarningType = "tornado" | "wildfire";
 
 interface Metrics {
   pop: number;
@@ -20,12 +35,7 @@ interface Metrics {
   tractCount: number;
 }
 
-interface CategoryCounts {
-  mobile_home_park: number;
-  school: number;
-  medical: number;
-  red_cross: number;
-}
+type CategoryCounts = Record<CategoryId, number>;
 
 type FeaturesByCategory = Record<CategoryId, FeatureRow[]>;
 
@@ -34,6 +44,11 @@ const EMPTY_COUNTS: CategoryCounts = {
   school: 0,
   medical: 0,
   red_cross: 0,
+  fire_station: 0,
+  police: 0,
+  hospital: 0,
+  dialysis: 0,
+  shelter: 0,
 };
 
 const EMPTY_FEATURES: FeaturesByCategory = {
@@ -41,6 +56,11 @@ const EMPTY_FEATURES: FeaturesByCategory = {
   school: [],
   medical: [],
   red_cross: [],
+  fire_station: [],
+  police: [],
+  hospital: [],
+  dialysis: [],
+  shelter: [],
 };
 
 const CATEGORY_LABELS: Record<CategoryId, string> = {
@@ -48,6 +68,108 @@ const CATEGORY_LABELS: Record<CategoryId, string> = {
   school: "Schools",
   medical: "Medical",
   red_cross: "Red Cross Assets",
+  fire_station: "Fire Stations",
+  police: "Police Stations",
+  hospital: "Hospitals",
+  dialysis: "Dialysis Clinics",
+  shelter: "Red Cross Shelters",
+};
+
+interface ScenarioSection {
+  id: CategoryId;
+  label: string;
+  dot: string;
+  layerId: string;
+  mapLabel: string;
+}
+
+const TORNADO_SECTIONS: ScenarioSection[] = [
+  {
+    id: "mobile_home_park",
+    label: "Mobile Home Parks",
+    dot: "#ED1B2E",
+    layerId: "DEMO_Cascade_Mobile_Home_Parks",
+    mapLabel: "Mobile Home Park",
+  },
+  {
+    id: "school",
+    label: "Schools",
+    dot: "#1E4A6D",
+    layerId: "DEMO_Cascade_Schools",
+    mapLabel: "School",
+  },
+  {
+    id: "medical",
+    label: "Medical",
+    dot: "#2D2D2D",
+    layerId: "DEMO_Cascade_Medical_Facilities",
+    mapLabel: "Medical Facility",
+  },
+  {
+    id: "red_cross",
+    label: "Red Cross Assets",
+    dot: "#ED1B2E",
+    layerId: "DEMO_Cascade_Red_Cross_Assets",
+    mapLabel: "Red Cross Asset",
+  },
+];
+
+const FIRE_SECTIONS: ScenarioSection[] = [
+  {
+    id: "fire_station",
+    label: "Fire Stations",
+    dot: "#E85D04",
+    layerId: "DEMO_FireArea_Fire_Stations",
+    mapLabel: "Fire Station",
+  },
+  {
+    id: "police",
+    label: "Police Stations",
+    dot: "#1E4A6D",
+    layerId: "DEMO_FireArea_Police_Stations",
+    mapLabel: "Police Station",
+  },
+  {
+    id: "hospital",
+    label: "Hospitals",
+    dot: "#2D2D2D",
+    layerId: "DEMO_FireArea_Hospitals",
+    mapLabel: "Hospital",
+  },
+  {
+    id: "dialysis",
+    label: "Dialysis Clinics",
+    dot: "#6B4E9F",
+    layerId: "DEMO_FireArea_Dialysis_Clinics",
+    mapLabel: "Dialysis Clinic",
+  },
+  {
+    id: "shelter",
+    label: "Red Cross Shelters",
+    dot: "#ED1B2E",
+    layerId: "DEMO_FireArea_Red_Cross_Shelters",
+    mapLabel: "Red Cross Shelter",
+  },
+];
+
+const SCENARIO_CONFIG: Record<
+  WarningType,
+  { sections: ScenarioSection[]; tractLayerId: string; spatialOnly: boolean }
+> = {
+  tornado: {
+    sections: TORNADO_SECTIONS,
+    tractLayerId: "DEMO_Cascade_Census_Tracts",
+    // Cascade mobile home parks / schools / medical query spatially;
+    // red-cross assets query unbounded (the tornado scene shows regional assets).
+    spatialOnly: false,
+  },
+  wildfire: {
+    sections: FIRE_SECTIONS,
+    tractLayerId: "DEMO_FireArea_Census_Tracts",
+    // Fire scenario layers are already scoped to the fire footprint,
+    // so a spatial query returns only features inside the perimeter.
+    spatialOnly: true,
+  },
 };
 
 type RightTab = "conversation" | "drill";
@@ -77,6 +199,7 @@ export default function HomePage() {
   const [rightTab, setRightTab] = useState<RightTab>("conversation");
   const [eventId, setEventId] = useState<string | null>(null);
   const [scenarioId, setScenarioId] = useState<string | null>(null);
+  const [warningType, setWarningType] = useState<WarningType | null>(null);
   const [focusFeature, setFocusFeature] = useState<FocusFeature | null>(null);
   const focusNonce = useRef(0);
   const [homeSignal, setHomeSignal] = useState(0);
@@ -89,7 +212,7 @@ export default function HomePage() {
     directive: string,
     polygon: unknown,
     sid: string,
-    warningType: "tornado" | "wildfire",
+    wt: WarningType,
     nwsEventId: string | null
   ) => {
     setMessages([]);
@@ -103,15 +226,16 @@ export default function HomePage() {
     setFocusFeature(null);
     setHighlightedFeature(null);
     setScenarioId(sid);
+    setWarningType(wt);
     setEventId(
-      nwsEventId || `DEMO-${warningType.toUpperCase()}-${new Date().getFullYear()}-0001`
+      nwsEventId || `DEMO-${wt.toUpperCase()}-${new Date().getFullYear()}-0001`
     );
     setTriggerDirective(directive);
 
     if (!polygon) return;
 
     const polygonStyle =
-      warningType === "wildfire"
+      wt === "wildfire"
         ? {
             color: "#E85D04",
             opacity: 0.18,
@@ -125,7 +249,7 @@ export default function HomePage() {
             scale: 150000,
           };
     const layerLabel =
-      warningType === "wildfire" ? "Fire Perimeter" : "Tornado Warning";
+      wt === "wildfire" ? "Fire Perimeter" : "Tornado Warning";
 
     setMapInstructions((prev) => [
       ...prev,
@@ -137,17 +261,17 @@ export default function HomePage() {
       },
     ]);
 
-    loadMetrics(polygon);
-    renderFeaturesInsidePolygon(polygon);
+    loadMetrics(polygon, wt);
+    renderFeaturesInsidePolygon(polygon, wt);
   };
 
-  const loadMetrics = async (polygon: unknown) => {
+  const loadMetrics = async (polygon: unknown, wt: WarningType) => {
     try {
       const res = await fetch("/api/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          layer_id: "DEMO_Cascade_Census_Tracts",
+          layer_id: SCENARIO_CONFIG[wt].tractLayerId,
           geometry: polygon,
           return_geometry: false,
         }),
@@ -179,35 +303,40 @@ export default function HomePage() {
     }
   };
 
-  const renderFeaturesInsidePolygon = async (polygon: unknown) => {
-    const layers: Array<{ id: string; featureType: CategoryId; label: string }> = [
-      { id: "DEMO_Cascade_Mobile_Home_Parks", featureType: "mobile_home_park", label: "Mobile Home Park" },
-      { id: "DEMO_Cascade_Schools", featureType: "school", label: "School" },
-      { id: "DEMO_Cascade_Medical_Facilities", featureType: "medical", label: "Medical Facility" },
-    ];
+  const renderFeaturesInsidePolygon = async (
+    polygon: unknown,
+    wt: WarningType
+  ) => {
+    const cfg = SCENARIO_CONFIG[wt];
 
-    for (const layer of layers) {
+    for (const section of cfg.sections) {
+      // Tornado scene queries Red Cross Assets unbounded (regional view); every
+      // other layer is spatially scoped to the warning polygon. Fire scene is
+      // fully spatial — fire-area layers are already scoped to the footprint.
+      const useGeometry =
+        cfg.spatialOnly || section.id !== "red_cross";
+
       try {
         const res = await fetch("/api/query", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            layer_id: layer.id,
-            geometry: polygon,
+            layer_id: section.layerId,
+            geometry: useGeometry ? polygon : undefined,
             return_geometry: true,
           }),
         });
         const data = await res.json();
         if (!data.features) continue;
 
-        setCounts((c) => ({ ...c, [layer.featureType]: data.features.length }));
+        setCounts((c) => ({ ...c, [section.id]: data.features.length }));
         setFeatures((f) => ({
           ...f,
-          [layer.featureType]: data.features.map((feat: any) => {
-            const c = extractLonLat(feat.geometry);
+          [section.id]: data.features.map((feat: any) => {
+            const p = extractLonLat(feat.geometry);
             return {
               attributes: feat.attributes || {},
-              geometry: c ? { lon: c[0], lat: c[1] } : undefined,
+              geometry: p ? { lon: p[0], lat: p[1] } : undefined,
             };
           }),
         }));
@@ -220,7 +349,7 @@ export default function HomePage() {
             feature.attributes?.park_name ||
             feature.attributes?.name ||
             feature.attributes?.asset_name ||
-            layer.label;
+            section.mapLabel;
 
           setMapInstructions((prev) => [
             ...prev,
@@ -228,9 +357,9 @@ export default function HomePage() {
               action: "draw",
               geometry: { type: "Point", coordinates: coords },
               style: { label: displayLabel },
-              layer_label: layer.label,
+              layer_label: section.mapLabel,
               ...({
-                featureType: layer.featureType,
+                featureType: section.id,
                 attributes: feature.attributes,
                 displayLabel,
               } as any),
@@ -238,60 +367,8 @@ export default function HomePage() {
           ]);
         }
       } catch (err) {
-        console.error("Failed to fetch " + layer.id, err);
+        console.error("Failed to fetch " + section.layerId, err);
       }
-    }
-
-    try {
-      const res = await fetch("/api/query", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          layer_id: "DEMO_Cascade_Red_Cross_Assets",
-          return_geometry: true,
-        }),
-      });
-      const data = await res.json();
-      if (data.features) {
-        setCounts((c) => ({ ...c, red_cross: data.features.length }));
-        setFeatures((f) => ({
-          ...f,
-          red_cross: data.features.map((feat: any) => {
-            const c = extractLonLat(feat.geometry);
-            return {
-              attributes: feat.attributes || {},
-              geometry: c ? { lon: c[0], lat: c[1] } : undefined,
-            };
-          }),
-        }));
-
-        for (const feature of data.features) {
-          const coords = extractLonLat(feature.geometry);
-          if (!coords) continue;
-
-          const displayLabel =
-            feature.attributes?.asset_name ||
-            feature.attributes?.name ||
-            "Red Cross Asset";
-
-          setMapInstructions((prev) => [
-            ...prev,
-            {
-              action: "draw",
-              geometry: { type: "Point", coordinates: coords },
-              style: { label: displayLabel },
-              layer_label: "Red Cross Asset",
-              ...({
-                featureType: "red_cross",
-                attributes: feature.attributes,
-                displayLabel,
-              } as any),
-            },
-          ]);
-        }
-      }
-    } catch (err) {
-      console.error("Failed to fetch Red Cross assets", err);
     }
   };
 
@@ -350,8 +427,12 @@ export default function HomePage() {
     setAccordionResetSignal((s) => s + 1);
   };
 
-  const totalAssetCount =
-    counts.mobile_home_park + counts.school + counts.medical + counts.red_cross;
+  const currentSections =
+    warningType ? SCENARIO_CONFIG[warningType].sections : TORNADO_SECTIONS;
+  const totalAssetCount = currentSections.reduce(
+    (sum, s) => sum + counts[s.id],
+    0
+  );
   const drillTabAvailable = totalAssetCount > 0;
 
   const handlePrint = () => {
@@ -458,39 +539,18 @@ export default function HomePage() {
             </div>
           )}
 
-          {(counts.mobile_home_park ||
-            counts.school ||
-            counts.medical ||
-            counts.red_cross) > 0 && (
+          {totalAssetCount > 0 && (
             <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-4 py-3 flex gap-2 flex-wrap">
-              <Chip
-                active={activeCategory === "mobile_home_park"}
-                onClick={() => toggleCategory("mobile_home_park")}
-                label="Mobile Home Parks"
-                count={counts.mobile_home_park}
-                dot="#ED1B2E"
-              />
-              <Chip
-                active={activeCategory === "school"}
-                onClick={() => toggleCategory("school")}
-                label="Schools"
-                count={counts.school}
-                dot="#1E4A6D"
-              />
-              <Chip
-                active={activeCategory === "medical"}
-                onClick={() => toggleCategory("medical")}
-                label="Medical"
-                count={counts.medical}
-                dot="#2D2D2D"
-              />
-              <Chip
-                active={activeCategory === "red_cross"}
-                onClick={() => toggleCategory("red_cross")}
-                label="Red Cross Assets"
-                count={counts.red_cross}
-                dot="#ED1B2E"
-              />
+              {currentSections.map((section) => (
+                <Chip
+                  key={section.id}
+                  active={activeCategory === section.id}
+                  onClick={() => toggleCategory(section.id)}
+                  label={section.label}
+                  count={counts[section.id]}
+                  dot={section.dot}
+                />
+              ))}
             </div>
           )}
 
@@ -585,6 +645,11 @@ export default function HomePage() {
                 />
               ) : (
                 <AllAssetsAccordion
+                  sections={currentSections.map((s) => ({
+                    id: s.id,
+                    label: s.label,
+                    dot: s.dot,
+                  }))}
                   features={features}
                   onSelect={handleSelectFeature}
                   resetSignal={accordionResetSignal}

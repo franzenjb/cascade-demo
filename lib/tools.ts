@@ -27,7 +27,7 @@ export const toolDefinitions: Anthropic.Tool[] = [
   {
     name: "count_population_in_polygon",
     description:
-      "Count residents whose census tract centroids fall within a polygon. Optional demographic filters narrow the count (e.g., min_age for 65+ population).",
+      "Count residents whose census tract centroids fall within a polygon. Optional demographic filters narrow the count (e.g., min_age for 65+ population). Defaults to DEMO_Cascade_Census_Tracts; pass layer_id=DEMO_FireArea_Census_Tracts for the Shasta wildfire scenario.",
     input_schema: {
       type: "object",
       properties: {
@@ -39,6 +39,11 @@ export const toolDefinitions: Anthropic.Tool[] = [
           type: "object",
           description:
             "Optional demographic filters: min_age, language (e.g., 'limited_english'), disability (boolean), etc.",
+        },
+        layer_id: {
+          type: "string",
+          description:
+            "Optional census tracts layer ID. Defaults to 'DEMO_Cascade_Census_Tracts'. Use 'DEMO_FireArea_Census_Tracts' for the Shasta wildfire scenario.",
         },
       },
       required: ["polygon_geojson"],
@@ -72,13 +77,18 @@ export const toolDefinitions: Anthropic.Tool[] = [
   {
     name: "get_demographics_for_polygon",
     description:
-      "Get a full demographic breakdown for the area within a polygon: total population, age breakdown, language, income, disability, CRCI score.",
+      "Get a full demographic breakdown for the area within a polygon: total population, age breakdown, language, income, disability, CRCI score. Defaults to DEMO_Cascade_Census_Tracts; pass layer_id=DEMO_FireArea_Census_Tracts for the Shasta wildfire scenario.",
     input_schema: {
       type: "object",
       properties: {
         polygon_geojson: {
           type: "object",
           description: "GeoJSON Polygon geometry",
+        },
+        layer_id: {
+          type: "string",
+          description:
+            "Optional census tracts layer ID. Defaults to 'DEMO_Cascade_Census_Tracts'. Use 'DEMO_FireArea_Census_Tracts' for the Shasta wildfire scenario.",
         },
       },
       required: ["polygon_geojson"],
@@ -87,7 +97,7 @@ export const toolDefinitions: Anthropic.Tool[] = [
   {
     name: "get_resources_near_polygon",
     description:
-      "Find Red Cross and partner resources (shelters, ERVs, hospitals, etc.) near a polygon, within a specified distance.",
+      "Find Red Cross and partner resources (shelters, ERVs, hospitals, etc.) near a polygon, within a specified distance. Defaults to DEMO_Cascade_Red_Cross_Assets; pass layer_id=DEMO_FireArea_Red_Cross_Shelters for the Shasta wildfire scenario.",
     input_schema: {
       type: "object",
       properties: {
@@ -105,6 +115,11 @@ export const toolDefinitions: Anthropic.Tool[] = [
           items: { type: "string" },
           description:
             "Optional filter: ['shelter', 'ERV_depot', 'warehouse', 'office']",
+        },
+        layer_id: {
+          type: "string",
+          description:
+            "Optional resources layer ID. Defaults to 'DEMO_Cascade_Red_Cross_Assets'. Use 'DEMO_FireArea_Red_Cross_Shelters' for the Shasta wildfire scenario.",
         },
       },
       required: ["polygon_geojson"],
@@ -242,10 +257,11 @@ async function executeCountPopulation(
 ): Promise<ToolExecutionResult> {
   const polygon = input.polygon_geojson;
   const filters = (input.filters as Record<string, unknown>) || {};
+  const layerId = (input.layer_id as string) || "DEMO_Cascade_Census_Tracts";
 
-  const url = getLayerServiceUrl("DEMO_Cascade_Census_Tracts");
+  const url = getLayerServiceUrl(layerId);
   if (!url) {
-    return { content: JSON.stringify({ error: "Census tracts layer not configured" }) };
+    return { content: JSON.stringify({ error: `Census tracts layer not configured: ${layerId}` }) };
   }
 
   const tracts = await agol.queryFeaturesByGeometry(url, polygon, {
@@ -325,9 +341,10 @@ async function executeGetDemographics(
   input: Record<string, unknown>
 ): Promise<ToolExecutionResult> {
   const polygon = input.polygon_geojson;
-  const url = getLayerServiceUrl("DEMO_Cascade_Census_Tracts");
+  const layerId = (input.layer_id as string) || "DEMO_Cascade_Census_Tracts";
+  const url = getLayerServiceUrl(layerId);
   if (!url) {
-    return { content: JSON.stringify({ error: "Census tracts layer not configured" }) };
+    return { content: JSON.stringify({ error: `Census tracts layer not configured: ${layerId}` }) };
   }
 
   const tracts = await agol.queryFeaturesByGeometry(url, polygon, { outFields: "*" });
@@ -380,10 +397,11 @@ async function executeGetResources(
   const polygon = input.polygon_geojson;
   const distanceMiles = (input.distance_miles as number) || 10;
   const resourceTypes = input.resource_types as string[] | undefined;
+  const layerId = (input.layer_id as string) || "DEMO_Cascade_Red_Cross_Assets";
 
-  const url = getLayerServiceUrl("DEMO_Cascade_Red_Cross_Assets");
+  const url = getLayerServiceUrl(layerId);
   if (!url) {
-    return { content: JSON.stringify({ error: "Red Cross assets layer not configured" }) };
+    return { content: JSON.stringify({ error: `Resources layer not configured: ${layerId}` }) };
   }
 
   // Buffer the polygon by distance_miles and query within

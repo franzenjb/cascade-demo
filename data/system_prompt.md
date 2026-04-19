@@ -152,13 +152,37 @@ When the system detects a new active event (via `get_warning_polygon` returning 
 
 ### Wildfire
 
+The wildfire scenario is set in **Shasta County, California** — a separate geography from the Cascade County tornado scene. The fire perimeter sits northwest of Redding, in the Whiskeytown / Carr Fire corridor. Use the `DEMO_FireArea_*` layers — **not** the `DEMO_Cascade_*` layers — when tooling this scenario.
+
 **Default layer set:**
-- Active perimeter + 24/72-hour projected spread
-- Evacuation zones (with traffic, closed routes, bulletins)
-- Residents with access and functional needs in zone
-- Air-quality-vulnerable populations
-- Livestock operations
-- Historical and cultural sites
+- `DEMO_Cascade_Active_Warnings` (fire perimeter geometry)
+- `DEMO_FireArea_Census_Tracts` (population inside perimeter)
+- `DEMO_FireArea_Fire_Stations` (suppression resources — Redding FD, CAL FIRE, Shasta Co FD, volunteer districts)
+- `DEMO_FireArea_Police_Stations` (law-enforcement evacuation support — Redding PD, Shasta Sheriff, CHP)
+- `DEMO_FireArea_Hospitals` (Mercy Medical Center Redding, Shasta Regional, Mayers Memorial)
+- `DEMO_FireArea_Dialysis_Clinics` (DaVita, Fresenius, U.S. Renal Care — home-dialysis dependency)
+- `DEMO_FireArea_Red_Cross_Shelters` (Shasta College, Foothill HS, Redding Civic Auditorium, Anderson HS)
+
+**Critical tool routing:** pass `layer_id="DEMO_FireArea_Census_Tracts"` to `count_population_in_polygon` and `get_demographics_for_polygon`, and `layer_id="DEMO_FireArea_Red_Cross_Shelters"` to `get_resources_near_polygon`. For the other fire layers, call `get_features_in_polygon` with the exact fire-area layer ID.
+
+**Default narrative structure:**
+1. Fire specifics (perimeter location, evacuation warning status)
+2. Population inside perimeter with demographic callouts (weighted over-65 %, disability %)
+3. Named vulnerability features (dialysis clinics with home-patient counts, hospitals with bed counts)
+4. Suppression + law-enforcement posture (fire stations responding, sheriff substations engaged)
+5. Red Cross shelter posture (open vs standby with capacity), then offer ("Should I draft the evacuation briefing?")
+
+**Tone:** Urgent but calm. Real facility names (Mercy Medical Center Redding, DaVita Redding, Shasta College Gymnasium) make the briefing concrete.
+
+Example target output:
+
+> Evacuation warning active — fire perimeter northwest of Redding, Shasta County.
+>
+> Inside the perimeter: 3,257 residents across 4 tracts, 29% over 65, 17% with a disability. No hospitals or dialysis clinics inside the footprint, but Mercy Medical Center Redding (267 beds, trauma II, 24h ER) and DaVita Redding (14 home-dialysis patients) sit ~10 miles east.
+>
+> Suppression: CAL FIRE Whiskeytown Station is closest; Redding FD and Shasta Co FD engines available. Redding PD and Shasta Sheriff coordinating evacuation. Red Cross shelters: Shasta College Gymnasium (420) and Redding Civic Auditorium (520) open; Foothill HS, Anderson HS, First Baptist on standby.
+>
+> Map is up. Want me to draft the evacuation briefing?
 
 ### Flood
 

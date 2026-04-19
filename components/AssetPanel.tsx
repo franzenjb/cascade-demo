@@ -241,6 +241,192 @@ export function configFor(category: string, rows: FeatureRow[]): CategoryConfig 
       };
     }
 
+    case "fire_station": {
+      const staffing = sum(attrs, "staffing");
+      const byAgency: Record<string, number> = {};
+      for (const a of attrs) {
+        const key = (a.agency || "Unknown").toString();
+        byAgency[key] = (byAgency[key] || 0) + 1;
+      }
+      return {
+        title: "Fire Stations",
+        summary: (
+          <Totals
+            items={[
+              { label: "Stations", value: String(rows.length) },
+              { label: "Staffing", value: staffing.toLocaleString() },
+              ...Object.entries(byAgency)
+                .slice(0, 2)
+                .map(([t, n]) => ({ label: t, value: String(n) })),
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Agency", value: a.agency },
+                { label: "Type", value: a.type },
+                { label: "Staffing", value: a.staffing },
+                a.in_fire_perimeter && {
+                  label: "In perimeter",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
+    case "police": {
+      const staffing = sum(attrs, "staffing");
+      return {
+        title: "Police Stations",
+        summary: (
+          <Totals
+            items={[
+              { label: "Agencies", value: String(rows.length) },
+              { label: "Officers", value: staffing.toLocaleString() },
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Agency", value: a.agency },
+                { label: "Jurisdiction", value: a.jurisdiction },
+                { label: "Staffing", value: a.staffing },
+                a.in_fire_perimeter && {
+                  label: "In perimeter",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
+    case "hospital": {
+      const beds = sum(attrs, "bed_count");
+      const er24h = attrs.filter((a) => a.has_er_24h === true).length;
+      return {
+        title: "Hospitals",
+        summary: (
+          <Totals
+            items={[
+              { label: "Hospitals", value: String(rows.length) },
+              { label: "Beds", value: beds.toLocaleString() },
+              { label: "24h ER", value: String(er24h) },
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Beds", value: a.bed_count },
+                { label: "Trauma", value: a.trauma_level },
+                {
+                  label: "24h ER",
+                  value: a.has_er_24h ? "Yes" : "No",
+                },
+                a.in_fire_perimeter && {
+                  label: "In perimeter",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
+    case "dialysis": {
+      const chairs = sum(attrs, "chairs");
+      const homePts = sum(attrs, "home_dialysis_patients");
+      return {
+        title: "Dialysis Clinics",
+        summary: (
+          <Totals
+            items={[
+              { label: "Clinics", value: String(rows.length) },
+              { label: "Chairs", value: chairs.toLocaleString() },
+              { label: "Home patients", value: String(homePts) },
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Chairs", value: a.chairs },
+                {
+                  label: "Home dialysis",
+                  value: a.home_dialysis_patients,
+                },
+                a.in_fire_perimeter && {
+                  label: "In perimeter",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
+    case "shelter": {
+      const capacity = sum(attrs, "capacity");
+      const open = attrs.filter((a) => a.status === "open").length;
+      const standby = attrs.filter((a) => a.status === "standby").length;
+      return {
+        title: "Red Cross Shelters",
+        summary: (
+          <Totals
+            items={[
+              { label: "Shelters", value: String(rows.length) },
+              { label: "Capacity", value: capacity.toLocaleString() },
+              { label: "Open", value: String(open) },
+              { label: "Standby", value: String(standby) },
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Type", value: a.facility_type },
+                { label: "Capacity", value: a.capacity },
+                { label: "Status", value: a.status },
+                a.in_fire_perimeter && {
+                  label: "In perimeter",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
     default:
       return {
         title: category,

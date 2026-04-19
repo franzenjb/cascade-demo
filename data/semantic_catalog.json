@@ -342,6 +342,229 @@
       "access_tier": "public",
       "data_vintage": "real-time (simulated)",
       "known_limitations": "In demo mode, warnings are triggered manually via /api/trigger. In production, this layer would be populated from actual NWS CAP feed."
+    },
+    {
+      "id": "DEMO_FireArea_Census_Tracts",
+      "service_url_env": "AGOL_FIRE_CENSUS_TRACTS_URL",
+      "display_name": "Shasta County Census Tracts",
+      "aliases": [
+        "shasta census tracts",
+        "shasta demographics",
+        "shasta population",
+        "fire scenario demographics",
+        "evacuation zone demographics",
+        "residents in fire zone"
+      ],
+      "disaster_relevance": {
+        "tornado": "none",
+        "hurricane": "none",
+        "wildfire": "high",
+        "flood": "medium",
+        "earthquake": "medium",
+        "winter_storm": "low",
+        "psps": "high"
+      },
+      "why_it_matters": "Foundational demographic layer for the Shasta County wildfire scenario. Mirrors the Cascade tract schema so playbook logic is identical.",
+      "schema": {
+        "tract_id": "string",
+        "pop": "integer",
+        "pct_over_65": "number",
+        "pct_under_18": "number",
+        "pct_lep": "number (limited English proficiency)",
+        "pct_poverty": "number",
+        "pct_disability": "number",
+        "median_income": "integer",
+        "crci_score": "number (Community Resilience Challenges Index, 0-1)",
+        "crci_top_drivers": "string (comma-separated)"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (patterns applied to real Shasta County geography)",
+      "known_limitations": "Tract geometry is stylized for demo purposes; boundaries are not real ACS tracts. Fields mirror the Cascade tract schema."
+    },
+    {
+      "id": "DEMO_FireArea_Fire_Stations",
+      "service_url_env": "AGOL_FIRE_STATIONS_URL",
+      "display_name": "Shasta County Fire Stations",
+      "aliases": [
+        "fire stations",
+        "fire station",
+        "engines",
+        "RFD",
+        "Redding Fire",
+        "CAL FIRE",
+        "Anderson FPD",
+        "Shasta County FD",
+        "first responders"
+      ],
+      "disaster_relevance": {
+        "tornado": "low",
+        "hurricane": "low",
+        "wildfire": "high",
+        "flood": "medium",
+        "earthquake": "high",
+        "winter_storm": "medium",
+        "psps": "low"
+      },
+      "why_it_matters": "Fire suppression and rescue capacity surrounding the incident. Staffing and apparatus type (engine/truck/rescue) inform initial-attack and mutual-aid posture.",
+      "schema": {
+        "station_id": "string",
+        "name": "string",
+        "agency": "string",
+        "station_number": "integer",
+        "type": "string (engine|truck|rescue)",
+        "staffing": "integer",
+        "address": "string",
+        "in_fire_perimeter": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (real Shasta County agencies, fictional staffing)",
+      "known_limitations": "Staffing is a design figure, not real-time on-duty count. Agency names are real; numbers are synthetic."
+    },
+    {
+      "id": "DEMO_FireArea_Police_Stations",
+      "service_url_env": "AGOL_FIRE_POLICE_URL",
+      "display_name": "Shasta County Law Enforcement",
+      "aliases": [
+        "police",
+        "police stations",
+        "sheriff",
+        "sheriff substations",
+        "law enforcement",
+        "CHP",
+        "Redding PD",
+        "Anderson PD"
+      ],
+      "disaster_relevance": {
+        "tornado": "low",
+        "hurricane": "low",
+        "wildfire": "high",
+        "flood": "medium",
+        "earthquake": "medium",
+        "winter_storm": "medium",
+        "psps": "medium"
+      },
+      "why_it_matters": "Law enforcement agencies managing evacuations, road closures, and perimeter control during the fire.",
+      "schema": {
+        "agency_id": "string",
+        "name": "string",
+        "agency": "string",
+        "jurisdiction": "string",
+        "staffing": "integer",
+        "address": "string",
+        "in_fire_perimeter": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (real agencies, fictional staffing)",
+      "known_limitations": "Staffing is a design figure, not a duty-roster count."
+    },
+    {
+      "id": "DEMO_FireArea_Hospitals",
+      "service_url_env": "AGOL_FIRE_HOSPITALS_URL",
+      "display_name": "Shasta County Hospitals",
+      "aliases": [
+        "hospitals",
+        "hospital",
+        "trauma",
+        "Mercy Medical",
+        "Shasta Regional",
+        "Mayers",
+        "ER",
+        "emergency department"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "high"
+      },
+      "why_it_matters": "Hospitals receive smoke-inhalation and burn casualties; trauma level and 24-hour ER capability determine routing for serious injuries.",
+      "schema": {
+        "facility_id": "string",
+        "name": "string",
+        "bed_count": "integer",
+        "trauma_level": "string (trauma_I|trauma_II|none)",
+        "has_er_24h": "boolean",
+        "address": "string",
+        "in_fire_perimeter": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (real hospitals, fictional bed counts)",
+      "known_limitations": "Bed counts and trauma designations are approximate. Do not cite as authoritative capacity."
+    },
+    {
+      "id": "DEMO_FireArea_Dialysis_Clinics",
+      "service_url_env": "AGOL_FIRE_DIALYSIS_URL",
+      "display_name": "Shasta County Dialysis Clinics",
+      "aliases": [
+        "dialysis",
+        "dialysis clinics",
+        "dialysis centers",
+        "home dialysis patients",
+        "DaVita",
+        "Fresenius",
+        "kidney care",
+        "renal care"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "high"
+      },
+      "why_it_matters": "Outpatient dialysis cannot be skipped without life-threatening consequences. Home-dialysis patient counts drive welfare-check protocols during evacuations and smoke events.",
+      "schema": {
+        "facility_id": "string",
+        "name": "string",
+        "chairs": "integer",
+        "home_dialysis_patients": "integer",
+        "address": "string",
+        "in_fire_perimeter": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (real clinics, fictional patient counts)",
+      "known_limitations": "Home-dialysis counts are service-area estimates, not verified individual tallies."
+    },
+    {
+      "id": "DEMO_FireArea_Red_Cross_Shelters",
+      "service_url_env": "AGOL_FIRE_SHELTERS_URL",
+      "display_name": "Shasta County Red Cross Shelters",
+      "aliases": [
+        "shelters",
+        "evacuation shelters",
+        "Red Cross shelters",
+        "church shelter",
+        "school shelter",
+        "shelter capacity",
+        "standby shelter"
+      ],
+      "disaster_relevance": {
+        "tornado": "medium",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "medium"
+      },
+      "why_it_matters": "Open or standby shelters for evacuees. Capacity and facility type (school/church/rec center) inform operational readiness.",
+      "schema": {
+        "shelter_id": "string",
+        "name": "string",
+        "facility_type": "string (school|church|rec_center)",
+        "capacity": "integer",
+        "status": "string (open|standby)",
+        "address": "string",
+        "in_fire_perimeter": "boolean"
+      },
+      "access_tier": "internal",
+      "data_vintage": "2026-Q1 synthetic (real facility names, fictional capacity and status)",
+      "known_limitations": "Status is a snapshot, not a live feed. Capacity is design capacity, not real-time occupancy."
     }
   ],
   "disaster_playbooks": {
@@ -380,10 +603,20 @@
     },
     "wildfire": {
       "default_layers": [
-        "DEMO_Cascade_Census_Tracts",
-        "DEMO_Cascade_AFN_Service_Areas",
-        "DEMO_Cascade_Roads",
-        "DEMO_Cascade_Red_Cross_Assets"
+        "DEMO_Cascade_Active_Warnings",
+        "DEMO_FireArea_Census_Tracts",
+        "DEMO_FireArea_Fire_Stations",
+        "DEMO_FireArea_Police_Stations",
+        "DEMO_FireArea_Hospitals",
+        "DEMO_FireArea_Dialysis_Clinics",
+        "DEMO_FireArea_Red_Cross_Shelters"
+      ],
+      "narrative_structure": [
+        "fire_specifics",
+        "population_inside_with_demographics",
+        "named_vulnerability_features",
+        "suppression_and_law_enforcement_posture",
+        "offer_next_step"
       ]
     },
     "flood": {
