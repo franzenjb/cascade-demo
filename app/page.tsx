@@ -166,9 +166,12 @@ const SCENARIO_CONFIG: Record<
   wildfire: {
     sections: FIRE_SECTIONS,
     tractLayerId: "DEMO_FireArea_Census_Tracts",
-    // Fire scenario layers are already scoped to the fire footprint,
-    // so a spatial query returns only features inside the perimeter.
-    spatialOnly: true,
+    // Fire perimeter is tight around Whiskeytown; point assets (stations,
+    // hospitals, shelters) sit in Redding proper. Query them unbounded so
+    // the responder sees the regional fire-response inventory, not just
+    // what's literally burning. Census tracts still query spatially for
+    // in-footprint population math.
+    spatialOnly: false,
   },
 };
 
@@ -310,11 +313,12 @@ export default function HomePage() {
     const cfg = SCENARIO_CONFIG[wt];
 
     for (const section of cfg.sections) {
-      // Tornado scene queries Red Cross Assets unbounded (regional view); every
-      // other layer is spatially scoped to the warning polygon. Fire scene is
-      // fully spatial — fire-area layers are already scoped to the footprint.
-      const useGeometry =
-        cfg.spatialOnly || section.id !== "red_cross";
+      // Tornado scene: tight warning polygon, so mobile-home-parks/schools/
+      // medical query spatially (Red Cross assets go unbounded — regional view).
+      // Wildfire scene: fire perimeter hugs Whiskeytown but the responder
+      // needs Redding-area fire stations/hospitals/shelters visible, so all
+      // fire-area point layers query unbounded (they're already regionally scoped).
+      const useGeometry = wt === "tornado" && section.id !== "red_cross";
 
       try {
         const res = await fetch("/api/query", {
