@@ -137,7 +137,7 @@ export default function ChatPanel({
       >
         {messages.length === 0 && !currentStreamText && (
           <div className="text-arc-gray-500 dark:text-arc-gray-300 text-sm italic py-8 text-center">
-            Click <span className="font-semibold text-arc-red">Fire the Tornado</span>{" "}
+            Click <span className="font-semibold text-arc-red">Fire a Simulation</span>{" "}
             to see the system respond proactively — or type a question to begin.
           </div>
         )}

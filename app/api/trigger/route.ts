@@ -12,7 +12,7 @@ import { NextRequest } from "next/server";
 import { getLayerServiceUrl } from "@/lib/catalog";
 import { applyEdits } from "@/lib/agol";
 import scenarios from "@/data/tornado_scenarios.json";
-import type { TornadoScenario } from "@/lib/types";
+import type { Scenario } from "@/lib/types";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
   }
 
   const scenarioId = body.scenario_id || "tornado_buncombe_replay";
-  const scenario = (scenarios.scenarios as TornadoScenario[]).find(
+  const scenario = (scenarios.scenarios as Scenario[]).find(
     (s) => s.id === scenarioId
   );
 
@@ -78,15 +78,20 @@ export async function POST(req: NextRequest) {
       ],
     });
 
+    const triggerDirective =
+      scenario.trigger_directive ||
+      `[SYSTEM EVENT] A ${scenario.warning_type} warning has just been issued. The active warning layer has been updated with the polygon. Produce the proactive situational briefing for this event following your disaster playbook. Under 120 words. Use tool calls for every number.`;
+
     return new Response(
       JSON.stringify({
         success: true,
         scenario_id: scenario.id,
         warning_type: scenario.warning_type,
+        nws_event_id: scenario.nws_event_id,
         issued: issued.toISOString(),
         expires: expires.toISOString(),
         polygon: scenario.polygon_geojson,
-        trigger_directive: `[SYSTEM EVENT] The NWS has just issued a ${scenario.warning_type} warning. The active warning layer has been updated with the polygon. Produce the proactive situational briefing for this event following your disaster playbook. Under 120 words. Use tool calls for every number.`,
+        trigger_directive: triggerDirective,
       }),
       { status: 200, headers: { "Content-Type": "application/json" } }
     );

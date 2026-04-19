@@ -20,6 +20,7 @@
           ]
         ]
       },
+      "trigger_directive": "[SYSTEM EVENT] The NWS has just issued a tornado warning. The active warning layer has been updated with the polygon. Produce the proactive situational briefing for this event following your disaster playbook. Under 120 words. Use tool calls for every number.",
       "expected_impact_numbers": {
         "total_population_in_polygon": 2847,
         "pct_over_65": 18,
@@ -38,6 +39,37 @@
         "nearest_erv_eta_minutes": [22, 34]
       },
       "narrative_notes": "These numbers are baked into the synthetic data. The generate_cascade_data.py script places mobile home parks, schools, and facilities specifically to produce these exact counts when the warning polygon is applied. Every number matches the Buncombe scene in the white paper."
+    },
+    {
+      "id": "fire_laurel_ridge",
+      "name": "Laurel Ridge Fire Perimeter",
+      "description": "Active wildfire along the Laurel Ridge corridor in south-central Cascade County. Organic perimeter shape represents the current fire footprint at the top of the response. Every figure Claude reports is pulled live from Cascade County layers intersected with the fire perimeter.",
+      "warning_type": "wildfire",
+      "nws_event_id": "DEMO-FIRE-2026-0001",
+      "issued_offset_seconds": 0,
+      "expires_offset_seconds": 21600,
+      "polygon_geojson": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-81.720, 35.895],
+            [-81.700, 35.886],
+            [-81.665, 35.887],
+            [-81.625, 35.892],
+            [-81.590, 35.903],
+            [-81.580, 35.923],
+            [-81.590, 35.945],
+            [-81.615, 35.958],
+            [-81.650, 35.956],
+            [-81.685, 35.945],
+            [-81.708, 35.928],
+            [-81.720, 35.910],
+            [-81.720, 35.895]
+          ]
+        ]
+      },
+      "trigger_directive": "[SYSTEM EVENT] An evacuation warning has just been issued for an active wildfire along the Laurel Ridge corridor in south-central Cascade County — the Laurel Ridge Fire. The active warning layer now shows the current fire perimeter. Produce the proactive situational briefing for this event following your wildfire playbook. Under 120 words. Use tool calls for every number — population inside the perimeter, mobile home parks, schools, medical facilities, and nearest Red Cross shelters.",
+      "narrative_notes": "Numbers are not baked. The perimeter sits in western Cascade County, entirely separate from the tornado scenario in the east, so features (tracts, mobile home parks, schools, medical facilities, Red Cross assets) intersected here are different from the tornado scene. Every figure Claude reports is pulled live."
     }
   ]
 }

@@ -88,7 +88,9 @@ export default function HomePage() {
   const handleTriggerFired = (
     directive: string,
     polygon: unknown,
-    sid: string
+    sid: string,
+    warningType: "tornado" | "wildfire",
+    nwsEventId: string | null
   ) => {
     setMessages([]);
     setMapInstructions([]);
@@ -101,18 +103,37 @@ export default function HomePage() {
     setFocusFeature(null);
     setHighlightedFeature(null);
     setScenarioId(sid);
-    setEventId(`DEMO-TOR-${new Date().getFullYear()}-0001`);
+    setEventId(
+      nwsEventId || `DEMO-${warningType.toUpperCase()}-${new Date().getFullYear()}-0001`
+    );
     setTriggerDirective(directive);
 
     if (!polygon) return;
+
+    const polygonStyle =
+      warningType === "wildfire"
+        ? {
+            color: "#E85D04",
+            opacity: 0.18,
+            label: "Fire Perimeter",
+            scale: 150000,
+          }
+        : {
+            color: "#ED1B2E",
+            opacity: 0.15,
+            label: "Tornado Warning",
+            scale: 150000,
+          };
+    const layerLabel =
+      warningType === "wildfire" ? "Fire Perimeter" : "Tornado Warning";
 
     setMapInstructions((prev) => [
       ...prev,
       {
         action: "draw",
         geometry: polygon as any,
-        style: { color: "#ED1B2E", opacity: 0.15, label: "Tornado Warning" },
-        layer_label: "Tornado Warning",
+        style: polygonStyle,
+        layer_label: layerLabel,
       },
     ]);
 

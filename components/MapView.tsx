@@ -182,6 +182,7 @@ export default function MapView({
             rings: inst.geometry.coordinates as any,
             spatialReference: { wkid: 4326 },
           });
+          const warningScale = inst.style?.scale ?? 150000;
           const graphic = new Graphic.default({
             geometry: geom,
             symbol: {
@@ -189,10 +190,10 @@ export default function MapView({
               color: [...hexToRgb(color), 0.15],
               outline: { color: hexToRgb(color), width: 3 },
             } as any,
-            attributes: { _role: "warning", label },
+            attributes: { _role: "warning", label, _scale: warningScale },
           });
           graphicsLayerRef.current.add(graphic);
-          viewRef.current?.goTo({ target: graphic, scale: 150000 }).catch(() => {});
+          viewRef.current?.goTo({ target: graphic, scale: warningScale }).catch(() => {});
         } else if (inst.geometry.type === "Point") {
           const pt = new Point.default({
             x: inst.geometry.coordinates[0],
@@ -359,7 +360,8 @@ export default function MapView({
       if (g.attributes?._role === "warning") warning = g;
     });
     if (warning) {
-      viewRef.current.goTo({ target: warning, scale: 150000 }).catch(() => {});
+      const scale = warning.attributes?._scale ?? 150000;
+      viewRef.current.goTo({ target: warning, scale }).catch(() => {});
     }
   }
 

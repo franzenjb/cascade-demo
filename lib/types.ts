@@ -87,18 +87,23 @@ export interface ToolResult {
 // Scenario Types
 // ═══════════════════════════════════════════════════════════
 
-export interface TornadoScenario {
+export type ScenarioWarningType = "tornado" | "wildfire";
+
+export interface Scenario {
   id: string;
   name: string;
   description: string;
-  warning_type: "tornado";
+  warning_type: ScenarioWarningType;
   nws_event_id: string;
   issued_offset_seconds: number;
   expires_offset_seconds: number;
   polygon_geojson: GeoJSONPolygon;
-  expected_impact_numbers: Record<string, number | string | number[] | string[]>;
+  trigger_directive?: string;
+  expected_impact_numbers?: Record<string, number | string | number[] | string[]>;
   narrative_notes: string;
 }
+
+export type TornadoScenario = Scenario;
 
 // ═══════════════════════════════════════════════════════════
 // Map State Types (frontend ↔ API)
@@ -111,6 +116,7 @@ export interface MapInstruction {
     color?: string;
     opacity?: number;
     label?: string;
+    scale?: number;
   };
   layer_label?: string;
 }
