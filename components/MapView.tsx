@@ -550,6 +550,43 @@ function svgForType(featureType: string, theme: Theme = "light"): string {
   <rect x="7" y="14" width="18" height="4" fill="#ED1B2E"/>
 </svg>`.trim();
 
+    case "fire_station":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#E85D04" stroke="#ffffff" stroke-width="2"/>
+  <path d="M16 8 C17 11 20 12 20 16 C20 17 19.5 17.5 19 18 C19.5 17 19 16 18 15.5 C18 17 17 18 16 18 C15 18 14 17.5 14 16 C14 17 13 18 12.5 19 C12 18 11.5 17 11.5 16 C11.5 13 14 12 15 10 C15 11.5 15.5 12 16 12 C16 11 16 9.5 16 8 Z" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "police":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#1E4A6D" stroke="#ffffff" stroke-width="2"/>
+  <polygon points="16,8 17.8,13.6 23.7,13.6 18.95,17.1 20.75,22.7 16,19.2 11.25,22.7 13.05,17.1 8.3,13.6 14.2,13.6" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "hospital":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#2D2D2D" stroke="#ffffff" stroke-width="2"/>
+  <path d="M10.5 8.5 L13.5 8.5 L13.5 14.5 L18.5 14.5 L18.5 8.5 L21.5 8.5 L21.5 23.5 L18.5 23.5 L18.5 17.5 L13.5 17.5 L13.5 23.5 L10.5 23.5 Z" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "dialysis":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#6B4E9F" stroke="#ffffff" stroke-width="2"/>
+  <path d="M16 8.5 C16 8.5 10.5 14 10.5 18.5 C10.5 21.5 13 24 16 24 C19 24 21.5 21.5 21.5 18.5 C21.5 14 16 8.5 16 8.5 Z" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "shelter":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#ED1B2E" stroke="#ffffff" stroke-width="2"/>
+  <path d="M8.5 18 L16 10 L23.5 18 L23.5 24 L8.5 24 Z" fill="#ffffff"/>
+  <rect x="15" y="18.5" width="2" height="5.5" fill="#ED1B2E"/>
+  <rect x="13.25" y="20.25" width="5.5" height="2" fill="#ED1B2E"/>
+</svg>`.trim();
+
     default:
       return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
@@ -609,6 +646,50 @@ function popupTemplateForFeatureType(
           "<b>Type:</b> {type}<br>" +
           "<b>Capacity:</b> {capacity}<br>" +
           "<b>Status:</b> {operational_status}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "fire_station":
+      return {
+        title: "{name}",
+        content:
+          "<b>Agency:</b> {agency}<br>" +
+          "<b>Apparatus:</b> {type}<br>" +
+          "<b>Staffing:</b> {staffing}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "police":
+      return {
+        title: "{name}",
+        content:
+          "<b>Agency:</b> {agency}<br>" +
+          "<b>Jurisdiction:</b> {jurisdiction}<br>" +
+          "<b>Staffing:</b> {staffing}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "hospital":
+      return {
+        title: "{name}",
+        content:
+          "<b>Beds:</b> {bed_count}<br>" +
+          "<b>Trauma level:</b> {trauma_level}<br>" +
+          "<b>24h ER:</b> {has_er_24h}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "dialysis":
+      return {
+        title: "{name}",
+        content:
+          "<b>Chairs:</b> {chairs}<br>" +
+          "<b>Home-dialysis patients:</b> {home_dialysis_patients}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "shelter":
+      return {
+        title: "{name}",
+        content:
+          "<b>Facility type:</b> {facility_type}<br>" +
+          "<b>Capacity:</b> {capacity}<br>" +
+          "<b>Status:</b> {status}<br>" +
           "<b>Address:</b> {address}",
       };
     default:
