@@ -520,7 +520,9 @@ export default function HomePage() {
                   {warningType === "wildfire" ? "Shasta County, CA" : "Cascade County"}
                 </h2>
                 <p className="text-xs text-arc-gray-500 dark:text-arc-gray-300 font-data uppercase tracking-wider mt-1">
-                  Synthetic demonstration data
+                  {warningType === "wildfire"
+                    ? "Real Shasta-area place names · synthetic operational numbers"
+                    : "Synthetic demonstration data"}
                 </p>
               </div>
               {eventId && (

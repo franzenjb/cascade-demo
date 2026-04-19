@@ -95,7 +95,7 @@ export default function TriggerButton({ onFired }: TriggerButtonProps) {
     ? "Simulating…"
     : fired
     ? "Warning Active"
-    : "Fire a Simulation";
+    : "Run a Simulation";
 
   return (
     <>
