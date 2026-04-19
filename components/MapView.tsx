@@ -505,8 +505,8 @@ function labelSymbol(
     yoffset: -20,
     font: {
       size: isHighlight ? 11 : 10,
-      family: "\"Source Sans Pro\", sans-serif",
-      weight: isHighlight ? "bold" : "600",
+      family: "Arial Unicode MS",
+      weight: isHighlight ? "bold" : "normal",
     },
   };
 }
