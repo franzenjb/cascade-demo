@@ -1,0 +1,47 @@
+{
+  "scenarios": [
+    {
+      "id": "tornado_buncombe_replay",
+      "name": "Buncombe-Preserving Tornado",
+      "description": "The canonical demo scenario. Designed so every number matches the Buncombe scene in the white paper.",
+      "warning_type": "tornado",
+      "nws_event_id": "DEMO-TOR-2026-0001",
+      "issued_offset_seconds": 0,
+      "expires_offset_seconds": 1800,
+      "polygon_geojson": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-81.5400, 36.0100],
+            [-81.5100, 36.0350],
+            [-81.4750, 36.0500],
+            [-81.4500, 36.0600],
+            [-81.4250, 36.0550],
+            [-81.4350, 36.0300],
+            [-81.4800, 36.0150],
+            [-81.5200, 36.0050],
+            [-81.5400, 36.0100]
+          ]
+        ]
+      },
+      "expected_impact_numbers": {
+        "total_population_in_polygon": 2847,
+        "pct_over_65": 18,
+        "pct_limited_english": 9,
+        "mobile_home_parks_count": 4,
+        "mobile_home_units_total": 312,
+        "largest_park_name": "Mountain View Estates",
+        "largest_park_units": 148,
+        "elementary_schools_inside": 1,
+        "assisted_living_inside": 1,
+        "home_dialysis_patients": 47,
+        "afn_transport_dependent": 43,
+        "historical_shelter_churches_nearby": 3,
+        "nearest_erv_count": 2,
+        "nearest_erv_locations": ["Ridgeton", "Hendersonville"],
+        "nearest_erv_eta_minutes": [22, 34]
+      },
+      "narrative_notes": "These numbers are baked into the synthetic data. The generate_cascade_data.py script places mobile home parks, schools, and facilities specifically to produce these exact counts when the warning polygon is applied. Every number matches the Buncombe scene in the white paper."
+    }
+  ]
+}

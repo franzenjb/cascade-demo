@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+build/
+
+# Production
+dist/
+
+# Misc
+.DS_Store
+*.pem
+.vscode/
+.idea/
+.claude/
+
+# Environment (NEVER commit)
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Python (for data generation scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+venv/
+.venv/
+
+# AGOL temporary outputs
+scripts/*.gdb/
+scripts/*.shp
+scripts/output/

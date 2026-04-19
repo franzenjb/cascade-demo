@@ -1,0 +1,398 @@
+{
+  "$schema": "./semantic_catalog.schema.json",
+  "catalog_version": "1.0.0",
+  "last_updated": "2026-04-19",
+  "synthetic_data_notice": "All layers are fictional/synthetic data for Cascade County demonstration. No real PII or sensitive data.",
+  "layers": [
+    {
+      "id": "DEMO_Cascade_Boundary",
+      "service_url_env": "DEMO_CASCADE_BOUNDARY_URL",
+      "display_name": "Cascade County Boundary",
+      "aliases": [
+        "county boundary",
+        "county limits",
+        "the county",
+        "county outline",
+        "Cascade County"
+      ],
+      "disaster_relevance": {
+        "tornado": "low",
+        "hurricane": "low",
+        "wildfire": "low",
+        "flood": "low",
+        "earthquake": "low",
+        "winter_storm": "low",
+        "psps": "low"
+      },
+      "why_it_matters": "Base geographic reference. Used for context but rarely the primary analysis layer.",
+      "schema": {
+        "county_name": "string",
+        "area_sq_mi": "number"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic",
+      "known_limitations": "Fictional boundary; not a real administrative polygon."
+    },
+    {
+      "id": "DEMO_Cascade_Census_Tracts",
+      "service_url_env": "DEMO_CASCADE_CENSUS_TRACTS_URL",
+      "display_name": "Census Tracts with Demographics",
+      "aliases": [
+        "census tracts",
+        "demographics",
+        "population",
+        "residents",
+        "people",
+        "vulnerable populations",
+        "who lives here",
+        "demographic breakdown"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "high"
+      },
+      "why_it_matters": "The foundational demographic layer. Every scenario needs to know who's in the footprint. Contains age, language, income, disability, and community resilience indicators derived from real ACS patterns applied to synthetic geography.",
+      "schema": {
+        "tract_id": "string",
+        "pop": "integer",
+        "pct_over_65": "number",
+        "pct_under_18": "number",
+        "pct_lep": "number (limited English proficiency)",
+        "pct_poverty": "number",
+        "pct_disability": "number",
+        "median_income": "integer",
+        "crci_score": "number (Community Resilience Challenges Index, 0-1)",
+        "crci_top_drivers": "string (comma-separated)"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (patterns based on 2020-2024 ACS)",
+      "known_limitations": "Tract boundaries are synthetic. Real tract-to-tract variation is stylized for demo purposes."
+    },
+    {
+      "id": "DEMO_Cascade_Mobile_Home_Parks",
+      "service_url_env": "DEMO_CASCADE_MOBILE_HOME_PARKS_URL",
+      "display_name": "Mobile Home Parks",
+      "aliases": [
+        "mobile homes",
+        "trailer parks",
+        "manufactured housing",
+        "trailer communities",
+        "MHP",
+        "wind-vulnerable housing",
+        "mobile home communities"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "medium",
+        "flood": "high",
+        "earthquake": "medium",
+        "winter_storm": "medium",
+        "psps": "low"
+      },
+      "why_it_matters": "Mobile homes have substantially higher tornado fatality rates than site-built structures. Occupancy data is estimated; regional average 2.4 persons per unit.",
+      "schema": {
+        "park_name": "string",
+        "unit_count": "integer",
+        "address": "string",
+        "year_established": "integer"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic",
+      "known_limitations": "Occupancy is estimated from unit counts, not measured directly."
+    },
+    {
+      "id": "DEMO_Cascade_Schools",
+      "service_url_env": "DEMO_CASCADE_SCHOOLS_URL",
+      "display_name": "Schools",
+      "aliases": [
+        "schools",
+        "elementary",
+        "middle school",
+        "high school",
+        "students",
+        "kids",
+        "children",
+        "educational facilities"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "medium",
+        "wildfire": "high",
+        "flood": "medium",
+        "earthquake": "high",
+        "winter_storm": "medium",
+        "psps": "medium"
+      },
+      "why_it_matters": "Schools are both a vulnerability (during school hours) and a potential shelter resource (after hours). Enrollment data supports impact estimates.",
+      "schema": {
+        "name": "string",
+        "type": "string (elementary|middle|high)",
+        "enrollment": "integer",
+        "address": "string",
+        "has_shelter_agreement": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic",
+      "known_limitations": "Attendance on any given day varies; enrollment is the roster count."
+    },
+    {
+      "id": "DEMO_Cascade_Medical_Facilities",
+      "service_url_env": "DEMO_CASCADE_MEDICAL_FACILITIES_URL",
+      "display_name": "Medical Facilities",
+      "aliases": [
+        "hospitals",
+        "clinics",
+        "medical facilities",
+        "dialysis centers",
+        "dialysis",
+        "dialysis patients",
+        "healthcare",
+        "medical",
+        "hospital capacity"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "high"
+      },
+      "why_it_matters": "Hospitals need protection and may need evacuation. Dialysis centers serve patients who cannot miss treatments without life-threatening consequences. Home-dialysis patient counts support welfare-check protocols.",
+      "schema": {
+        "name": "string",
+        "type": "string (hospital|clinic|dialysis|urgent_care)",
+        "bed_count": "integer (for hospitals)",
+        "home_dialysis_patients": "integer (service-area estimate, for dialysis centers)",
+        "address": "string",
+        "has_backup_power": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic",
+      "known_limitations": "Home-dialysis patient counts are service-area estimates, not verified individual counts."
+    },
+    {
+      "id": "DEMO_Cascade_AFN_Service_Areas",
+      "service_url_env": "DEMO_CASCADE_AFN_SERVICE_AREAS_URL",
+      "display_name": "Access & Functional Needs Service Areas",
+      "aliases": [
+        "AFN",
+        "access and functional needs",
+        "transport-dependent residents",
+        "people with disabilities",
+        "vulnerable populations",
+        "special needs",
+        "accessible transportation",
+        "specialized support"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "high"
+      },
+      "why_it_matters": "Residents with access and functional needs require specialized support during emergencies (communication, maintaining health, independence, support/safety, transportation — the C-MIST framework). Counts surface in aggregate; individual records are role-restricted.",
+      "schema": {
+        "area_name": "string",
+        "aggregated_count": "integer",
+        "service_type": "string (transport|communication|medical_equipment|independence|support_safety)",
+        "has_registered_providers": "boolean"
+      },
+      "access_tier": "privacy-restricted",
+      "data_vintage": "2026-Q1 synthetic",
+      "known_limitations": "Aggregated counts by service area. Individual-level data requires role-gated access with logged audit trail. Do not surface addresses or names of individuals."
+    },
+    {
+      "id": "DEMO_Cascade_Red_Cross_Assets",
+      "service_url_env": "DEMO_CASCADE_RED_CROSS_ASSETS_URL",
+      "display_name": "Red Cross Assets",
+      "aliases": [
+        "Red Cross",
+        "shelters",
+        "ERV",
+        "Emergency Response Vehicles",
+        "chapter office",
+        "ARC assets",
+        "Red Cross resources",
+        "supplies",
+        "cots",
+        "comfort kits"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "medium"
+      },
+      "why_it_matters": "Red Cross operational resources for response. ERVs are mobile; shelter capacity is fixed; chapter office is coordination hub.",
+      "schema": {
+        "asset_name": "string",
+        "type": "string (office|shelter|ERV_depot|warehouse)",
+        "capacity": "integer (beds for shelters, vehicles for depots, etc.)",
+        "address": "string",
+        "operational_status": "string (active|standby|offline)"
+      },
+      "access_tier": "internal",
+      "data_vintage": "2026-Q1 synthetic",
+      "known_limitations": "Capacity is design capacity, not real-time availability."
+    },
+    {
+      "id": "DEMO_Cascade_Historical_Incidents",
+      "service_url_env": "DEMO_CASCADE_HISTORICAL_INCIDENTS_URL",
+      "display_name": "Historical Incidents",
+      "aliases": [
+        "past events",
+        "historical disasters",
+        "prior incidents",
+        "history",
+        "past tornadoes",
+        "past floods"
+      ],
+      "disaster_relevance": {
+        "tornado": "medium",
+        "hurricane": "medium",
+        "wildfire": "medium",
+        "flood": "medium",
+        "earthquake": "medium",
+        "winter_storm": "medium",
+        "psps": "medium"
+      },
+      "why_it_matters": "Past incidents reveal patterns — areas with recurring vulnerability, prior Red Cross response footprints, community resilience context.",
+      "schema": {
+        "event_date": "date",
+        "event_type": "string (tornado|hurricane|flood|wildfire|winter_storm|other)",
+        "affected_pop": "integer",
+        "duration_days": "integer",
+        "notes": "string"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (plausible historical patterns)",
+      "known_limitations": "Fabricated events designed to support demo scenarios."
+    },
+    {
+      "id": "DEMO_Cascade_Roads",
+      "service_url_env": "DEMO_CASCADE_ROADS_URL",
+      "display_name": "Roads",
+      "aliases": [
+        "roads",
+        "streets",
+        "highways",
+        "road network",
+        "routes"
+      ],
+      "disaster_relevance": {
+        "tornado": "medium",
+        "hurricane": "medium",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "medium",
+        "winter_storm": "high",
+        "psps": "low"
+      },
+      "why_it_matters": "Road network for access routing. In mountain terrain, a handful of key routes connect valleys and scattered communities.",
+      "schema": {
+        "road_type": "string (interstate|highway|arterial|local|dirt)",
+        "name": "string",
+        "speed_limit": "integer"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic",
+      "known_limitations": "Synthetic network; does not reflect any real road system."
+    },
+    {
+      "id": "DEMO_Cascade_Active_Warnings",
+      "service_url_env": "DEMO_CASCADE_ACTIVE_WARNINGS_URL",
+      "display_name": "Active NWS Warnings",
+      "aliases": [
+        "warning",
+        "tornado warning",
+        "NWS alert",
+        "active alert",
+        "weather warning"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "low",
+        "flood": "high",
+        "earthquake": "low",
+        "winter_storm": "high",
+        "psps": "low"
+      },
+      "why_it_matters": "Dynamic layer that holds the currently active warning polygon when the trigger is fired. Empty otherwise.",
+      "schema": {
+        "warning_type": "string (tornado|flood|severe_thunderstorm|winter_storm)",
+        "issued": "datetime",
+        "expires": "datetime",
+        "nws_event_id": "string"
+      },
+      "access_tier": "public",
+      "data_vintage": "real-time (simulated)",
+      "known_limitations": "In demo mode, warnings are triggered manually via /api/trigger. In production, this layer would be populated from actual NWS CAP feed."
+    }
+  ],
+  "disaster_playbooks": {
+    "tornado": {
+      "default_layers": [
+        "DEMO_Cascade_Active_Warnings",
+        "DEMO_Cascade_Census_Tracts",
+        "DEMO_Cascade_Mobile_Home_Parks",
+        "DEMO_Cascade_Schools",
+        "DEMO_Cascade_Medical_Facilities",
+        "DEMO_Cascade_Red_Cross_Assets"
+      ],
+      "narrative_structure": [
+        "warning_specifics",
+        "population_inside_with_demographics",
+        "named_vulnerability_features",
+        "infrastructure_of_note",
+        "offer_next_step"
+      ]
+    },
+    "hurricane_pre_landfall": {
+      "default_layers": [
+        "DEMO_Cascade_Census_Tracts",
+        "DEMO_Cascade_Medical_Facilities",
+        "DEMO_Cascade_Mobile_Home_Parks",
+        "DEMO_Cascade_AFN_Service_Areas",
+        "DEMO_Cascade_Red_Cross_Assets"
+      ],
+      "narrative_structure": [
+        "advisory_summary",
+        "projected_impact_population",
+        "afn_breakdown",
+        "medical_inventory",
+        "resource_prepositioning"
+      ]
+    },
+    "wildfire": {
+      "default_layers": [
+        "DEMO_Cascade_Census_Tracts",
+        "DEMO_Cascade_AFN_Service_Areas",
+        "DEMO_Cascade_Roads",
+        "DEMO_Cascade_Red_Cross_Assets"
+      ]
+    },
+    "flood": {
+      "default_layers": [
+        "DEMO_Cascade_Census_Tracts",
+        "DEMO_Cascade_Roads",
+        "DEMO_Cascade_Medical_Facilities",
+        "DEMO_Cascade_Mobile_Home_Parks"
+      ]
+    }
+  }
+}
