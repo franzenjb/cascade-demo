@@ -225,7 +225,7 @@ export default function HomePage() {
     setFeatures(EMPTY_FEATURES);
     setMetrics(null);
     setActiveCategory(null);
-    setRightTab("conversation");
+    setRightTab("drill");
     setFocusFeature(null);
     setHighlightedFeature(null);
     setScenarioId(sid);
@@ -233,7 +233,9 @@ export default function HomePage() {
     setEventId(
       nwsEventId || `DEMO-${wt.toUpperCase()}-${new Date().getFullYear()}-0001`
     );
-    setTriggerDirective(directive);
+    // Demo trigger goes straight to the assets — skip the Claude narrative.
+    // The conversation tab is still available for typed questions.
+    void directive;
 
     if (!polygon) return;
 
