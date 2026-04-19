@@ -513,7 +513,7 @@ export default function HomePage() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="font-headline text-lg font-bold text-arc-black dark:text-arc-cream">
-                  Cascade County
+                  {warningType === "wildfire" ? "Shasta County, CA" : "Cascade County"}
                 </h2>
                 <p className="text-xs text-arc-gray-500 dark:text-arc-gray-300 font-data uppercase tracking-wider mt-1">
                   Synthetic demonstration data
