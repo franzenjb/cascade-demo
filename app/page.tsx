@@ -390,8 +390,12 @@ export default function HomePage() {
       // needs Redding-area fire stations/hospitals/shelters visible, so all
       // fire-area point layers query unbounded (they're already regionally scoped).
       // Tornado: spatial for most layers, unbounded for Red Cross.
-      // Wildfire/dam_break: unbounded — assets are regionally scoped already.
-      const useGeometry = wt === "tornado" && section.id !== "red_cross";
+      // Wildfire: unbounded — assets are regionally scoped already.
+      // Dam break: spatial — show only what's in the inundation zone.
+      //   Exception: shelters query unbounded (they're outside the zone by design).
+      const useGeometry =
+        (wt === "tornado" && section.id !== "red_cross") ||
+        (wt === "dam_break" && section.id !== "dam_shelter");
 
       try {
         const res = await fetch("/api/query", {
