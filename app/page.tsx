@@ -556,8 +556,8 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-arc-cream dark:bg-arc-black">
-      <header className="bg-white dark:bg-arc-gray-900 border-b-[3px] border-arc-black dark:border-arc-cream py-6 print:border-b">
+    <div className="h-screen flex flex-col bg-arc-cream dark:bg-arc-black overflow-hidden">
+      <header className="bg-white dark:bg-arc-gray-900 border-b-[3px] border-arc-black dark:border-arc-cream py-3 print:border-b">
         <div className="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <svg viewBox="0 0 32 32" width="32" height="32">
@@ -568,7 +568,7 @@ export default function HomePage() {
               <div className="text-[11px] font-semibold uppercase tracking-widest text-arc-red">
                 Project Cascade · Demo
               </div>
-              <h1 className="font-headline text-2xl font-bold text-arc-black dark:text-arc-cream mt-1">
+              <h1 className="font-headline text-lg font-bold text-arc-black dark:text-arc-cream mt-0.5">
                 Before You Even Ask
               </h1>
               <div className="text-sm text-arc-gray-500 dark:text-arc-gray-300 italic">
@@ -584,13 +584,12 @@ export default function HomePage() {
         </div>
       </header>
 
-      <main className="flex-1 flex max-w-[1400px] w-full mx-auto px-6 py-6 gap-6">
+      <main className="flex-1 flex max-w-[1400px] w-full mx-auto px-4 py-3 gap-4 min-h-0">
         <section
-          className="flex-[2] bg-white dark:bg-arc-gray-900 border border-arc-gray-100 dark:border-arc-gray-700 flex flex-col"
-          style={{ height: "760px" }}
+          className="flex-[2] bg-white dark:bg-arc-gray-900 border border-arc-gray-100 dark:border-arc-gray-700 flex flex-col min-h-0"
         >
-          <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 p-4">
-            <div className="red-rule mb-2"></div>
+          <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-4 py-2">
+            <div className="red-rule mb-1"></div>
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="font-headline text-lg font-bold text-arc-black dark:text-arc-cream">
@@ -620,7 +619,7 @@ export default function HomePage() {
           </div>
 
           {metrics && (
-            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-arc-cream/50 dark:bg-arc-black/40 px-4 py-3 grid grid-cols-4 gap-3">
+            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-arc-cream/50 dark:bg-arc-black/40 px-4 py-2 grid grid-cols-4 gap-3">
               <Metric label="In footprint" value={metrics.pop.toLocaleString()} suffix="residents" />
               <Metric label="Age 65+" value={fmtPct(metrics.pctOver65)} />
               <Metric label="Limited English" value={fmtPct(metrics.pctLep)} />
@@ -629,7 +628,7 @@ export default function HomePage() {
           )}
 
           {totalAssetCount > 0 && (
-            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-4 py-3 flex gap-2 flex-wrap">
+            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-4 py-2 flex gap-2 flex-wrap">
               {currentSections.map((section) => (
                 <Chip
                   key={section.id}
@@ -657,7 +656,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="flex-1 bg-white dark:bg-arc-gray-900 border border-arc-gray-100 dark:border-arc-gray-700 flex flex-col min-h-[760px] max-w-md">
+        <section className="flex-1 bg-white dark:bg-arc-gray-900 border border-arc-gray-100 dark:border-arc-gray-700 flex flex-col min-h-0 max-w-md">
           <div className="px-4 pt-4 pb-2 flex items-center justify-between gap-2">
             <div className="red-rule flex-1"></div>
             <div className="flex gap-1 print:hidden">
