@@ -514,7 +514,7 @@ function labelSymbol(
 function svgForType(featureType: string, theme: Theme = "light"): string {
   const medicalFill = theme === "dark" ? "#f7f5f2" : "#2D2D2D";
   const medicalStripe = theme === "dark" ? "#2D2D2D" : "#ffffff";
-  const medicalStroke = theme === "dark" ? "#2D2D2D" : "#ffffff";
+  const medicalStroke = "#ffffff";
 
   switch (featureType) {
     case "mobile_home_park":
@@ -528,7 +528,7 @@ function svgForType(featureType: string, theme: Theme = "light"): string {
     case "school":
       return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <circle cx="16" cy="16" r="14" fill="#1E4A6D" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="16" cy="16" r="14" fill="#E85D04" stroke="#ffffff" stroke-width="2"/>
   <path d="M6 14 L16 9 L26 14 L16 19 Z" fill="#ffffff"/>
   <path d="M10 16 L10 20 C10 22 13 23 16 23 C19 23 22 22 22 20 L22 16" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
   <line x1="24" y1="14" x2="24" y2="19" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
@@ -560,14 +560,14 @@ function svgForType(featureType: string, theme: Theme = "light"): string {
     case "police":
       return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <circle cx="16" cy="16" r="14" fill="#1E4A6D" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="16" cy="16" r="14" fill="#3B82F6" stroke="#ffffff" stroke-width="2"/>
   <polygon points="16,8 17.8,13.6 23.7,13.6 18.95,17.1 20.75,22.7 16,19.2 11.25,22.7 13.05,17.1 8.3,13.6 14.2,13.6" fill="#ffffff"/>
 </svg>`.trim();
 
     case "hospital":
       return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <circle cx="16" cy="16" r="14" fill="#2D2D2D" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="16" cy="16" r="14" fill="#6B4E9F" stroke="#ffffff" stroke-width="2"/>
   <path d="M10.5 8.5 L13.5 8.5 L13.5 14.5 L18.5 14.5 L18.5 8.5 L21.5 8.5 L21.5 23.5 L18.5 23.5 L18.5 17.5 L13.5 17.5 L13.5 23.5 L10.5 23.5 Z" fill="#ffffff"/>
 </svg>`.trim();
 
@@ -626,9 +626,9 @@ function svgForType(featureType: string, theme: Theme = "light"): string {
     case "dam_water_plant":
       return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <circle cx="16" cy="16" r="14" fill="#1E4A6D" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="16" cy="16" r="14" fill="#0891B2" stroke="#ffffff" stroke-width="2"/>
   <path d="M16 8 C16 8 10 14 10 18 C10 21.3 12.7 24 16 24 C19.3 24 22 21.3 22 18 C22 14 16 8 16 8 Z" fill="#ffffff"/>
-  <path d="M13 18 Q14.5 16 16 18 Q17.5 20 19 18" fill="none" stroke="#1E4A6D" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M13 18 Q14.5 16 16 18 Q17.5 20 19 18" fill="none" stroke="#0891B2" stroke-width="1.5" stroke-linecap="round"/>
 </svg>`.trim();
 
     default:

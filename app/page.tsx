@@ -567,7 +567,7 @@ export default function HomePage() {
             <h1 className="font-headline text-sm font-bold text-arc-black dark:text-arc-cream">
               Project Cascade
             </h1>
-            <span className="text-[10px] text-arc-gray-500 dark:text-arc-gray-400 italic hidden sm:inline">
+            <span className="text-[10px] text-arc-gray-500 dark:text-arc-gray-300 italic hidden sm:inline">
               Anticipatory Mapping for Emergency Response
             </span>
           </div>
@@ -593,23 +593,23 @@ export default function HomePage() {
                   ? "Butte County, CA"
                   : "Cascade County"}
               </h2>
-              <span className="text-[9px] text-arc-gray-400 dark:text-arc-gray-500 font-data uppercase tracking-wider">
+              <span className="text-[9px] text-arc-gray-400 dark:text-arc-gray-300 font-data uppercase tracking-wider">
                 Synthetic data
               </span>
             </div>
             {eventId && (
-              <span className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-400 tracking-wider">{eventId}</span>
+              <span className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 tracking-wider">{eventId}</span>
             )}
           </div>
 
           {metrics && (
             <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-arc-cream/50 dark:bg-arc-black/40 px-3 py-1 flex items-center gap-4 text-[11px] font-data">
               <span className="font-bold text-arc-black dark:text-arc-cream">{metrics.pop.toLocaleString()}</span>
-              <span className="text-arc-gray-500 dark:text-arc-gray-400">in footprint</span>
-              <span className="text-arc-gray-300 dark:text-arc-gray-600">|</span>
-              <span className="text-arc-gray-500 dark:text-arc-gray-400">65+ <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctOver65)}</strong></span>
-              <span className="text-arc-gray-500 dark:text-arc-gray-400">LEP <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctLep)}</strong></span>
-              <span className="text-arc-gray-500 dark:text-arc-gray-400">Disability <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctDisability)}</strong></span>
+              <span className="text-arc-gray-500 dark:text-arc-cream/60">in footprint</span>
+              <span className="text-arc-gray-300 dark:text-arc-cream/30">|</span>
+              <span className="text-arc-gray-500 dark:text-arc-cream/60">65+ <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctOver65)}</strong></span>
+              <span className="text-arc-gray-500 dark:text-arc-cream/60">LEP <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctLep)}</strong></span>
+              <span className="text-arc-gray-500 dark:text-arc-cream/60">Disability <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctDisability)}</strong></span>
             </div>
           )}
 
