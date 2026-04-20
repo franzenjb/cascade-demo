@@ -1,0 +1,672 @@
+{
+  "infra_pharmacies": [
+    {
+      "attributes": { "name": "CVS Pharmacy #9521", "address": "1275 Pine St, Redding, CA 96001", "phone": "(530) 243-1800", "operator": "CVS", "rx_open_status": "open" },
+      "geometry": { "x": -122.3935, "y": 40.5865, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Walgreens #5412", "address": "1560 Hilltop Dr, Redding, CA 96002", "phone": "(530) 222-0180", "operator": "Walgreens", "rx_open_status": "open" },
+      "geometry": { "x": -122.3510, "y": 40.5720, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Rite Aid #5687", "address": "2180 Pine St, Redding, CA 96002", "phone": "(530) 222-3400", "operator": "Rite Aid", "rx_open_status": "closed" },
+      "geometry": { "x": -122.3720, "y": 40.5790, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Raley's Pharmacy", "address": "1275 East St, Redding, CA 96001", "phone": "(530) 245-1234", "operator": "independent", "rx_open_status": "open" },
+      "geometry": { "x": -122.3850, "y": 40.5810, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "CVS Pharmacy #9534", "address": "2655 Larkspur Ln, Redding, CA 96002", "phone": "(530) 226-5600", "operator": "CVS", "rx_open_status": "open" },
+      "geometry": { "x": -122.3380, "y": 40.5650, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Walgreens #3087", "address": "5070 Rhonda Rd, Anderson, CA 96007", "phone": "(530) 365-2200", "operator": "Walgreens", "rx_open_status": "open" },
+      "geometry": { "x": -122.2980, "y": 40.4530, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta Lake Pharmacy", "address": "4536 Shasta Dam Blvd, Shasta Lake, CA 96019", "phone": "(530) 275-1122", "operator": "independent", "rx_open_status": "unknown" },
+      "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Safeway Pharmacy #1592", "address": "1070 E Cypress Ave, Redding, CA 96002", "phone": "(530) 222-7890", "operator": "independent", "rx_open_status": "open" },
+      "geometry": { "x": -122.3600, "y": 40.5740, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_urgent_care": [
+    {
+      "attributes": { "name": "Dignity Health Connected Living - Redding", "address": "100 Mercy Oaks Dr, Redding, CA 96001", "phone": "(530) 225-6100", "hours": "8am-8pm daily", "capabilities": ["suture", "xray", "lab"] },
+      "geometry": { "x": -122.3950, "y": 40.5900, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta Regional Urgent Care", "address": "1255 Liberty St, Redding, CA 96001", "phone": "(530) 246-5000", "hours": "7am-9pm daily", "capabilities": ["suture", "xray", "lab"] },
+      "geometry": { "x": -122.3880, "y": 40.5830, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "NorCal Urgent Care", "address": "2701 Eureka Way, Redding, CA 96001", "phone": "(530) 229-0222", "hours": "9am-7pm Mon-Sat", "capabilities": ["suture", "xray"] },
+      "geometry": { "x": -122.4150, "y": 40.5870, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Hilltop Urgent Care", "address": "1610 Hilltop Dr, Redding, CA 96002", "phone": "(530) 221-3399", "hours": "8am-6pm Mon-Fri", "capabilities": ["suture", "lab"] },
+      "geometry": { "x": -122.3500, "y": 40.5710, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Anderson Urgent Care", "address": "2120 Ferry St, Anderson, CA 96007", "phone": "(530) 365-4500", "hours": "8am-5pm Mon-Fri", "capabilities": ["suture", "xray"] },
+      "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_public_health": [
+    {
+      "attributes": { "name": "Shasta County Health & Human Services Agency", "address": "2650 Breslauer Way, Redding, CA 96001", "phone": "(530) 225-5591", "type": "county" },
+      "geometry": { "x": -122.4020, "y": 40.5920, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "City of Redding Public Health Office", "address": "777 Cypress Ave, Redding, CA 96001", "phone": "(530) 225-4100", "type": "city" },
+      "geometry": { "x": -122.3900, "y": 40.5840, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta Community Health Center", "address": "1035 Placer St, Redding, CA 96001", "phone": "(530) 246-5710", "type": "community health center" },
+      "geometry": { "x": -122.3930, "y": 40.5800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Hill Country Community Clinic", "address": "1824 Court St, Redding, CA 96001", "phone": "(530) 243-5744", "type": "community health center" },
+      "geometry": { "x": -122.3960, "y": 40.5860, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Anderson Community Health Center", "address": "3045 East Center St, Anderson, CA 96007", "phone": "(530) 365-5225", "type": "community health center" },
+      "geometry": { "x": -122.2940, "y": 40.4470, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_private_schools": [
+    {
+      "attributes": { "name": "Redding Christian School", "address": "3100 Eureka Way, Redding, CA 96001", "enrollment": 285, "grades": "K-8", "type": "independent" },
+      "geometry": { "x": -122.4200, "y": 40.5880, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "North Valley Catholic Academy", "address": "1851 Hartnell Ave, Redding, CA 96002", "enrollment": 192, "grades": "K-8", "type": "parochial" },
+      "geometry": { "x": -122.3560, "y": 40.5690, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta Bible College & Graduate School K-12 Academy", "address": "2951 Goodwater Ave, Redding, CA 96002", "enrollment": 78, "grades": "K-12", "type": "independent" },
+      "geometry": { "x": -122.3300, "y": 40.5780, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Liberty Christian School", "address": "4120 Placer St, Redding, CA 96001", "enrollment": 145, "grades": "K-8", "type": "independent" },
+      "geometry": { "x": -122.3940, "y": 40.5770, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Cascade Charter Academy", "address": "1645 Market St, Redding, CA 96001", "enrollment": 310, "grades": "K-8", "type": "charter" },
+      "geometry": { "x": -122.3890, "y": 40.5850, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Anderson New Life Christian School", "address": "2780 Balls Ferry Rd, Anderson, CA 96007", "enrollment": 95, "grades": "K-6", "type": "independent" },
+      "geometry": { "x": -122.2880, "y": 40.4550, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_colleges": [
+    {
+      "attributes": { "name": "Shasta College", "address": "11555 Old Oregon Trail, Redding, CA 96049", "enrollment": 10200, "type": "community college", "campus_shelter_capacity": 2500 },
+      "geometry": { "x": -122.3450, "y": 40.6160, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Simpson University", "address": "2211 College View Dr, Redding, CA 96003", "enrollment": 1050, "type": "university", "campus_shelter_capacity": 800 },
+      "geometry": { "x": -122.3370, "y": 40.6020, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta Bible College", "address": "2951 Goodwater Ave, Redding, CA 96002", "enrollment": 110, "type": "university", "campus_shelter_capacity": 200 },
+      "geometry": { "x": -122.3290, "y": 40.5770, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "National University - Redding", "address": "303 N Butte St, Redding, CA 96001", "enrollment": 180, "type": "university", "campus_shelter_capacity": 100 },
+      "geometry": { "x": -122.3910, "y": 40.5890, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Bethel School of Supernatural Ministry", "address": "933 College View Dr, Redding, CA 96003", "enrollment": 2200, "type": "university", "campus_shelter_capacity": 1200 },
+      "geometry": { "x": -122.3400, "y": 40.5990, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_worship": [
+    {
+      "attributes": { "name": "Bethel Church", "address": "933 College View Dr, Redding, CA 96003", "denomination": "non-denominational", "seating_capacity": 2800, "has_kitchen": true, "has_generator": true, "shelter_agreement": "yes" },
+      "geometry": { "x": -122.3400, "y": 40.5990, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Calvary Chapel Redding", "address": "1180 Queen St, Redding, CA 96001", "denomination": "Calvary Chapel", "seating_capacity": 650, "has_kitchen": true, "has_generator": true, "shelter_agreement": "yes" },
+      "geometry": { "x": -122.3880, "y": 40.5830, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "All Saints Catholic Church", "address": "2150 Shasta View Dr, Redding, CA 96003", "denomination": "Catholic", "seating_capacity": 500, "has_kitchen": true, "has_generator": false, "shelter_agreement": "yes" },
+      "geometry": { "x": -122.3480, "y": 40.5950, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "First Baptist Church of Redding", "address": "1825 East St, Redding, CA 96001", "denomination": "Baptist", "seating_capacity": 450, "has_kitchen": true, "has_generator": false, "shelter_agreement": "yes" },
+      "geometry": { "x": -122.3860, "y": 40.5800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Church of Jesus Christ of Latter-day Saints - Redding Stake", "address": "3410 Churn Creek Rd, Redding, CA 96002", "denomination": "LDS", "seating_capacity": 400, "has_kitchen": true, "has_generator": true, "shelter_agreement": "yes" },
+      "geometry": { "x": -122.3350, "y": 40.5680, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Redding Community Church", "address": "2400 Hartnell Ave, Redding, CA 96002", "denomination": "non-denominational", "seating_capacity": 320, "has_kitchen": true, "has_generator": false, "shelter_agreement": "no" },
+      "geometry": { "x": -122.3550, "y": 40.5720, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Grace Baptist Church", "address": "3100 Bechelli Ln, Redding, CA 96002", "denomination": "Baptist", "seating_capacity": 280, "has_kitchen": true, "has_generator": false, "shelter_agreement": "no" },
+      "geometry": { "x": -122.3420, "y": 40.5620, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta Lake Calvary Chapel", "address": "4720 Shasta Dam Blvd, Shasta Lake, CA 96019", "denomination": "Calvary Chapel", "seating_capacity": 200, "has_kitchen": true, "has_generator": true, "shelter_agreement": "yes" },
+      "geometry": { "x": -122.3730, "y": 40.6800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Anderson Baptist Church", "address": "2950 McMurray Dr, Anderson, CA 96007", "denomination": "Baptist", "seating_capacity": 350, "has_kitchen": true, "has_generator": false, "shelter_agreement": "yes" },
+      "geometry": { "x": -122.2960, "y": 40.4510, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Igo Community Church", "address": "18250 Main St, Igo, CA 96047", "denomination": "non-denominational", "seating_capacity": 80, "has_kitchen": true, "has_generator": true, "shelter_agreement": "yes" },
+      "geometry": { "x": -122.5350, "y": 40.5200, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_snap": [
+    {
+      "attributes": { "name": "WinCo Foods", "address": "1070 E Cypress Ave, Redding, CA 96002", "type": "supermarket", "accepts_ebt": true },
+      "geometry": { "x": -122.3600, "y": 40.5740, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Grocery Outlet Bargain Market", "address": "1585 Hilltop Dr, Redding, CA 96002", "type": "grocery", "accepts_ebt": true },
+      "geometry": { "x": -122.3510, "y": 40.5720, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Safeway #1592", "address": "1070 E Cypress Ave, Redding, CA 96002", "type": "supermarket", "accepts_ebt": true },
+      "geometry": { "x": -122.3620, "y": 40.5745, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Raley's Supermarket", "address": "1275 East St, Redding, CA 96001", "type": "supermarket", "accepts_ebt": true },
+      "geometry": { "x": -122.3850, "y": 40.5810, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Trader Joe's", "address": "2180 Hilltop Dr, Redding, CA 96002", "type": "grocery", "accepts_ebt": true },
+      "geometry": { "x": -122.3460, "y": 40.5690, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Dollar General #18742", "address": "4501 Shasta Dam Blvd, Shasta Lake, CA 96019", "type": "convenience", "accepts_ebt": true },
+      "geometry": { "x": -122.3700, "y": 40.6780, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Walmart Supercenter #1952", "address": "1515 Dana Dr, Redding, CA 96003", "type": "supermarket", "accepts_ebt": true },
+      "geometry": { "x": -122.3440, "y": 40.5970, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Anderson Foodmaxx", "address": "2690 Gateway Dr, Anderson, CA 96007", "type": "supermarket", "accepts_ebt": true },
+      "geometry": { "x": -122.3010, "y": 40.4480, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Igo Country Store", "address": "18280 Main St, Igo, CA 96047", "type": "convenience", "accepts_ebt": true },
+      "geometry": { "x": -122.5360, "y": 40.5210, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "French Gulch General Store", "address": "12400 Main St, French Gulch, CA 96033", "type": "convenience", "accepts_ebt": true },
+      "geometry": { "x": -122.6370, "y": 40.7010, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_power_plants": [
+    {
+      "attributes": { "name": "Shasta Dam Powerhouse", "fuel_type": "hydro", "capacity_mw": 710, "operator": "Bureau of Reclamation" },
+      "geometry": { "x": -122.4190, "y": 40.7210, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Whiskeytown Powerhouse", "fuel_type": "hydro", "capacity_mw": 3, "operator": "Bureau of Reclamation" },
+      "geometry": { "x": -122.5530, "y": 40.6300, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Spring Creek Powerhouse", "fuel_type": "hydro", "capacity_mw": 180, "operator": "Bureau of Reclamation" },
+      "geometry": { "x": -122.4400, "y": 40.7150, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Keswick Dam Powerhouse", "fuel_type": "hydro", "capacity_mw": 117, "operator": "Bureau of Reclamation" },
+      "geometry": { "x": -122.4450, "y": 40.6100, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Redding Solar Farm", "fuel_type": "solar", "capacity_mw": 22, "operator": "independent" },
+      "geometry": { "x": -122.3200, "y": 40.5500, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Redding Power Plant (Peaker)", "fuel_type": "gas", "capacity_mw": 85, "operator": "PG&E" },
+      "geometry": { "x": -122.3900, "y": 40.5700, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_landfills": [
+    {
+      "attributes": { "name": "West Central Landfill", "address": "15850 Bowman Rd, Cottonwood, CA 96022", "status": "active", "type": "MSW", "daily_capacity_tons": 1500 },
+      "geometry": { "x": -122.3700, "y": 40.4200, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Clear Creek Transfer Station", "address": "20175 Clear Creek Rd, Redding, CA 96001", "status": "active", "type": "C&D", "daily_capacity_tons": 200 },
+      "geometry": { "x": -122.4800, "y": 40.5600, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Anderson Landfill (closed)", "address": "6500 Deschutes Rd, Anderson, CA 96007", "status": "closed", "type": "MSW", "daily_capacity_tons": 0 },
+      "geometry": { "x": -122.3100, "y": 40.4600, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Benton Air Park Transfer Station", "address": "8901 Airport Rd, Redding, CA 96002", "status": "active", "type": "C&D", "daily_capacity_tons": 150 },
+      "geometry": { "x": -122.2800, "y": 40.5100, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta County Inert Debris Facility", "address": "19500 Old Oregon Trail, Redding, CA 96003", "status": "active", "type": "C&D", "daily_capacity_tons": 100 },
+      "geometry": { "x": -122.3500, "y": 40.6300, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_dams": [
+    {
+      "attributes": { "name": "Shasta Dam", "river": "Sacramento River", "height_ft": 602, "hazard_class": "high", "year_built": 1945, "downstream_pop_at_risk": 420000 },
+      "geometry": { "x": -122.4190, "y": 40.7210, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Whiskeytown Dam", "river": "Clear Creek", "height_ft": 282, "hazard_class": "high", "year_built": 1963, "downstream_pop_at_risk": 95000 },
+      "geometry": { "x": -122.5530, "y": 40.6300, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Keswick Dam", "river": "Sacramento River", "height_ft": 157, "hazard_class": "high", "year_built": 1950, "downstream_pop_at_risk": 390000 },
+      "geometry": { "x": -122.4450, "y": 40.6100, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Clear Creek Dam (Crystal Creek)", "river": "Clear Creek", "height_ft": 58, "hazard_class": "significant", "year_built": 1940, "downstream_pop_at_risk": 8500 },
+      "geometry": { "x": -122.5100, "y": 40.5900, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Spring Creek Debris Dam", "river": "Spring Creek", "height_ft": 217, "hazard_class": "high", "year_built": 1963, "downstream_pop_at_risk": 110000 },
+      "geometry": { "x": -122.4400, "y": 40.7150, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_prisons": [
+    {
+      "attributes": { "name": "Shasta County Jail", "address": "1525 Court St, Redding, CA 96001", "type": "county jail", "population": 380, "security_level": "medium" },
+      "geometry": { "x": -122.3950, "y": 40.5870, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta County Juvenile Rehabilitation Facility", "address": "2680 Radio Ln, Redding, CA 96001", "type": "county jail", "population": 42, "security_level": "minimum" },
+      "geometry": { "x": -122.4050, "y": 40.5900, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Shasta County Community Corrections Center", "address": "1540 West St, Redding, CA 96001", "type": "county jail", "population": 110, "security_level": "minimum" },
+      "geometry": { "x": -122.4000, "y": 40.5860, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "cr_no_hs_diploma": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_pop_25plus": 4120, "no_diploma_count": 494, "no_diploma_pct": 12.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_pop_25plus": 2850, "no_diploma_count": 484, "no_diploma_pct": 17.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_pop_25plus": 3600, "no_diploma_count": 612, "no_diploma_pct": 17.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_pop_25plus": 5100, "no_diploma_count": 510, "no_diploma_pct": 10.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_pop_25plus": 4300, "no_diploma_count": 602, "no_diploma_pct": 14.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_pop_25plus": 1800, "no_diploma_count": 342, "no_diploma_pct": 19.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_race_ethnicity": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_pop": 5800, "white_pct": 80.2, "black_pct": 1.5, "hispanic_pct": 12.1, "asian_pct": 3.0, "native_pct": 3.2, "other_pct": 0.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_pop": 3900, "white_pct": 84.5, "black_pct": 0.8, "hispanic_pct": 9.2, "asian_pct": 1.1, "native_pct": 4.4, "other_pct": 0.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_pop": 5100, "white_pct": 78.6, "black_pct": 1.2, "hispanic_pct": 14.5, "asian_pct": 1.8, "native_pct": 3.9, "other_pct": 0.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_pop": 7200, "white_pct": 82.0, "black_pct": 1.8, "hispanic_pct": 10.3, "asian_pct": 3.5, "native_pct": 2.4, "other_pct": 0.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_pop": 6100, "white_pct": 79.8, "black_pct": 1.0, "hispanic_pct": 13.8, "asian_pct": 2.2, "native_pct": 3.2, "other_pct": 0.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_pop": 2400, "white_pct": 87.3, "black_pct": 0.4, "hispanic_pct": 7.1, "asian_pct": 0.5, "native_pct": 4.7, "other_pct": 0.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_vehicle": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_households": 2450, "no_vehicle_count": 245, "no_vehicle_pct": 10.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_households": 1600, "no_vehicle_count": 80, "no_vehicle_pct": 5.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_households": 2100, "no_vehicle_count": 252, "no_vehicle_pct": 12.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_households": 3200, "no_vehicle_count": 192, "no_vehicle_pct": 6.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_households": 2600, "no_vehicle_count": 234, "no_vehicle_pct": 9.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_households": 950, "no_vehicle_count": 38, "no_vehicle_pct": 4.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_single_parent": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "households_with_children": 680, "single_parent_count": 224, "single_parent_pct": 33.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "households_with_children": 410, "single_parent_count": 123, "single_parent_pct": 30.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "households_with_children": 620, "single_parent_count": 223, "single_parent_pct": 36.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "households_with_children": 850, "single_parent_count": 221, "single_parent_pct": 26.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "households_with_children": 720, "single_parent_count": 245, "single_parent_pct": 34.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "households_with_children": 250, "single_parent_count": 68, "single_parent_pct": 27.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_smartphone": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_households": 2450, "no_smartphone_count": 343, "no_smartphone_pct": 14.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_households": 1600, "no_smartphone_count": 288, "no_smartphone_pct": 18.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_households": 2100, "no_smartphone_count": 399, "no_smartphone_pct": 19.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_households": 3200, "no_smartphone_count": 352, "no_smartphone_pct": 11.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_households": 2600, "no_smartphone_count": 416, "no_smartphone_pct": 16.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_households": 950, "no_smartphone_count": 228, "no_smartphone_pct": 24.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_broadband": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_households": 2450, "no_broadband_count": 368, "no_broadband_pct": 15.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_households": 1600, "no_broadband_count": 400, "no_broadband_pct": 25.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_households": 2100, "no_broadband_count": 462, "no_broadband_pct": 22.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_households": 3200, "no_broadband_count": 384, "no_broadband_pct": 12.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_households": 2600, "no_broadband_count": 494, "no_broadband_pct": 19.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_households": 950, "no_broadband_count": 333, "no_broadband_pct": 35.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_mobile_homes_pct": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_housing_units": 2700, "mobile_home_count": 162, "mobile_home_pct": 6.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_housing_units": 1800, "mobile_home_count": 432, "mobile_home_pct": 24.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_housing_units": 2350, "mobile_home_count": 611, "mobile_home_pct": 26.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_housing_units": 3500, "mobile_home_count": 280, "mobile_home_pct": 8.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_housing_units": 2900, "mobile_home_count": 522, "mobile_home_pct": 18.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_housing_units": 1100, "mobile_home_count": 385, "mobile_home_pct": 35.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_owner_occupied": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_housing_units": 2700, "owner_occupied_count": 1350, "owner_occupied_pct": 50.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_housing_units": 1800, "owner_occupied_count": 1260, "owner_occupied_pct": 70.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_housing_units": 2350, "owner_occupied_count": 1175, "owner_occupied_pct": 50.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_housing_units": 3500, "owner_occupied_count": 2275, "owner_occupied_pct": 65.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_housing_units": 2900, "owner_occupied_count": 1595, "owner_occupied_pct": 55.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_housing_units": 1100, "owner_occupied_count": 880, "owner_occupied_pct": 80.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_housing_costs": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "renter_households": 1100, "cost_burdened_count": 484, "cost_burdened_pct": 44.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "renter_households": 480, "cost_burdened_count": 187, "cost_burdened_pct": 39.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "renter_households": 1050, "cost_burdened_count": 504, "cost_burdened_pct": 48.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "renter_households": 1120, "cost_burdened_count": 392, "cost_burdened_pct": 35.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "renter_households": 1170, "cost_burdened_count": 515, "cost_burdened_pct": 44.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "renter_households": 190, "cost_burdened_count": 70, "cost_burdened_pct": 37.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_flood_insurance": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "sfha_structures": 320, "insured_count": 128, "insured_pct": 40.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "sfha_structures": 85, "insured_count": 21, "insured_pct": 25.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "sfha_structures": 210, "insured_count": 63, "insured_pct": 30.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "sfha_structures": 180, "insured_count": 81, "insured_pct": 45.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "sfha_structures": 260, "insured_count": 78, "insured_pct": 30.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "sfha_structures": 45, "insured_count": 9, "insured_pct": 20.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_hospital_count": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "hospitals": 2, "pop_per_hospital": 2900 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "hospitals": 1, "pop_per_hospital": 7200 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_medical_capacity": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "primary_care_physicians": 28, "specialists": 45, "per_100k_rate": 1259.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "primary_care_physicians": 2, "specialists": 0, "per_100k_rate": 51.3 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "primary_care_physicians": 3, "specialists": 1, "per_100k_rate": 78.4 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "primary_care_physicians": 18, "specialists": 32, "per_100k_rate": 694.4 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "primary_care_physicians": 5, "specialists": 3, "per_100k_rate": 131.1 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "primary_care_physicians": 0, "specialists": 0, "per_100k_rate": 0.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_uninsured": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_pop": 5800, "uninsured_count": 696, "uninsured_pct": 12.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_pop": 3900, "uninsured_count": 585, "uninsured_pct": 15.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_pop": 5100, "uninsured_count": 816, "uninsured_pct": 16.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_pop": 7200, "uninsured_count": 720, "uninsured_pct": 10.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_pop": 6100, "uninsured_count": 854, "uninsured_pct": 14.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_pop": 2400, "uninsured_count": 432, "uninsured_pct": 18.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_power_dependent": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "medicare_beneficiaries": 1250, "power_dependent_count": 38, "device_types": "oxygen concentrator, CPAP, ventilator" }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "medicare_beneficiaries": 820, "power_dependent_count": 28, "device_types": "oxygen concentrator, CPAP" }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "medicare_beneficiaries": 1100, "power_dependent_count": 45, "device_types": "oxygen concentrator, CPAP, dialysis" }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "medicare_beneficiaries": 1550, "power_dependent_count": 42, "device_types": "oxygen concentrator, CPAP, ventilator" }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "medicare_beneficiaries": 1320, "power_dependent_count": 52, "device_types": "oxygen concentrator, CPAP, dialysis" }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "medicare_beneficiaries": 510, "power_dependent_count": 22, "device_types": "oxygen concentrator, CPAP" }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_unemployed": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "labor_force": 2800, "unemployed_count": 224, "unemployment_rate": 8.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "labor_force": 1700, "unemployed_count": 170, "unemployment_rate": 10.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "labor_force": 2300, "unemployed_count": 276, "unemployment_rate": 12.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "labor_force": 3600, "unemployed_count": 252, "unemployment_rate": 7.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "labor_force": 2900, "unemployed_count": 290, "unemployment_rate": 10.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "labor_force": 950, "unemployed_count": 124, "unemployment_rate": 13.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_unemployed_women": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "female_labor_force": 1350, "unemployed_women": 122, "female_unemployment_rate": 9.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "female_labor_force": 780, "unemployed_women": 94, "female_unemployment_rate": 12.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "female_labor_force": 1050, "unemployed_women": 147, "female_unemployment_rate": 14.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "female_labor_force": 1750, "unemployed_women": 140, "female_unemployment_rate": 8.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "female_labor_force": 1400, "unemployed_women": 154, "female_unemployment_rate": 11.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "female_labor_force": 420, "unemployed_women": 63, "female_unemployment_rate": 15.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_gini": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "gini_index": 0.44 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "gini_index": 0.41 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "gini_index": 0.39 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "gini_index": 0.46 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "gini_index": 0.42 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "gini_index": 0.38 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_predominant_sector": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "predominant_sector": "Health Care & Social Assistance", "sector_pct": 28.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "predominant_sector": "Agriculture, Forestry & Logging", "sector_pct": 22.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "predominant_sector": "Retail Trade", "sector_pct": 19.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "predominant_sector": "Health Care & Social Assistance", "sector_pct": 24.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "predominant_sector": "Manufacturing", "sector_pct": 18.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "predominant_sector": "Agriculture, Forestry & Logging", "sector_pct": 31.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_civic_orgs": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "civic_org_count": 18, "per_10k_rate": 31.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "civic_org_count": 4, "per_10k_rate": 10.3 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "civic_org_count": 6, "per_10k_rate": 11.8 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "civic_org_count": 12, "per_10k_rate": 16.7 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "civic_org_count": 8, "per_10k_rate": 13.1 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "civic_org_count": 3, "per_10k_rate": 12.5 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_religious_affiliation": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "total_pop": 5800, "no_affiliation_count": 2610, "no_affiliation_pct": 45.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "total_pop": 3900, "no_affiliation_count": 1872, "no_affiliation_pct": 48.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "total_pop": 5100, "no_affiliation_count": 2550, "no_affiliation_pct": 50.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "total_pop": 7200, "no_affiliation_count": 2880, "no_affiliation_pct": 40.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "total_pop": 6100, "no_affiliation_count": 2806, "no_affiliation_pct": 46.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "total_pop": 2400, "no_affiliation_count": 1200, "no_affiliation_pct": 50.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_inactive_voters": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "registered_voters": 3800, "inactive_count": 570, "inactive_pct": 15.0 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "registered_voters": 2500, "inactive_count": 500, "inactive_pct": 20.0 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "registered_voters": 3100, "inactive_count": 558, "inactive_pct": 18.0 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "registered_voters": 4800, "inactive_count": 576, "inactive_pct": 12.0 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "registered_voters": 3900, "inactive_count": 663, "inactive_pct": 17.0 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "registered_voters": 1500, "inactive_count": 345, "inactive_pct": 23.0 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_population_change": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "pop_2010": 5500, "pop_2020": 5800, "change_pct": 5.5 }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "pop_2010": 4200, "pop_2020": 3900, "change_pct": -7.1 }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "pop_2010": 5300, "pop_2020": 5100, "change_pct": -3.8 }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "pop_2010": 6800, "pop_2020": 7200, "change_pct": 5.9 }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "pop_2010": 5900, "pop_2020": 6100, "change_pct": 3.4 }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "pop_2010": 2700, "pop_2020": 2400, "change_pct": -11.1 }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_stream_gauges": [
+    {
+      "attributes": { "gauge_id": "11370500", "name": "Sacramento River at Keswick", "river": "Sacramento River", "current_level_ft": 8.2, "flood_stage_ft": 33.5, "status": "normal" },
+      "geometry": { "x": -122.4450, "y": 40.6100, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "11372000", "name": "Clear Creek near Igo", "river": "Clear Creek", "current_level_ft": 3.1, "flood_stage_ft": 12.0, "status": "normal" },
+      "geometry": { "x": -122.5200, "y": 40.5300, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "11374000", "name": "Cottonwood Creek near Cottonwood", "river": "Cottonwood Creek", "current_level_ft": 2.4, "flood_stage_ft": 15.0, "status": "normal" },
+      "geometry": { "x": -122.3200, "y": 40.3900, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "11370000", "name": "Sacramento River at Delta", "river": "Sacramento River", "current_level_ft": 5.8, "flood_stage_ft": 28.0, "status": "normal" },
+      "geometry": { "x": -122.4100, "y": 40.9400, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "11371500", "name": "Sacramento River at Redding", "river": "Sacramento River", "current_level_ft": 6.5, "flood_stage_ft": 18.0, "status": "normal" },
+      "geometry": { "x": -122.3900, "y": 40.5900, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "11371200", "name": "Spring Creek at Spring Creek Powerhouse", "river": "Sacramento River", "current_level_ft": 4.0, "flood_stage_ft": 10.0, "status": "normal" },
+      "geometry": { "x": -122.4400, "y": 40.7150, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_river_flooding": [
+    {
+      "attributes": { "name": "Sacramento River at Redding", "river": "Sacramento River", "outlook": "No flooding expected", "valid_through": "2026-04-27" },
+      "geometry": { "x": -122.3900, "y": 40.5900, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Clear Creek near Whiskeytown", "river": "Clear Creek", "outlook": "No flooding expected", "valid_through": "2026-04-27" },
+      "geometry": { "x": -122.5200, "y": 40.5300, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Cottonwood Creek near Cottonwood", "river": "Cottonwood Creek", "outlook": "No flooding expected", "valid_through": "2026-04-27" },
+      "geometry": { "x": -122.3200, "y": 40.3900, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_severe_outlook": [
+    {
+      "attributes": { "area_name": "Northern Sacramento Valley", "risk_level": "marginal", "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.3900, "y": 40.5800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "area_name": "Shasta County Mountains", "risk_level": "slight", "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.5500, "y": 40.7000, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_excessive_rainfall": [
+    {
+      "attributes": { "area_name": "Northern Sacramento Valley", "risk_level": "none", "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.3900, "y": 40.5800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "area_name": "Shasta County Foothills", "risk_level": "none", "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.5000, "y": 40.6000, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_wildfire_points": [
+    {
+      "attributes": { "fire_name": "Buckhorn Fire", "acres": 4250, "containment_pct": 15, "discovered_date": "2026-04-18", "cause": "under investigation" },
+      "geometry": { "x": -122.5500, "y": 40.6700, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "fire_name": "Whiskey Fire", "acres": 820, "containment_pct": 40, "discovered_date": "2026-04-17", "cause": "lightning" },
+      "geometry": { "x": -122.5800, "y": 40.6400, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "fire_name": "Clear Creek Spot Fire", "acres": 45, "containment_pct": 85, "discovered_date": "2026-04-19", "cause": "spot fire from Buckhorn" },
+      "geometry": { "x": -122.5100, "y": 40.6300, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "fire_name": "French Gulch Fire", "acres": 180, "containment_pct": 60, "discovered_date": "2026-04-18", "cause": "lightning" },
+      "geometry": { "x": -122.6400, "y": 40.7050, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "fire_name": "Igo Spot Fire", "acres": 12, "containment_pct": 95, "discovered_date": "2026-04-19", "cause": "ember transport" },
+      "geometry": { "x": -122.5400, "y": 40.5250, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_fire_weather": [
+    {
+      "attributes": { "zone_name": "Shasta County - Western Mountains", "condition": "red_flag", "wind_mph": 35, "rh_pct": 8, "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.5500, "y": 40.6700, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "zone_name": "Northern Sacramento Valley - Redding", "condition": "critical", "wind_mph": 25, "rh_pct": 12, "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.3900, "y": 40.5800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "zone_name": "Shasta County - Eastern Foothills", "condition": "elevated", "wind_mph": 18, "rh_pct": 18, "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.3000, "y": 40.6000, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "zone_name": "Anderson / South Valley", "condition": "elevated", "wind_mph": 15, "rh_pct": 22, "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "zone_name": "Whiskeytown / Clear Creek Corridor", "condition": "red_flag", "wind_mph": 40, "rh_pct": 6, "valid_date": "2026-04-20" },
+      "geometry": { "x": -122.5300, "y": 40.6300, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_seismic": [
+    {
+      "attributes": { "area_name": "Redding / Northern Sacramento Valley", "pga_2pct_50yr": 0.22, "risk_level": "moderate" },
+      "geometry": { "x": -122.3900, "y": 40.5800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "area_name": "Shasta County Western Mountains", "pga_2pct_50yr": 0.28, "risk_level": "moderate" },
+      "geometry": { "x": -122.5500, "y": 40.6700, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "area_name": "Anderson / Cottonwood", "pga_2pct_50yr": 0.18, "risk_level": "low-moderate" },
+      "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_national_risk": [
+    { "attributes": { "tract_id": "060890001001", "tract_name": "Redding Downtown", "composite_score": 62.5, "expected_annual_loss_usd": 1850000, "top_hazard": "wildfire" }, "geometry": { "x": -122.3920, "y": 40.5850, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890002002", "tract_name": "West Redding / Whiskeytown", "composite_score": 88.3, "expected_annual_loss_usd": 4200000, "top_hazard": "wildfire" }, "geometry": { "x": -122.4800, "y": 40.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890003003", "tract_name": "Shasta Lake City", "composite_score": 71.0, "expected_annual_loss_usd": 2400000, "top_hazard": "wildfire" }, "geometry": { "x": -122.3710, "y": 40.6810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890004004", "tract_name": "East Redding / Hilltop", "composite_score": 55.2, "expected_annual_loss_usd": 1200000, "top_hazard": "wildfire" }, "geometry": { "x": -122.3480, "y": 40.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890005005", "tract_name": "Anderson", "composite_score": 48.8, "expected_annual_loss_usd": 980000, "top_hazard": "wildfire" }, "geometry": { "x": -122.2970, "y": 40.4490, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "060890006006", "tract_name": "Igo / Ono / French Gulch", "composite_score": 92.1, "expected_annual_loss_usd": 5100000, "top_hazard": "wildfire" }, "geometry": { "x": -122.5600, "y": 40.5800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_climate_outlooks": [
+    {
+      "attributes": { "area_name": "Northern Sacramento Valley", "temp_outlook": "above_normal", "precip_outlook": "below_normal", "valid_period": "May-Jun-Jul 2026" },
+      "geometry": { "x": -122.3900, "y": 40.5800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "area_name": "Shasta County Mountains", "temp_outlook": "above_normal", "precip_outlook": "below_normal", "valid_period": "May-Jun-Jul 2026" },
+      "geometry": { "x": -122.5500, "y": 40.7000, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_wea": [
+    {
+      "attributes": { "alert_id": "WEA-2026-0420-001", "alert_type": "evacuation_warning", "issued": "2026-04-20T08:00:00-07:00", "expires": "2026-04-21T08:00:00-07:00", "headline": "Evacuation WARNING for Buckhorn Summit, French Gulch, and Whiskeytown areas due to Buckhorn Fire" },
+      "geometry": { "x": -122.5500, "y": 40.6700, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "alert_id": "WEA-2026-0420-002", "alert_type": "fire_weather", "issued": "2026-04-20T05:00:00-07:00", "expires": "2026-04-21T20:00:00-07:00", "headline": "Red Flag Warning for western Shasta County - critical fire weather conditions with gusty winds and very low humidity" },
+      "geometry": { "x": -122.4500, "y": 40.6200, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "alert_id": "WEA-2026-0419-003", "alert_type": "evacuation_warning", "issued": "2026-04-19T14:00:00-07:00", "expires": "2026-04-20T14:00:00-07:00", "headline": "Evacuation WARNING for Igo and Ono communities - prepare to evacuate if conditions worsen" },
+      "geometry": { "x": -122.5350, "y": 40.5200, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "alert_id": "WEA-2026-0420-004", "alert_type": "fire_weather", "issued": "2026-04-20T06:00:00-07:00", "expires": "2026-04-22T06:00:00-07:00", "headline": "Fire Weather Watch for greater Redding area - elevated fire danger expected through Wednesday" },
+      "geometry": { "x": -122.3900, "y": 40.5800, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "alert_id": "WEA-2026-0420-005", "alert_type": "evacuation_warning", "issued": "2026-04-20T10:30:00-07:00", "expires": "2026-04-21T10:30:00-07:00", "headline": "Evacuation WARNING expanded to include Shasta Lake City western neighborhoods" },
+      "geometry": { "x": -122.3800, "y": 40.6800, "spatialReference": { "wkid": 4326 } }
+    }
+  ]
+}

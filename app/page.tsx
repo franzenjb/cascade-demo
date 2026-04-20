@@ -501,23 +501,70 @@ export default function HomePage() {
     setRightTab("drill");
   };
 
-  const handleToggleLayer = (layerId: string, _layer: CatalogLayer) => {
+  const handleToggleLayer = async (layerId: string, layer: CatalogLayer) => {
+    if (enabledLayers.has(layerId)) {
+      setEnabledLayers((prev) => {
+        const next = new Set(prev);
+        next.delete(layerId);
+        return next;
+      });
+      setMapInstructions((mi) => [
+        ...mi,
+        { action: "remove_by_label", layer_label: layerId },
+      ]);
+      return;
+    }
+
     setEnabledLayers((prev) => {
       const next = new Set(prev);
-      if (next.has(layerId)) {
-        next.delete(layerId);
-        // Remove graphics for this layer
-        setMapInstructions((mi) => [
-          ...mi,
-          { action: "remove_by_label", layer_label: layerId },
-        ]);
-      } else {
-        next.add(layerId);
-        // Future: fetch features from AGOL and add to map
-        // For now, toggle state is tracked for the UI
-      }
+      next.add(layerId);
       return next;
     });
+
+    // Resolve which AGOL layer to query, or fall back to synthetic data
+    const scenario = warningType || "tornado";
+    const agolLayerId = layer.scenario_layers?.[scenario];
+
+    try {
+      const res = await fetch("/api/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          layer_id: agolLayerId || layerId,
+          scenario,
+        }),
+      });
+
+      if (!res.ok) return;
+      const data = await res.json();
+      const features = data.features || [];
+
+      // Convert features to map instructions
+      const color = layer.category === "infrastructure" ? "#1e4a6d"
+        : layer.category === "hazards_weather" ? "#ED1B2E"
+        : "#b8860b";
+
+      const newInstructions = features
+        .filter((f: any) => f.geometry)
+        .map((f: any) => ({
+          action: "draw" as const,
+          geometry: {
+            type: "Point" as const,
+            coordinates: [f.geometry.x, f.geometry.y],
+          },
+          layer_label: layerId,
+          style: { color, label: f.attributes?.name || layer.name },
+          featureType: "generic",
+          displayLabel: f.attributes?.name || f.attributes?.tract_name || layer.name,
+          attributes: f.attributes,
+        }));
+
+      if (newInstructions.length > 0) {
+        setMapInstructions((mi) => [...mi, ...newInstructions]);
+      }
+    } catch {
+      // Silently fail — layer toggle stays on visually
+    }
   };
 
   const handleHome = () => {

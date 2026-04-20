@@ -10,7 +10,15 @@
       "subcategory": "Healthcare",
       "status": "demo",
       "source": "HIFLD",
-      "aliases": ["hospital", "trauma center", "ER", "emergency room", "medical center", "beds", "helipad"],
+      "aliases": [
+        "hospital",
+        "trauma center",
+        "ER",
+        "emergency room",
+        "medical center",
+        "beds",
+        "helipad"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Medical_Facilities",
         "wildfire": "DEMO_FireArea_Hospitals",
@@ -25,7 +33,16 @@
       "subcategory": "Healthcare",
       "status": "demo",
       "source": "HIFLD",
-      "aliases": ["nursing home", "assisted living", "senior care", "SNF", "skilled nursing", "long-term care", "elderly care", "mobility impaired"],
+      "aliases": [
+        "nursing home",
+        "assisted living",
+        "senior care",
+        "SNF",
+        "skilled nursing",
+        "long-term care",
+        "elderly care",
+        "mobility impaired"
+      ],
       "scenario_layers": {
         "dam_break": "DEMO_DamBreak_Nursing_Homes"
       }
@@ -38,7 +55,20 @@
       "subcategory": "Healthcare",
       "status": "coming_soon",
       "source": "HIFLD / RxOpen",
-      "aliases": ["pharmacy", "drugstore", "CVS", "Walgreens", "prescription", "medication", "RxOpen"]
+      "aliases": [
+        "pharmacy",
+        "drugstore",
+        "CVS",
+        "Walgreens",
+        "prescription",
+        "medication",
+        "RxOpen"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_pharmacies",
+        "wildfire": "infra_pharmacies",
+        "dam_break": "infra_pharmacies"
+      }
     },
     {
       "id": "infra_urgent_care",
@@ -48,7 +78,17 @@
       "subcategory": "Healthcare",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["urgent care", "walk-in clinic", "clinic", "immediate care"]
+      "aliases": [
+        "urgent care",
+        "walk-in clinic",
+        "clinic",
+        "immediate care"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_urgent_care",
+        "wildfire": "infra_urgent_care",
+        "dam_break": "infra_urgent_care"
+      }
     },
     {
       "id": "infra_dialysis",
@@ -58,7 +98,14 @@
       "subcategory": "Healthcare",
       "status": "demo",
       "source": "HIFLD",
-      "aliases": ["dialysis", "kidney", "renal", "DaVita", "Fresenius", "kidney care"],
+      "aliases": [
+        "dialysis",
+        "kidney",
+        "renal",
+        "DaVita",
+        "Fresenius",
+        "kidney care"
+      ],
       "scenario_layers": {
         "wildfire": "DEMO_FireArea_Dialysis_Clinics"
       }
@@ -71,7 +118,17 @@
       "subcategory": "Healthcare",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["public health", "health department", "community health", "county health"]
+      "aliases": [
+        "public health",
+        "health department",
+        "community health",
+        "county health"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_public_health",
+        "wildfire": "infra_public_health",
+        "dam_break": "infra_public_health"
+      }
     },
     {
       "id": "infra_fire_stations",
@@ -81,7 +138,17 @@
       "subcategory": "Emergency Services",
       "status": "demo",
       "source": "HIFLD",
-      "aliases": ["fire station", "fire department", "engine", "truck company", "rescue", "CAL FIRE", "RFD", "fire suppression", "first responders"],
+      "aliases": [
+        "fire station",
+        "fire department",
+        "engine",
+        "truck company",
+        "rescue",
+        "CAL FIRE",
+        "RFD",
+        "fire suppression",
+        "first responders"
+      ],
       "scenario_layers": {
         "wildfire": "DEMO_FireArea_Fire_Stations"
       }
@@ -94,7 +161,15 @@
       "subcategory": "Emergency Services",
       "status": "demo",
       "source": "HIFLD",
-      "aliases": ["police", "sheriff", "law enforcement", "CHP", "police station", "patrol", "highway patrol"],
+      "aliases": [
+        "police",
+        "sheriff",
+        "law enforcement",
+        "CHP",
+        "police station",
+        "patrol",
+        "highway patrol"
+      ],
       "scenario_layers": {
         "wildfire": "DEMO_FireArea_Police_Stations"
       }
@@ -107,7 +182,13 @@
       "subcategory": "Emergency Services",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["911", "PSAP", "emergency call", "dispatch", "service area"]
+      "aliases": [
+        "911",
+        "PSAP",
+        "emergency call",
+        "dispatch",
+        "service area"
+      ]
     },
     {
       "id": "infra_public_schools",
@@ -117,7 +198,17 @@
       "subcategory": "Education",
       "status": "demo",
       "source": "HIFLD",
-      "aliases": ["public school", "elementary", "middle school", "high school", "K-12", "students", "kids", "children", "enrollment"],
+      "aliases": [
+        "public school",
+        "elementary",
+        "middle school",
+        "high school",
+        "K-12",
+        "students",
+        "kids",
+        "children",
+        "enrollment"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Schools",
         "dam_break": "DEMO_DamBreak_Schools"
@@ -131,7 +222,17 @@
       "subcategory": "Education",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["private school", "parochial", "charter school", "academy"]
+      "aliases": [
+        "private school",
+        "parochial",
+        "charter school",
+        "academy"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_private_schools",
+        "wildfire": "infra_private_schools",
+        "dam_break": "infra_private_schools"
+      }
     },
     {
       "id": "infra_colleges",
@@ -141,7 +242,18 @@
       "subcategory": "Education",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["college", "university", "campus", "higher education", "community college"]
+      "aliases": [
+        "college",
+        "university",
+        "campus",
+        "higher education",
+        "community college"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_colleges",
+        "wildfire": "infra_colleges",
+        "dam_break": "infra_colleges"
+      }
     },
     {
       "id": "infra_mobile_homes",
@@ -151,7 +263,13 @@
       "subcategory": "Community",
       "status": "demo",
       "source": "HIFLD",
-      "aliases": ["mobile home", "trailer park", "manufactured housing", "MHP", "mobile home park"],
+      "aliases": [
+        "mobile home",
+        "trailer park",
+        "manufactured housing",
+        "MHP",
+        "mobile home park"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Mobile_Home_Parks"
       }
@@ -164,7 +282,20 @@
       "subcategory": "Community",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["church", "mosque", "temple", "synagogue", "worship", "congregation", "faith-based"]
+      "aliases": [
+        "church",
+        "mosque",
+        "temple",
+        "synagogue",
+        "worship",
+        "congregation",
+        "faith-based"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_worship",
+        "wildfire": "infra_worship",
+        "dam_break": "infra_worship"
+      }
     },
     {
       "id": "infra_snap",
@@ -174,7 +305,19 @@
       "subcategory": "Community",
       "status": "coming_soon",
       "source": "USDA",
-      "aliases": ["SNAP", "EBT", "food stamps", "grocery", "food access", "food desert"]
+      "aliases": [
+        "SNAP",
+        "EBT",
+        "food stamps",
+        "grocery",
+        "food access",
+        "food desert"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_snap",
+        "wildfire": "infra_snap",
+        "dam_break": "infra_snap"
+      }
     },
     {
       "id": "infra_power_plants",
@@ -184,7 +327,18 @@
       "subcategory": "Energy & Utilities",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["power plant", "generator", "electricity", "energy", "power generation"]
+      "aliases": [
+        "power plant",
+        "generator",
+        "electricity",
+        "energy",
+        "power generation"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_power_plants",
+        "wildfire": "infra_power_plants",
+        "dam_break": "infra_power_plants"
+      }
     },
     {
       "id": "infra_transmission",
@@ -194,7 +348,13 @@
       "subcategory": "Energy & Utilities",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["transmission line", "power line", "high voltage", "electric grid", "PSPS"]
+      "aliases": [
+        "transmission line",
+        "power line",
+        "high voltage",
+        "electric grid",
+        "PSPS"
+      ]
     },
     {
       "id": "infra_wastewater",
@@ -204,7 +364,13 @@
       "subcategory": "Energy & Utilities",
       "status": "demo",
       "source": "HIFLD",
-      "aliases": ["wastewater", "sewage", "water treatment", "water plant", "pump station"],
+      "aliases": [
+        "wastewater",
+        "sewage",
+        "water treatment",
+        "water plant",
+        "pump station"
+      ],
       "scenario_layers": {
         "dam_break": "DEMO_DamBreak_Water_Plants"
       }
@@ -217,7 +383,18 @@
       "subcategory": "Energy & Utilities",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["landfill", "dump", "solid waste", "debris", "waste management"]
+      "aliases": [
+        "landfill",
+        "dump",
+        "solid waste",
+        "debris",
+        "waste management"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_landfills",
+        "wildfire": "infra_landfills",
+        "dam_break": "infra_landfills"
+      }
     },
     {
       "id": "infra_dams",
@@ -227,7 +404,19 @@
       "subcategory": "Transportation & Water",
       "status": "coming_soon",
       "source": "NID / HIFLD",
-      "aliases": ["dam", "reservoir", "spillway", "dam break", "dam failure", "Oroville"]
+      "aliases": [
+        "dam",
+        "reservoir",
+        "spillway",
+        "dam break",
+        "dam failure",
+        "Oroville"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_dams",
+        "wildfire": "infra_dams",
+        "dam_break": "infra_dams"
+      }
     },
     {
       "id": "infra_ports",
@@ -237,7 +426,13 @@
       "subcategory": "Transportation & Water",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["port", "harbor", "maritime", "shipping", "dock"]
+      "aliases": [
+        "port",
+        "harbor",
+        "maritime",
+        "shipping",
+        "dock"
+      ]
     },
     {
       "id": "infra_prisons",
@@ -247,9 +442,19 @@
       "subcategory": "Transportation & Water",
       "status": "coming_soon",
       "source": "HIFLD",
-      "aliases": ["prison", "jail", "correctional", "incarcerated", "detention"]
+      "aliases": [
+        "prison",
+        "jail",
+        "correctional",
+        "incarcerated",
+        "detention"
+      ],
+      "scenario_layers": {
+        "tornado": "infra_prisons",
+        "wildfire": "infra_prisons",
+        "dam_break": "infra_prisons"
+      }
     },
-
     {
       "id": "cr_no_hs_diploma",
       "name": "No High School Diploma",
@@ -258,7 +463,18 @@
       "subcategory": "Population",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["education", "no diploma", "high school", "literacy", "educational attainment"]
+      "aliases": [
+        "education",
+        "no diploma",
+        "high school",
+        "literacy",
+        "educational attainment"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_no_hs_diploma",
+        "wildfire": "cr_no_hs_diploma",
+        "dam_break": "cr_no_hs_diploma"
+      }
     },
     {
       "id": "cr_over_65",
@@ -268,7 +484,14 @@
       "subcategory": "Population",
       "status": "demo",
       "source": "ACS 5-Year",
-      "aliases": ["elderly", "seniors", "aging", "over 65", "65+", "older adults"],
+      "aliases": [
+        "elderly",
+        "seniors",
+        "aging",
+        "over 65",
+        "65+",
+        "older adults"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Census_Tracts",
         "wildfire": "DEMO_FireArea_Census_Tracts",
@@ -283,7 +506,14 @@
       "subcategory": "Population",
       "status": "demo",
       "source": "ACS 5-Year",
-      "aliases": ["disability", "disabled", "ADA", "functional needs", "AFN", "access needs"],
+      "aliases": [
+        "disability",
+        "disabled",
+        "ADA",
+        "functional needs",
+        "AFN",
+        "access needs"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Census_Tracts",
         "wildfire": "DEMO_FireArea_Census_Tracts",
@@ -298,7 +528,21 @@
       "subcategory": "Population",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["race", "ethnicity", "Hispanic", "Latino", "Black", "Asian", "minority", "demographics"]
+      "aliases": [
+        "race",
+        "ethnicity",
+        "Hispanic",
+        "Latino",
+        "Black",
+        "Asian",
+        "minority",
+        "demographics"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_race_ethnicity",
+        "wildfire": "cr_race_ethnicity",
+        "dam_break": "cr_race_ethnicity"
+      }
     },
     {
       "id": "cr_no_vehicle",
@@ -308,7 +552,19 @@
       "subcategory": "Household",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["no car", "no vehicle", "carless", "transportation", "transit dependent", "evacuation transport"]
+      "aliases": [
+        "no car",
+        "no vehicle",
+        "carless",
+        "transportation",
+        "transit dependent",
+        "evacuation transport"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_no_vehicle",
+        "wildfire": "cr_no_vehicle",
+        "dam_break": "cr_no_vehicle"
+      }
     },
     {
       "id": "cr_limited_english",
@@ -318,7 +574,16 @@
       "subcategory": "Household",
       "status": "demo",
       "source": "ACS 5-Year",
-      "aliases": ["limited English", "LEP", "non-English", "language barrier", "ESL", "bilingual", "Spanish", "interpreter"],
+      "aliases": [
+        "limited English",
+        "LEP",
+        "non-English",
+        "language barrier",
+        "ESL",
+        "bilingual",
+        "Spanish",
+        "interpreter"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Census_Tracts",
         "wildfire": "DEMO_FireArea_Census_Tracts",
@@ -333,7 +598,18 @@
       "subcategory": "Household",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["single parent", "single mom", "single dad", "one parent", "lone parent"]
+      "aliases": [
+        "single parent",
+        "single mom",
+        "single dad",
+        "one parent",
+        "lone parent"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_single_parent",
+        "wildfire": "cr_single_parent",
+        "dam_break": "cr_single_parent"
+      }
     },
     {
       "id": "cr_no_smartphone",
@@ -343,7 +619,18 @@
       "subcategory": "Household",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["no smartphone", "no phone", "no mobile", "digital divide", "WEA"]
+      "aliases": [
+        "no smartphone",
+        "no phone",
+        "no mobile",
+        "digital divide",
+        "WEA"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_no_smartphone",
+        "wildfire": "cr_no_smartphone",
+        "dam_break": "cr_no_smartphone"
+      }
     },
     {
       "id": "cr_no_broadband",
@@ -353,7 +640,18 @@
       "subcategory": "Household",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["no broadband", "no internet", "offline", "digital divide", "connectivity"]
+      "aliases": [
+        "no broadband",
+        "no internet",
+        "offline",
+        "digital divide",
+        "connectivity"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_no_broadband",
+        "wildfire": "cr_no_broadband",
+        "dam_break": "cr_no_broadband"
+      }
     },
     {
       "id": "cr_mobile_homes_pct",
@@ -363,7 +661,17 @@
       "subcategory": "Housing",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["mobile home percentage", "manufactured housing", "trailer", "housing vulnerability"]
+      "aliases": [
+        "mobile home percentage",
+        "manufactured housing",
+        "trailer",
+        "housing vulnerability"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_mobile_homes_pct",
+        "wildfire": "cr_mobile_homes_pct",
+        "dam_break": "cr_mobile_homes_pct"
+      }
     },
     {
       "id": "cr_owner_occupied",
@@ -373,7 +681,17 @@
       "subcategory": "Housing",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["homeowner", "owner occupied", "renters", "housing tenure"]
+      "aliases": [
+        "homeowner",
+        "owner occupied",
+        "renters",
+        "housing tenure"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_owner_occupied",
+        "wildfire": "cr_owner_occupied",
+        "dam_break": "cr_owner_occupied"
+      }
     },
     {
       "id": "cr_housing_costs",
@@ -383,7 +701,18 @@
       "subcategory": "Housing",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["housing cost", "rent burden", "cost burden", "affordability", "housing stress"]
+      "aliases": [
+        "housing cost",
+        "rent burden",
+        "cost burden",
+        "affordability",
+        "housing stress"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_housing_costs",
+        "wildfire": "cr_housing_costs",
+        "dam_break": "cr_housing_costs"
+      }
     },
     {
       "id": "cr_flood_insurance",
@@ -393,7 +722,18 @@
       "subcategory": "Housing",
       "status": "coming_soon",
       "source": "FEMA NFIP",
-      "aliases": ["flood insurance", "NFIP", "flood policy", "insured", "SFHA"]
+      "aliases": [
+        "flood insurance",
+        "NFIP",
+        "flood policy",
+        "insured",
+        "SFHA"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_flood_insurance",
+        "wildfire": "cr_flood_insurance",
+        "dam_break": "cr_flood_insurance"
+      }
     },
     {
       "id": "cr_hospital_count",
@@ -403,7 +743,17 @@
       "subcategory": "Healthcare Capacity",
       "status": "coming_soon",
       "source": "HIFLD / ACS",
-      "aliases": ["hospital access", "healthcare access", "hospital capacity", "medical access"]
+      "aliases": [
+        "hospital access",
+        "healthcare access",
+        "hospital capacity",
+        "medical access"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_hospital_count",
+        "wildfire": "cr_hospital_count",
+        "dam_break": "cr_hospital_count"
+      }
     },
     {
       "id": "cr_medical_capacity",
@@ -413,7 +763,18 @@
       "subcategory": "Healthcare Capacity",
       "status": "coming_soon",
       "source": "HRSA",
-      "aliases": ["doctors", "physicians", "medical professionals", "healthcare workforce", "surge capacity"]
+      "aliases": [
+        "doctors",
+        "physicians",
+        "medical professionals",
+        "healthcare workforce",
+        "surge capacity"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_medical_capacity",
+        "wildfire": "cr_medical_capacity",
+        "dam_break": "cr_medical_capacity"
+      }
     },
     {
       "id": "cr_uninsured",
@@ -423,7 +784,17 @@
       "subcategory": "Healthcare Capacity",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["uninsured", "no insurance", "no health insurance", "coverage gap"]
+      "aliases": [
+        "uninsured",
+        "no insurance",
+        "no health insurance",
+        "coverage gap"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_uninsured",
+        "wildfire": "cr_uninsured",
+        "dam_break": "cr_uninsured"
+      }
     },
     {
       "id": "cr_power_dependent",
@@ -433,7 +804,20 @@
       "subcategory": "Healthcare Capacity",
       "status": "coming_soon",
       "source": "CMS / HHS emPOWER",
-      "aliases": ["power dependent", "oxygen", "ventilator", "medical equipment", "emPOWER", "life support", "PSPS"]
+      "aliases": [
+        "power dependent",
+        "oxygen",
+        "ventilator",
+        "medical equipment",
+        "emPOWER",
+        "life support",
+        "PSPS"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_power_dependent",
+        "wildfire": "cr_power_dependent",
+        "dam_break": "cr_power_dependent"
+      }
     },
     {
       "id": "cr_poverty",
@@ -443,7 +827,13 @@
       "subcategory": "Economic",
       "status": "demo",
       "source": "ACS 5-Year",
-      "aliases": ["poverty", "poor", "low income", "below poverty", "economic vulnerability"],
+      "aliases": [
+        "poverty",
+        "poor",
+        "low income",
+        "below poverty",
+        "economic vulnerability"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Census_Tracts",
         "wildfire": "DEMO_FireArea_Census_Tracts",
@@ -458,7 +848,13 @@
       "subcategory": "Economic",
       "status": "demo",
       "source": "ACS 5-Year",
-      "aliases": ["income", "median income", "household income", "wages", "earnings"],
+      "aliases": [
+        "income",
+        "median income",
+        "household income",
+        "wages",
+        "earnings"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Census_Tracts",
         "wildfire": "DEMO_FireArea_Census_Tracts",
@@ -473,7 +869,17 @@
       "subcategory": "Economic",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["unemployment", "unemployed", "jobless", "labor force"]
+      "aliases": [
+        "unemployment",
+        "unemployed",
+        "jobless",
+        "labor force"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_unemployed",
+        "wildfire": "cr_unemployed",
+        "dam_break": "cr_unemployed"
+      }
     },
     {
       "id": "cr_unemployed_women",
@@ -483,7 +889,17 @@
       "subcategory": "Economic",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["women unemployed", "female unemployment", "gender", "women labor"]
+      "aliases": [
+        "women unemployed",
+        "female unemployment",
+        "gender",
+        "women labor"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_unemployed_women",
+        "wildfire": "cr_unemployed_women",
+        "dam_break": "cr_unemployed_women"
+      }
     },
     {
       "id": "cr_gini",
@@ -493,7 +909,18 @@
       "subcategory": "Economic",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["gini", "inequality", "income gap", "wealth gap", "disparity"]
+      "aliases": [
+        "gini",
+        "inequality",
+        "income gap",
+        "wealth gap",
+        "disparity"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_gini",
+        "wildfire": "cr_gini",
+        "dam_break": "cr_gini"
+      }
     },
     {
       "id": "cr_predominant_sector",
@@ -503,7 +930,17 @@
       "subcategory": "Economic",
       "status": "coming_soon",
       "source": "ACS 5-Year",
-      "aliases": ["industry", "sector", "employment concentration", "economic diversity"]
+      "aliases": [
+        "industry",
+        "sector",
+        "employment concentration",
+        "economic diversity"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_predominant_sector",
+        "wildfire": "cr_predominant_sector",
+        "dam_break": "cr_predominant_sector"
+      }
     },
     {
       "id": "cr_civic_orgs",
@@ -513,7 +950,18 @@
       "subcategory": "Community Engagement",
       "status": "coming_soon",
       "source": "County Business Patterns",
-      "aliases": ["civic", "social organization", "nonprofit", "community group", "volunteer"]
+      "aliases": [
+        "civic",
+        "social organization",
+        "nonprofit",
+        "community group",
+        "volunteer"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_civic_orgs",
+        "wildfire": "cr_civic_orgs",
+        "dam_break": "cr_civic_orgs"
+      }
     },
     {
       "id": "cr_religious_affiliation",
@@ -523,7 +971,17 @@
       "subcategory": "Community Engagement",
       "status": "coming_soon",
       "source": "ASARB",
-      "aliases": ["religious", "church membership", "congregation", "faith community"]
+      "aliases": [
+        "religious",
+        "church membership",
+        "congregation",
+        "faith community"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_religious_affiliation",
+        "wildfire": "cr_religious_affiliation",
+        "dam_break": "cr_religious_affiliation"
+      }
     },
     {
       "id": "cr_inactive_voters",
@@ -533,7 +991,18 @@
       "subcategory": "Community Engagement",
       "status": "coming_soon",
       "source": "EAC",
-      "aliases": ["voters", "voting", "civic engagement", "election", "turnout"]
+      "aliases": [
+        "voters",
+        "voting",
+        "civic engagement",
+        "election",
+        "turnout"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_inactive_voters",
+        "wildfire": "cr_inactive_voters",
+        "dam_break": "cr_inactive_voters"
+      }
     },
     {
       "id": "cr_population_change",
@@ -543,9 +1012,19 @@
       "subcategory": "Community Engagement",
       "status": "coming_soon",
       "source": "Census Decennial",
-      "aliases": ["population change", "growth", "decline", "migration", "depopulation"]
+      "aliases": [
+        "population change",
+        "growth",
+        "decline",
+        "migration",
+        "depopulation"
+      ],
+      "scenario_layers": {
+        "tornado": "cr_population_change",
+        "wildfire": "cr_population_change",
+        "dam_break": "cr_population_change"
+      }
     },
-
     {
       "id": "haz_stream_gauges",
       "name": "Live Stream Gauges",
@@ -554,7 +1033,18 @@
       "subcategory": "Flood & Water",
       "status": "coming_soon",
       "source": "USGS",
-      "aliases": ["stream gauge", "river level", "water level", "flood gauge", "USGS"]
+      "aliases": [
+        "stream gauge",
+        "river level",
+        "water level",
+        "flood gauge",
+        "USGS"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_stream_gauges",
+        "wildfire": "haz_stream_gauges",
+        "dam_break": "haz_stream_gauges"
+      }
     },
     {
       "id": "haz_flood_hazard",
@@ -564,7 +1054,15 @@
       "subcategory": "Flood & Water",
       "status": "coming_soon",
       "source": "FEMA NFHL",
-      "aliases": ["flood zone", "floodplain", "100-year flood", "500-year flood", "NFHL", "floodway", "SFHA"]
+      "aliases": [
+        "flood zone",
+        "floodplain",
+        "100-year flood",
+        "500-year flood",
+        "NFHL",
+        "floodway",
+        "SFHA"
+      ]
     },
     {
       "id": "haz_sea_level_rise",
@@ -574,7 +1072,13 @@
       "subcategory": "Flood & Water",
       "status": "coming_soon",
       "source": "NOAA",
-      "aliases": ["sea level", "sea level rise", "coastal flooding", "inundation", "SLR"]
+      "aliases": [
+        "sea level",
+        "sea level rise",
+        "coastal flooding",
+        "inundation",
+        "SLR"
+      ]
     },
     {
       "id": "haz_river_flooding",
@@ -584,7 +1088,17 @@
       "subcategory": "Flood & Water",
       "status": "coming_soon",
       "source": "NWS",
-      "aliases": ["river flood", "river flooding", "flood forecast", "flood outlook"]
+      "aliases": [
+        "river flood",
+        "river flooding",
+        "flood forecast",
+        "flood outlook"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_river_flooding",
+        "wildfire": "haz_river_flooding",
+        "dam_break": "haz_river_flooding"
+      }
     },
     {
       "id": "haz_nws_warnings",
@@ -594,7 +1108,15 @@
       "subcategory": "Severe Weather",
       "status": "demo",
       "source": "NWS",
-      "aliases": ["NWS", "watch", "warning", "advisory", "alert", "tornado warning", "severe thunderstorm"],
+      "aliases": [
+        "NWS",
+        "watch",
+        "warning",
+        "advisory",
+        "alert",
+        "tornado warning",
+        "severe thunderstorm"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Active_Warnings"
       }
@@ -607,7 +1129,18 @@
       "subcategory": "Severe Weather",
       "status": "coming_soon",
       "source": "NWS / SPC",
-      "aliases": ["severe weather", "convective outlook", "SPC", "storm prediction", "risk area"]
+      "aliases": [
+        "severe weather",
+        "convective outlook",
+        "SPC",
+        "storm prediction",
+        "risk area"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_severe_outlook",
+        "wildfire": "haz_severe_outlook",
+        "dam_break": "haz_severe_outlook"
+      }
     },
     {
       "id": "haz_excessive_rainfall",
@@ -617,7 +1150,17 @@
       "subcategory": "Severe Weather",
       "status": "coming_soon",
       "source": "NWS / WPC",
-      "aliases": ["excessive rainfall", "flash flood", "heavy rain", "rainfall outlook"]
+      "aliases": [
+        "excessive rainfall",
+        "flash flood",
+        "heavy rain",
+        "rainfall outlook"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_excessive_rainfall",
+        "wildfire": "haz_excessive_rainfall",
+        "dam_break": "haz_excessive_rainfall"
+      }
     },
     {
       "id": "haz_hurricane_tracks",
@@ -627,7 +1170,12 @@
       "subcategory": "Severe Weather",
       "status": "coming_soon",
       "source": "NOAA",
-      "aliases": ["hurricane", "tropical storm", "hurricane track", "cyclone history"]
+      "aliases": [
+        "hurricane",
+        "tropical storm",
+        "hurricane track",
+        "cyclone history"
+      ]
     },
     {
       "id": "haz_tornado_tracks",
@@ -637,7 +1185,18 @@
       "subcategory": "Severe Weather",
       "status": "coming_soon",
       "source": "NOAA / SPC",
-      "aliases": ["tornado track", "tornado path", "tornado history", "EF scale", "twister"]
+      "aliases": [
+        "tornado track",
+        "tornado path",
+        "tornado history",
+        "EF scale",
+        "twister"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_tornado_tracks",
+        "wildfire": "haz_tornado_tracks",
+        "dam_break": "haz_tornado_tracks"
+      }
     },
     {
       "id": "haz_wildfire_points",
@@ -647,7 +1206,16 @@
       "subcategory": "Fire",
       "status": "coming_soon",
       "source": "IRWIN / NIFC",
-      "aliases": ["wildfire", "active fire", "fire incident", "IRWIN", "fire location"]
+      "aliases": [
+        "wildfire",
+        "active fire",
+        "fire incident",
+        "IRWIN",
+        "fire location"
+      ],
+      "scenario_layers": {
+        "wildfire": "haz_wildfire_points"
+      }
     },
     {
       "id": "haz_wildfire_perimeters",
@@ -657,7 +1225,16 @@
       "subcategory": "Fire",
       "status": "coming_soon",
       "source": "NIFC",
-      "aliases": ["fire perimeter", "fire boundary", "burn area", "fire footprint", "NIFC perimeter"]
+      "aliases": [
+        "fire perimeter",
+        "fire boundary",
+        "burn area",
+        "fire footprint",
+        "NIFC perimeter"
+      ],
+      "scenario_layers": {
+        "wildfire": "haz_wildfire_perimeters"
+      }
     },
     {
       "id": "haz_fire_weather",
@@ -667,7 +1244,16 @@
       "subcategory": "Fire",
       "status": "coming_soon",
       "source": "NWS",
-      "aliases": ["fire weather", "red flag", "critical fire", "fire forecast", "fire danger"]
+      "aliases": [
+        "fire weather",
+        "red flag",
+        "critical fire",
+        "fire forecast",
+        "fire danger"
+      ],
+      "scenario_layers": {
+        "wildfire": "haz_fire_weather"
+      }
     },
     {
       "id": "haz_seismic",
@@ -677,7 +1263,18 @@
       "subcategory": "Seismic & Risk",
       "status": "coming_soon",
       "source": "USGS",
-      "aliases": ["earthquake", "seismic", "fault line", "ground shaking", "earthquake risk"]
+      "aliases": [
+        "earthquake",
+        "seismic",
+        "fault line",
+        "ground shaking",
+        "earthquake risk"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_seismic",
+        "wildfire": "haz_seismic",
+        "dam_break": "haz_seismic"
+      }
     },
     {
       "id": "haz_national_risk",
@@ -687,7 +1284,18 @@
       "subcategory": "Seismic & Risk",
       "status": "coming_soon",
       "source": "FEMA NRI",
-      "aliases": ["national risk", "NRI", "risk index", "expected annual loss", "hazard risk"]
+      "aliases": [
+        "national risk",
+        "NRI",
+        "risk index",
+        "expected annual loss",
+        "hazard risk"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_national_risk",
+        "wildfire": "haz_national_risk",
+        "dam_break": "haz_national_risk"
+      }
     },
     {
       "id": "haz_storm_surge",
@@ -697,7 +1305,13 @@
       "subcategory": "Seismic & Risk",
       "status": "coming_soon",
       "source": "NHC",
-      "aliases": ["storm surge", "surge zone", "coastal surge", "hurricane surge", "inundation"]
+      "aliases": [
+        "storm surge",
+        "surge zone",
+        "coastal surge",
+        "hurricane surge",
+        "inundation"
+      ]
     },
     {
       "id": "haz_climate_outlooks",
@@ -707,7 +1321,18 @@
       "subcategory": "Climate & Radar",
       "status": "coming_soon",
       "source": "NWS / CPC",
-      "aliases": ["climate outlook", "temperature forecast", "precipitation forecast", "long range", "CPC"]
+      "aliases": [
+        "climate outlook",
+        "temperature forecast",
+        "precipitation forecast",
+        "long range",
+        "CPC"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_climate_outlooks",
+        "wildfire": "haz_climate_outlooks",
+        "dam_break": "haz_climate_outlooks"
+      }
     },
     {
       "id": "haz_nexrad",
@@ -717,7 +1342,14 @@
       "subcategory": "Climate & Radar",
       "status": "coming_soon",
       "source": "NWS",
-      "aliases": ["radar", "NEXRAD", "weather radar", "doppler", "precipitation", "rain"]
+      "aliases": [
+        "radar",
+        "NEXRAD",
+        "weather radar",
+        "doppler",
+        "precipitation",
+        "rain"
+      ]
     },
     {
       "id": "haz_tropical_atlantic",
@@ -727,7 +1359,12 @@
       "subcategory": "Climate & Radar",
       "status": "coming_soon",
       "source": "NHC",
-      "aliases": ["tropical cyclone", "Atlantic hurricane", "Caribbean storm", "forecast cone"]
+      "aliases": [
+        "tropical cyclone",
+        "Atlantic hurricane",
+        "Caribbean storm",
+        "forecast cone"
+      ]
     },
     {
       "id": "haz_tropical_pacific",
@@ -737,7 +1374,11 @@
       "subcategory": "Climate & Radar",
       "status": "coming_soon",
       "source": "NHC",
-      "aliases": ["Pacific cyclone", "Pacific hurricane", "Pacific storm"]
+      "aliases": [
+        "Pacific cyclone",
+        "Pacific hurricane",
+        "Pacific storm"
+      ]
     },
     {
       "id": "haz_wea",
@@ -747,9 +1388,20 @@
       "subcategory": "Alerting",
       "status": "coming_soon",
       "source": "FEMA IPAWS",
-      "aliases": ["WEA", "wireless alert", "cell alert", "IPAWS", "emergency alert", "amber alert"]
+      "aliases": [
+        "WEA",
+        "wireless alert",
+        "cell alert",
+        "IPAWS",
+        "emergency alert",
+        "amber alert"
+      ],
+      "scenario_layers": {
+        "tornado": "haz_wea",
+        "wildfire": "haz_wea",
+        "dam_break": "haz_wea"
+      }
     },
-
     {
       "id": "infra_red_cross",
       "name": "Red Cross Shelters & Assets",
@@ -758,7 +1410,15 @@
       "subcategory": "Emergency Services",
       "status": "demo",
       "source": "Red Cross",
-      "aliases": ["Red Cross", "shelter", "evacuation shelter", "ERV", "Emergency Response Vehicle", "cots", "supplies"],
+      "aliases": [
+        "Red Cross",
+        "shelter",
+        "evacuation shelter",
+        "ERV",
+        "Emergency Response Vehicle",
+        "cots",
+        "supplies"
+      ],
       "scenario_layers": {
         "tornado": "DEMO_Cascade_Red_Cross_Assets",
         "wildfire": "DEMO_FireArea_Red_Cross_Shelters",

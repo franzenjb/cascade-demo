@@ -17,8 +17,8 @@ const CATEGORY_META: Record<
 
 const STATUS_CONFIG: Record<string, { dot: string; label: string }> = {
   live: { dot: "#2d5a27", label: "Live" },
-  demo: { dot: "#1e4a6d", label: "Demo" },
-  coming_soon: { dot: "#a3a3a3", label: "Coming Soon" },
+  demo: { dot: "#1e4a6d", label: "Available" },
+  coming_soon: { dot: "#1e4a6d", label: "Available" },
 };
 
 // ─── Props ─────────────────────────────────────────────────
@@ -158,11 +158,7 @@ export default function LayerDiscovery({
                       {catMeta.label}
                     </span>
                     <span className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300">
-                      {counts.active > 0 && (
-                        <span className="text-arc-black dark:text-arc-cream font-bold">{counts.active}</span>
-                      )}
-                      {counts.active > 0 && " / "}
-                      {counts.total}
+                      {counts.total} layers
                     </span>
                     <Chevron open={isOpen} />
                   </button>
@@ -234,18 +230,12 @@ function LayerRow({
 }) {
   const status = STATUS_CONFIG[layer.status];
   const isToggleable =
-    layer.status !== "coming_soon" &&
     warningType !== null &&
     layer.scenario_layers?.[warningType] != null;
-  const isComingSoon = layer.status === "coming_soon";
 
   return (
     <div
-      className={`flex items-center gap-3 px-6 py-2.5 text-left transition-colors ${
-        isComingSoon
-          ? "opacity-50"
-          : "hover:bg-arc-cream/40 dark:hover:bg-arc-black/40"
-      }`}
+      className="flex items-center gap-3 px-6 py-2.5 text-left transition-colors hover:bg-arc-cream/40 dark:hover:bg-arc-black/40"
     >
       {/* Status dot */}
       <span
@@ -266,11 +256,10 @@ function LayerRow({
             </span>
           )}
           {layer.source}
-          {isComingSoon && " · Coming Soon"}
         </div>
       </div>
 
-      {/* Toggle or badge */}
+      {/* Toggle or status */}
       {isToggleable ? (
         <button
           type="button"
@@ -288,14 +277,6 @@ function LayerRow({
             }`}
           />
         </button>
-      ) : isComingSoon ? (
-        <svg
-          className="w-3 h-3 text-arc-gray-300 dark:text-arc-gray-700 flex-shrink-0"
-          viewBox="0 0 16 16"
-          fill="currentColor"
-        >
-          <path d="M8 1a4 4 0 0 0-4 4v3H3a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-1V5a4 4 0 0 0-4-4zm-2 4a2 2 0 1 1 4 0v3H6V5z" />
-        </svg>
       ) : (
         <span className="text-[9px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider flex-shrink-0">
           {status.label}

@@ -1,0 +1,367 @@
+{
+  "infra_pharmacies": [
+    { "attributes": { "name": "CVS Pharmacy #9483", "address": "1950 Oro Dam Blvd, Oroville, CA 95966", "phone": "(530) 533-7800", "operator": "CVS", "rx_open_status": "closed" }, "geometry": { "x": -121.4895, "y": 39.5195, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Walgreens #15221", "address": "2188 Myers St, Oroville, CA 95966", "phone": "(530) 534-0240", "operator": "Walgreens", "rx_open_status": "closed" }, "geometry": { "x": -121.4842, "y": 39.5135, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Rite Aid #5668", "address": "1465 Montgomery St, Oroville, CA 95965", "phone": "(530) 533-3585", "operator": "Rite Aid", "rx_open_status": "unknown" }, "geometry": { "x": -121.4925, "y": 39.5088, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Walmart Pharmacy", "address": "465 Cal Oak Rd, Oroville, CA 95965", "phone": "(530) 538-2083", "operator": "Walmart", "rx_open_status": "closed" }, "geometry": { "x": -121.4780, "y": 39.5048, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Gridley Pharmacy", "address": "512 Kentucky St, Gridley, CA 95948", "phone": "(530) 846-5691", "operator": "independent", "rx_open_status": "open" }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Raley's Pharmacy", "address": "2325 Myers St, Oroville, CA 95966", "phone": "(530) 534-9190", "operator": "Raley's", "rx_open_status": "closed" }, "geometry": { "x": -121.4830, "y": 39.5152, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "South Oroville Drug", "address": "2840 Lincoln Blvd, Oroville, CA 95966", "phone": "(530) 534-8722", "operator": "independent", "rx_open_status": "unknown" }, "geometry": { "x": -121.4870, "y": 39.4985, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_urgent_care": [
+    { "attributes": { "name": "Oroville Hospital Urgent Care", "address": "2767 Olive Hwy, Oroville, CA 95966", "phone": "(530) 533-8500", "hours": "8am-8pm daily", "capabilities": "x-ray, laceration repair, IV fluids, fracture stabilization" }, "geometry": { "x": -121.4705, "y": 39.5218, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Feather River Urgent Care", "address": "2690 Oro Dam Blvd, Oroville, CA 95966", "phone": "(530) 534-7100", "hours": "9am-7pm Mon-Sat", "capabilities": "x-ray, lab work, minor procedures, pediatric" }, "geometry": { "x": -121.4725, "y": 39.5201, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Gridley Medical Clinic Urgent Care", "address": "390 Spruce St, Gridley, CA 95948", "phone": "(530) 846-2461", "hours": "8am-6pm Mon-Fri", "capabilities": "x-ray, lab work, wound care" }, "geometry": { "x": -121.6942, "y": 39.3648, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Thermalito Medical Group", "address": "15 Grand Ave, Thermalito, CA 95965", "phone": "(530) 534-2500", "hours": "9am-5pm Mon-Fri", "capabilities": "lab work, minor procedures, chronic disease management" }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Biggs-Gridley Medical Center", "address": "282 Spruce St, Biggs, CA 95917", "phone": "(530) 868-5831", "hours": "8am-5pm Mon-Fri", "capabilities": "x-ray, wound care, lab work" }, "geometry": { "x": -121.7120, "y": 39.4125, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_public_health": [
+    { "attributes": { "name": "Butte County Public Health Department", "address": "695 Oleander Ave, Chico, CA 95926", "phone": "(530) 552-4000", "type": "county" }, "geometry": { "x": -121.4935, "y": 39.5160, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Butte County WIC Office — Oroville", "address": "78 Table Mountain Blvd, Oroville, CA 95965", "phone": "(530) 538-7520", "type": "county" }, "geometry": { "x": -121.4880, "y": 39.5105, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Ampla Health — Oroville", "address": "4941 Olive Hwy, Oroville, CA 95966", "phone": "(530) 534-7500", "type": "community health center" }, "geometry": { "x": -121.4650, "y": 39.5235, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Ampla Health — Gridley", "address": "438 Spruce St, Gridley, CA 95948", "phone": "(530) 846-4781", "type": "community health center" }, "geometry": { "x": -121.6940, "y": 39.3640, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "City of Oroville Public Health Office", "address": "1735 Montgomery St, Oroville, CA 95965", "phone": "(530) 538-2535", "type": "city" }, "geometry": { "x": -121.4910, "y": 39.5095, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Feather River Tribal Health", "address": "2145 5th Ave, Oroville, CA 95965", "phone": "(530) 534-5394", "type": "community health center" }, "geometry": { "x": -121.4860, "y": 39.5170, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_private_schools": [
+    { "attributes": { "name": "Oroville Christian School", "address": "2450 Monte Vista Ave, Oroville, CA 95966", "enrollment": 185, "grades": "K-8", "type": "religious" }, "geometry": { "x": -121.4790, "y": 39.5170, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Feather Falls Adventist School", "address": "3520 Foothill Blvd, Oroville, CA 95966", "enrollment": 62, "grades": "K-8", "type": "religious" }, "geometry": { "x": -121.4610, "y": 39.5245, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "St. Thomas the Apostle School", "address": "1380 Bird St, Oroville, CA 95965", "enrollment": 120, "grades": "K-8", "type": "religious" }, "geometry": { "x": -121.4920, "y": 39.5110, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Manzanita Christian School", "address": "1890 Lincoln Blvd, Oroville, CA 95966", "enrollment": 95, "grades": "K-12", "type": "religious" }, "geometry": { "x": -121.4858, "y": 39.5030, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Gridley Christian Academy", "address": "285 Washington St, Gridley, CA 95948", "enrollment": 48, "grades": "K-6", "type": "religious" }, "geometry": { "x": -121.6950, "y": 39.3630, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_colleges": [
+    { "attributes": { "name": "Butte College", "address": "3536 Butte Campus Dr, Oroville, CA 95965", "enrollment": 12500, "type": "community college", "campus_shelter_capacity": 2500 }, "geometry": { "x": -121.5620, "y": 39.6575, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "California State University, Chico", "address": "400 W 1st St, Chico, CA 95929", "enrollment": 16200, "type": "state university", "campus_shelter_capacity": 5000 }, "geometry": { "x": -121.8490, "y": 39.7295, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Butte College — Oroville Center", "address": "2480 Oro Dam Blvd, Oroville, CA 95966", "enrollment": 1800, "type": "community college satellite", "campus_shelter_capacity": 400 }, "geometry": { "x": -121.4752, "y": 39.5188, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_worship": [
+    { "attributes": { "name": "First Baptist Church of Oroville", "address": "2455 Montgomery St, Oroville, CA 95965", "denomination": "Baptist (SBC)", "seating_capacity": 600, "has_kitchen": true, "has_generator": true, "shelter_agreement": "Red Cross" }, "geometry": { "x": -121.4912, "y": 39.5125, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Hmong Alliance Church", "address": "2890 Lincoln Blvd, Oroville, CA 95966", "denomination": "Christian & Missionary Alliance", "seating_capacity": 350, "has_kitchen": true, "has_generator": false, "shelter_agreement": "none" }, "geometry": { "x": -121.4865, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "St. Thomas the Apostle Catholic Church", "address": "1330 Bird St, Oroville, CA 95965", "denomination": "Roman Catholic", "seating_capacity": 450, "has_kitchen": true, "has_generator": true, "shelter_agreement": "Red Cross" }, "geometry": { "x": -121.4922, "y": 39.5115, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Thermalito Community Church", "address": "50 Plumas Ave, Thermalito, CA 95965", "denomination": "non-denominational", "seating_capacity": 250, "has_kitchen": true, "has_generator": false, "shelter_agreement": "Butte County OES" }, "geometry": { "x": -121.5075, "y": 39.5045, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Sacred Heart Catholic Church — Gridley", "address": "360 Magnolia St, Gridley, CA 95948", "denomination": "Roman Catholic", "seating_capacity": 300, "has_kitchen": true, "has_generator": false, "shelter_agreement": "Red Cross" }, "geometry": { "x": -121.6928, "y": 39.3645, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Palermo Community Bible Church", "address": "2345 Palermo Rd, Palermo, CA 95968", "denomination": "non-denominational", "seating_capacity": 180, "has_kitchen": true, "has_generator": false, "shelter_agreement": "none" }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Oroville Church of the Nazarene", "address": "1880 Oro Dam Blvd, Oroville, CA 95966", "denomination": "Nazarene", "seating_capacity": 220, "has_kitchen": true, "has_generator": true, "shelter_agreement": "Red Cross" }, "geometry": { "x": -121.4890, "y": 39.5200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Wat Lao Buddhist Temple", "address": "1445 Spencer Ave, Oroville, CA 95966", "denomination": "Theravada Buddhist", "seating_capacity": 150, "has_kitchen": true, "has_generator": false, "shelter_agreement": "none" }, "geometry": { "x": -121.4855, "y": 39.5005, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "First United Methodist Church — Oroville", "address": "1995 Robinson St, Oroville, CA 95965", "denomination": "United Methodist", "seating_capacity": 350, "has_kitchen": true, "has_generator": false, "shelter_agreement": "Butte County OES" }, "geometry": { "x": -121.4940, "y": 39.5140, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Biggs Community Church", "address": "478 B St, Biggs, CA 95917", "denomination": "non-denominational", "seating_capacity": 200, "has_kitchen": true, "has_generator": false, "shelter_agreement": "none" }, "geometry": { "x": -121.7128, "y": 39.4118, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_snap": [
+    { "attributes": { "name": "Walmart Supercenter", "address": "465 Cal Oak Rd, Oroville, CA 95965", "type": "supermarket", "accepts_ebt": true }, "geometry": { "x": -121.4780, "y": 39.5048, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Raley's", "address": "2325 Myers St, Oroville, CA 95966", "type": "supermarket", "accepts_ebt": true }, "geometry": { "x": -121.4830, "y": 39.5152, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "FoodMaxx", "address": "2101 Oro Dam Blvd, Oroville, CA 95966", "type": "supermarket", "accepts_ebt": true }, "geometry": { "x": -121.4872, "y": 39.5192, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Dollar General — Thermalito", "address": "1820 Grand Ave, Thermalito, CA 95965", "type": "convenience", "accepts_ebt": true }, "geometry": { "x": -121.5065, "y": 39.5058, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Grocery Outlet — Oroville", "address": "2175 Myers St, Oroville, CA 95966", "type": "grocery", "accepts_ebt": true }, "geometry": { "x": -121.4838, "y": 39.5142, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Gridley Supermarket", "address": "515 Kentucky St, Gridley, CA 95948", "type": "grocery", "accepts_ebt": true }, "geometry": { "x": -121.6938, "y": 39.3638, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Dollar Tree — Oroville", "address": "1940 Oro Dam Blvd, Oroville, CA 95966", "type": "convenience", "accepts_ebt": false }, "geometry": { "x": -121.4892, "y": 39.5195, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Palermo Market", "address": "2510 Palermo Rd, Palermo, CA 95968", "type": "convenience", "accepts_ebt": true }, "geometry": { "x": -121.5370, "y": 39.4345, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "AM/PM — South Oroville", "address": "2920 Lincoln Blvd, Oroville, CA 95966", "type": "convenience", "accepts_ebt": true }, "geometry": { "x": -121.4875, "y": 39.4968, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_power_plants": [
+    { "attributes": { "name": "Edward Hyatt Powerplant (Oroville Dam)", "fuel_type": "hydro", "capacity_mw": 644, "operator": "California Department of Water Resources" }, "geometry": { "x": -121.4845, "y": 39.5395, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Thermalito Diversion Dam Powerplant", "fuel_type": "hydro", "capacity_mw": 3, "operator": "California Department of Water Resources" }, "geometry": { "x": -121.5150, "y": 39.5180, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Thermalito Pumping-Generating Plant", "fuel_type": "hydro", "capacity_mw": 115, "operator": "California Department of Water Resources" }, "geometry": { "x": -121.5320, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "South Feather Power Project — Sly Creek", "fuel_type": "hydro", "capacity_mw": 60, "operator": "South Feather Water and Power Agency" }, "geometry": { "x": -121.3510, "y": 39.5820, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "PG&E Butte County Substation Solar", "fuel_type": "solar", "capacity_mw": 12, "operator": "Pacific Gas & Electric" }, "geometry": { "x": -121.5900, "y": 39.4510, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_landfills": [
+    { "attributes": { "name": "Neal Road Recycling and Waste Facility", "address": "1023 Neal Rd, Paradise, CA 95969", "status": "active", "type": "class III municipal solid waste", "daily_capacity_tons": 1500 }, "geometry": { "x": -121.6180, "y": 39.6910, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Oroville Transfer Station", "address": "2720 S 5th Ave, Oroville, CA 95965", "status": "active", "type": "transfer station", "daily_capacity_tons": 200 }, "geometry": { "x": -121.4860, "y": 39.4950, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Gridley Transfer Station", "address": "199 Obermeyer Rd, Gridley, CA 95948", "status": "active", "type": "transfer station", "daily_capacity_tons": 80 }, "geometry": { "x": -121.6880, "y": 39.3585, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Palermo Road Disposal Site", "address": "3700 Palermo Rd, Palermo, CA 95968", "status": "closed", "type": "class III (closed)", "daily_capacity_tons": 0 }, "geometry": { "x": -121.5410, "y": 39.4290, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Butte County C&D Recycling Facility", "address": "5640 Hwy 99, Oroville, CA 95966", "status": "active", "type": "construction & demolition", "daily_capacity_tons": 300 }, "geometry": { "x": -121.5540, "y": 39.4620, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_dams": [
+    { "attributes": { "name": "Oroville Dam", "river": "Feather River", "height_ft": 770, "hazard_class": "high", "year_built": 1968, "downstream_pop_at_risk": 160000 }, "geometry": { "x": -121.4850, "y": 39.5380, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Thermalito Diversion Dam", "river": "Feather River", "height_ft": 52, "hazard_class": "high", "year_built": 1967, "downstream_pop_at_risk": 145000 }, "geometry": { "x": -121.5150, "y": 39.5180, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Thermalito Afterbay Dam", "river": "Feather River (Thermalito Afterbay)", "height_ft": 42, "hazard_class": "high", "year_built": 1967, "downstream_pop_at_risk": 130000 }, "geometry": { "x": -121.5680, "y": 39.4750, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Sly Creek Dam", "river": "Lost Creek", "height_ft": 249, "hazard_class": "high", "year_built": 1961, "downstream_pop_at_risk": 25000 }, "geometry": { "x": -121.3520, "y": 39.5810, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Miners Ranch Dam", "river": "Miners Ranch Ditch", "height_ft": 72, "hazard_class": "significant", "year_built": 1964, "downstream_pop_at_risk": 8000 }, "geometry": { "x": -121.4480, "y": 39.5550, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Bidwell Bar Diversion Dam", "river": "North Fork Feather River", "height_ft": 35, "hazard_class": "significant", "year_built": 1928, "downstream_pop_at_risk": 165000 }, "geometry": { "x": -121.4210, "y": 39.5610, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "infra_prisons": [
+    { "attributes": { "name": "Butte County Jail", "address": "33 County Center Dr, Oroville, CA 95965", "type": "county jail", "population": 480, "security_level": "medium" }, "geometry": { "x": -121.4950, "y": 39.5115, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Butte County Jail — Main", "address": "17 County Center Dr, Oroville, CA 95965", "type": "county jail", "population": 335, "security_level": "maximum" }, "geometry": { "x": -121.4945, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Butte County Juvenile Hall", "address": "1 County Center Dr, Oroville, CA 95965", "type": "juvenile detention", "population": 42, "security_level": "medium" }, "geometry": { "x": -121.4955, "y": 39.5108, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "California Conservation Camp — Butte", "address": "5648 Clark Rd, Butte County, CA 95965", "type": "state conservation camp", "population": 125, "security_level": "minimum" }, "geometry": { "x": -121.5720, "y": 39.6280, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Gridley Community Re-Entry Center", "address": "248 Sycamore St, Gridley, CA 95948", "type": "re-entry facility", "population": 55, "security_level": "minimum" }, "geometry": { "x": -121.6945, "y": 39.3628, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_hs_diploma": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_pop_25plus": 2450, "no_diploma_count": 612, "no_diploma_pct": 24.98 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_pop_25plus": 3100, "no_diploma_count": 899, "no_diploma_pct": 29.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_pop_25plus": 4200, "no_diploma_count": 1050, "no_diploma_pct": 25.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_pop_25plus": 2800, "no_diploma_count": 616, "no_diploma_pct": 22.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_pop_25plus": 4050, "no_diploma_count": 729, "no_diploma_pct": 18.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_pop_25plus": 1350, "no_diploma_count": 243, "no_diploma_pct": 18.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_race_ethnicity": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_pop": 3850, "white_pct": 52.0, "black_pct": 2.5, "hispanic_pct": 22.0, "asian_pct": 18.0, "native_pct": 3.0, "other_pct": 2.5 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_pop": 4800, "white_pct": 42.0, "black_pct": 3.0, "hispanic_pct": 30.0, "asian_pct": 20.0, "native_pct": 2.5, "other_pct": 2.5 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_pop": 6500, "white_pct": 55.0, "black_pct": 2.0, "hispanic_pct": 20.0, "asian_pct": 15.0, "native_pct": 4.0, "other_pct": 4.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_pop": 4200, "white_pct": 62.0, "black_pct": 1.5, "hispanic_pct": 25.0, "asian_pct": 6.0, "native_pct": 2.5, "other_pct": 3.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_pop": 6300, "white_pct": 45.0, "black_pct": 1.0, "hispanic_pct": 40.0, "asian_pct": 8.0, "native_pct": 2.0, "other_pct": 4.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_pop": 1880, "white_pct": 50.0, "black_pct": 1.0, "hispanic_pct": 38.0, "asian_pct": 5.0, "native_pct": 2.0, "other_pct": 4.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_vehicle": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_households": 1520, "no_vehicle_count": 243, "no_vehicle_pct": 16.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_households": 1780, "no_vehicle_count": 302, "no_vehicle_pct": 17.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_households": 2450, "no_vehicle_count": 318, "no_vehicle_pct": 13.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_households": 1580, "no_vehicle_count": 158, "no_vehicle_pct": 10.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_households": 2200, "no_vehicle_count": 198, "no_vehicle_pct": 9.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_households": 680, "no_vehicle_count": 54, "no_vehicle_pct": 7.9 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_single_parent": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "households_with_children": 480, "single_parent_count": 192, "single_parent_pct": 40.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "households_with_children": 620, "single_parent_count": 279, "single_parent_pct": 45.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "households_with_children": 750, "single_parent_count": 285, "single_parent_pct": 38.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "households_with_children": 510, "single_parent_count": 178, "single_parent_pct": 34.9 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "households_with_children": 680, "single_parent_count": 218, "single_parent_pct": 32.1 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "households_with_children": 220, "single_parent_count": 66, "single_parent_pct": 30.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_smartphone": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_households": 1520, "no_smartphone_count": 380, "no_smartphone_pct": 25.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_households": 1780, "no_smartphone_count": 463, "no_smartphone_pct": 26.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_households": 2450, "no_smartphone_count": 539, "no_smartphone_pct": 22.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_households": 1580, "no_smartphone_count": 316, "no_smartphone_pct": 20.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_households": 2200, "no_smartphone_count": 374, "no_smartphone_pct": 17.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_households": 680, "no_smartphone_count": 129, "no_smartphone_pct": 19.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_broadband": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_households": 1520, "no_broadband_count": 456, "no_broadband_pct": 30.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_households": 1780, "no_broadband_count": 570, "no_broadband_pct": 32.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_households": 2450, "no_broadband_count": 662, "no_broadband_pct": 27.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_households": 1580, "no_broadband_count": 411, "no_broadband_pct": 26.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_households": 2200, "no_broadband_count": 484, "no_broadband_pct": 22.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_households": 680, "no_broadband_count": 163, "no_broadband_pct": 24.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_mobile_homes_pct": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_housing_units": 1680, "mobile_home_count": 168, "mobile_home_pct": 10.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_housing_units": 1950, "mobile_home_count": 488, "mobile_home_pct": 25.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_housing_units": 2700, "mobile_home_count": 594, "mobile_home_pct": 22.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_housing_units": 1750, "mobile_home_count": 525, "mobile_home_pct": 30.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_housing_units": 2400, "mobile_home_count": 360, "mobile_home_pct": 15.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_housing_units": 740, "mobile_home_count": 148, "mobile_home_pct": 20.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_owner_occupied": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_housing_units": 1680, "owner_occupied_count": 672, "owner_occupied_pct": 40.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_housing_units": 1950, "owner_occupied_count": 878, "owner_occupied_pct": 45.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_housing_units": 2700, "owner_occupied_count": 1350, "owner_occupied_pct": 50.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_housing_units": 1750, "owner_occupied_count": 1050, "owner_occupied_pct": 60.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_housing_units": 2400, "owner_occupied_count": 1320, "owner_occupied_pct": 55.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_housing_units": 740, "owner_occupied_count": 437, "owner_occupied_pct": 59.1 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_housing_costs": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "renter_households": 850, "cost_burdened_count": 442, "cost_burdened_pct": 52.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "renter_households": 920, "cost_burdened_count": 506, "cost_burdened_pct": 55.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "renter_households": 1150, "cost_burdened_count": 552, "cost_burdened_pct": 48.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "renter_households": 580, "cost_burdened_count": 261, "cost_burdened_pct": 45.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "renter_households": 880, "cost_burdened_count": 370, "cost_burdened_pct": 42.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "renter_households": 250, "cost_burdened_count": 100, "cost_burdened_pct": 40.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_flood_insurance": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "sfha_structures": 420, "insured_count": 126, "insured_pct": 30.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "sfha_structures": 580, "insured_count": 145, "insured_pct": 25.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "sfha_structures": 350, "insured_count": 112, "insured_pct": 32.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "sfha_structures": 290, "insured_count": 64, "insured_pct": 22.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "sfha_structures": 610, "insured_count": 220, "insured_pct": 36.1 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "sfha_structures": 185, "insured_count": 59, "insured_pct": 31.9 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_hospital_count": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "hospitals": 1, "pop_per_hospital": 3850 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "hospitals": 1, "pop_per_hospital": 6300 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_medical_capacity": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "primary_care_physicians": 8, "specialists": 12, "per_100k_rate": 519.5 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "primary_care_physicians": 2, "specialists": 1, "per_100k_rate": 62.5 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "primary_care_physicians": 4, "specialists": 2, "per_100k_rate": 92.3 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "primary_care_physicians": 1, "specialists": 0, "per_100k_rate": 23.8 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "primary_care_physicians": 5, "specialists": 3, "per_100k_rate": 127.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "primary_care_physicians": 1, "specialists": 0, "per_100k_rate": 53.2 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_uninsured": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_pop": 3850, "uninsured_count": 616, "uninsured_pct": 16.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_pop": 4800, "uninsured_count": 912, "uninsured_pct": 19.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_pop": 6500, "uninsured_count": 975, "uninsured_pct": 15.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_pop": 4200, "uninsured_count": 672, "uninsured_pct": 16.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_pop": 6300, "uninsured_count": 819, "uninsured_pct": 13.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_pop": 1880, "uninsured_count": 263, "uninsured_pct": 14.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_power_dependent": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "medicare_beneficiaries": 820, "power_dependent_count": 41, "device_types": "oxygen concentrator, CPAP, nebulizer" }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "medicare_beneficiaries": 950, "power_dependent_count": 57, "device_types": "oxygen concentrator, ventilator, CPAP" }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "medicare_beneficiaries": 1400, "power_dependent_count": 84, "device_types": "oxygen concentrator, CPAP, dialysis" }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "medicare_beneficiaries": 780, "power_dependent_count": 39, "device_types": "oxygen concentrator, CPAP" }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "medicare_beneficiaries": 1100, "power_dependent_count": 55, "device_types": "oxygen concentrator, CPAP, nebulizer" }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "medicare_beneficiaries": 380, "power_dependent_count": 15, "device_types": "oxygen concentrator, CPAP" }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_unemployed": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "labor_force": 1450, "unemployed_count": 203, "unemployment_rate": 14.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "labor_force": 1820, "unemployed_count": 291, "unemployment_rate": 16.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "labor_force": 2600, "unemployed_count": 338, "unemployment_rate": 13.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "labor_force": 1650, "unemployed_count": 198, "unemployment_rate": 12.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "labor_force": 2500, "unemployed_count": 250, "unemployment_rate": 10.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "labor_force": 750, "unemployed_count": 68, "unemployment_rate": 9.1 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_unemployed_women": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "female_labor_force": 680, "unemployed_women": 109, "female_unemployment_rate": 16.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "female_labor_force": 840, "unemployed_women": 151, "female_unemployment_rate": 18.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "female_labor_force": 1200, "unemployed_women": 168, "female_unemployment_rate": 14.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "female_labor_force": 760, "unemployed_women": 99, "female_unemployment_rate": 13.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "female_labor_force": 1100, "unemployed_women": 121, "female_unemployment_rate": 11.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "female_labor_force": 340, "unemployed_women": 34, "female_unemployment_rate": 10.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_gini": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "gini_index": 0.48 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "gini_index": 0.52 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "gini_index": 0.45 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "gini_index": 0.42 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "gini_index": 0.44 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "gini_index": 0.40 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_predominant_sector": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "predominant_sector": "Government", "sector_pct": 28.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "predominant_sector": "Retail Trade", "sector_pct": 22.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "predominant_sector": "Health Care & Social Assistance", "sector_pct": 25.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "predominant_sector": "Agriculture", "sector_pct": 30.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "predominant_sector": "Agriculture", "sector_pct": 35.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "predominant_sector": "Agriculture", "sector_pct": 42.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_civic_orgs": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "civic_org_count": 8, "per_10k_rate": 20.8 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "civic_org_count": 3, "per_10k_rate": 6.3 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "civic_org_count": 5, "per_10k_rate": 7.7 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "civic_org_count": 2, "per_10k_rate": 4.8 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "civic_org_count": 6, "per_10k_rate": 9.5 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "civic_org_count": 3, "per_10k_rate": 16.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_religious_affiliation": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "total_pop": 3850, "no_affiliation_count": 2118, "no_affiliation_pct": 55.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "total_pop": 4800, "no_affiliation_count": 2880, "no_affiliation_pct": 60.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "total_pop": 6500, "no_affiliation_count": 3575, "no_affiliation_pct": 55.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "total_pop": 4200, "no_affiliation_count": 2520, "no_affiliation_pct": 60.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "total_pop": 6300, "no_affiliation_count": 3024, "no_affiliation_pct": 48.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "total_pop": 1880, "no_affiliation_count": 846, "no_affiliation_pct": 45.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_inactive_voters": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "registered_voters": 2100, "inactive_count": 504, "inactive_pct": 24.0 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "registered_voters": 2500, "inactive_count": 675, "inactive_pct": 27.0 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "registered_voters": 3600, "inactive_count": 792, "inactive_pct": 22.0 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "registered_voters": 2300, "inactive_count": 460, "inactive_pct": 20.0 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "registered_voters": 3200, "inactive_count": 576, "inactive_pct": 18.0 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "registered_voters": 1050, "inactive_count": 168, "inactive_pct": 16.0 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_population_change": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "pop_2010": 4100, "pop_2020": 3850, "change_pct": -6.1 }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "pop_2010": 4500, "pop_2020": 4800, "change_pct": 6.7 }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "pop_2010": 6200, "pop_2020": 6500, "change_pct": 4.8 }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "pop_2010": 4350, "pop_2020": 4200, "change_pct": -3.4 }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "pop_2010": 5800, "pop_2020": 6300, "change_pct": 8.6 }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "pop_2010": 1820, "pop_2020": 1880, "change_pct": 3.3 }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_stream_gauges": [
+    { "attributes": { "gauge_id": "FEA-001", "name": "Feather River at Oroville Dam", "river": "Feather River", "current_level_ft": 72.5, "flood_stage_ft": 55.0, "status": "major_flood" }, "geometry": { "x": -121.4850, "y": 39.5380, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "gauge_id": "FEA-002", "name": "Feather River at Thermalito Diversion", "river": "Feather River", "current_level_ft": 48.2, "flood_stage_ft": 32.0, "status": "major_flood" }, "geometry": { "x": -121.5150, "y": 39.5180, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "gauge_id": "FEA-003", "name": "Feather River at Boyd's Pump", "river": "Feather River", "current_level_ft": 38.6, "flood_stage_ft": 28.0, "status": "major_flood" }, "geometry": { "x": -121.5420, "y": 39.4680, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "gauge_id": "FEA-004", "name": "Feather River at Gridley Bridge", "river": "Feather River", "current_level_ft": 32.1, "flood_stage_ft": 25.0, "status": "major_flood" }, "geometry": { "x": -121.6200, "y": 39.3600, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "gauge_id": "TAB-001", "name": "Thermalito Afterbay Outlet", "river": "Thermalito Afterbay", "current_level_ft": 22.8, "flood_stage_ft": 18.0, "status": "major_flood" }, "geometry": { "x": -121.5680, "y": 39.4750, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "gauge_id": "BTC-001", "name": "Butte Creek at Durham-Pentz Rd", "river": "Butte Creek", "current_level_ft": 14.3, "flood_stage_ft": 12.0, "status": "moderate_flood" }, "geometry": { "x": -121.6100, "y": 39.6150, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "gauge_id": "BTC-002", "name": "Butte Creek at Chico", "river": "Butte Creek", "current_level_ft": 9.8, "flood_stage_ft": 10.5, "status": "action" }, "geometry": { "x": -121.7850, "y": 39.6980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "gauge_id": "FEA-005", "name": "Feather River near South Oroville", "river": "Feather River", "current_level_ft": 44.0, "flood_stage_ft": 30.0, "status": "major_flood" }, "geometry": { "x": -121.5050, "y": 39.4920, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "gauge_id": "FEA-006", "name": "Feather River at Palermo Bridge", "river": "Feather River", "current_level_ft": 35.2, "flood_stage_ft": 26.0, "status": "major_flood" }, "geometry": { "x": -121.5580, "y": 39.4350, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_river_flooding": [
+    { "attributes": { "name": "Feather River — Oroville to Gridley", "river": "Feather River", "outlook": "occurring", "valid_through": "2026-04-22T00:00:00Z" }, "geometry": { "x": -121.5200, "y": 39.4500, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Feather River — Gridley to Sacramento River confluence", "river": "Feather River", "outlook": "likely", "valid_through": "2026-04-23T00:00:00Z" }, "geometry": { "x": -121.6500, "y": 39.3200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Butte Creek — upper reaches", "river": "Butte Creek", "outlook": "likely", "valid_through": "2026-04-21T12:00:00Z" }, "geometry": { "x": -121.6100, "y": 39.6150, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Thermalito Afterbay Overflow", "river": "Thermalito Afterbay", "outlook": "occurring", "valid_through": "2026-04-22T06:00:00Z" }, "geometry": { "x": -121.5680, "y": 39.4750, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "name": "Sacramento River at Butte City", "river": "Sacramento River", "outlook": "likely", "valid_through": "2026-04-24T00:00:00Z" }, "geometry": { "x": -121.9850, "y": 39.4620, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_severe_outlook": [
+    { "attributes": { "area_name": "Butte County — Feather River corridor", "risk_level": "high", "valid_date": "2026-04-20" }, "geometry": { "x": -121.5200, "y": 39.4800, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Butte County — western valley", "risk_level": "moderate", "valid_date": "2026-04-20" }, "geometry": { "x": -121.6800, "y": 39.3900, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Sacramento Valley — northern", "risk_level": "slight", "valid_date": "2026-04-20" }, "geometry": { "x": -121.7500, "y": 39.3500, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Sierra Nevada foothills — Butte County", "risk_level": "moderate", "valid_date": "2026-04-20" }, "geometry": { "x": -121.3800, "y": 39.5800, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Butte County — Oroville metro", "risk_level": "high", "valid_date": "2026-04-21" }, "geometry": { "x": -121.4900, "y": 39.5100, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_excessive_rainfall": [
+    { "attributes": { "area_name": "Northern Sierra — Butte/Plumas County line", "risk_level": "high", "valid_date": "2026-04-20" }, "geometry": { "x": -121.3500, "y": 39.6200, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Lake Oroville watershed", "risk_level": "high", "valid_date": "2026-04-20" }, "geometry": { "x": -121.4200, "y": 39.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Butte Creek drainage", "risk_level": "moderate", "valid_date": "2026-04-20" }, "geometry": { "x": -121.6000, "y": 39.6100, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Feather River canyon", "risk_level": "high", "valid_date": "2026-04-20" }, "geometry": { "x": -121.3800, "y": 39.6500, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Sacramento Valley floor — Butte County", "risk_level": "slight", "valid_date": "2026-04-21" }, "geometry": { "x": -121.6800, "y": 39.3800, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_seismic": [
+    { "attributes": { "area_name": "Oroville Seismic Zone", "pga_2pct_50yr": 0.25, "risk_level": "moderate" }, "geometry": { "x": -121.4850, "y": 39.5380, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Cleveland Hill Fault", "pga_2pct_50yr": 0.30, "risk_level": "moderate" }, "geometry": { "x": -121.4600, "y": 39.5100, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Sacramento Valley — low seismicity", "pga_2pct_50yr": 0.10, "risk_level": "low" }, "geometry": { "x": -121.6500, "y": 39.3800, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Foothill Fault System — Butte County", "pga_2pct_50yr": 0.22, "risk_level": "moderate" }, "geometry": { "x": -121.4000, "y": 39.5800, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Feather River canyon zone", "pga_2pct_50yr": 0.18, "risk_level": "low-moderate" }, "geometry": { "x": -121.3700, "y": 39.6200, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_national_risk": [
+    { "attributes": { "tract_id": "06007000300", "tract_name": "Downtown Oroville", "composite_score": 82.5, "expected_annual_loss_usd": 2450000, "top_hazard": "flooding" }, "geometry": { "x": -121.4880, "y": 39.5120, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000401", "tract_name": "South Oroville", "composite_score": 88.2, "expected_annual_loss_usd": 3200000, "top_hazard": "flooding" }, "geometry": { "x": -121.4870, "y": 39.4980, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007000500", "tract_name": "Thermalito", "composite_score": 79.1, "expected_annual_loss_usd": 2100000, "top_hazard": "flooding" }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001200", "tract_name": "Palermo", "composite_score": 74.6, "expected_annual_loss_usd": 1600000, "top_hazard": "flooding" }, "geometry": { "x": -121.5380, "y": 39.4340, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001600", "tract_name": "Gridley", "composite_score": 68.3, "expected_annual_loss_usd": 1200000, "top_hazard": "flooding" }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "06007001700", "tract_name": "Biggs", "composite_score": 62.1, "expected_annual_loss_usd": 850000, "top_hazard": "flooding" }, "geometry": { "x": -121.7125, "y": 39.4120, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_climate_outlooks": [
+    { "attributes": { "area_name": "Northern Sacramento Valley", "temp_outlook": "below_normal", "precip_outlook": "above_normal", "valid_period": "Apr 20-27 2026" }, "geometry": { "x": -121.5500, "y": 39.5000, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Sierra Nevada foothills — Butte County", "temp_outlook": "below_normal", "precip_outlook": "much_above_normal", "valid_period": "Apr 20-27 2026" }, "geometry": { "x": -121.3800, "y": 39.5800, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Central Valley — Butte to Sutter County", "temp_outlook": "near_normal", "precip_outlook": "above_normal", "valid_period": "Apr 20-27 2026" }, "geometry": { "x": -121.7000, "y": 39.3500, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Lake Oroville basin", "temp_outlook": "below_normal", "precip_outlook": "much_above_normal", "valid_period": "Apr 20-27 2026" }, "geometry": { "x": -121.4200, "y": 39.5700, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "area_name": "Northern Sacramento Valley — extended", "temp_outlook": "near_normal", "precip_outlook": "above_normal", "valid_period": "May 2026" }, "geometry": { "x": -121.5500, "y": 39.4500, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_wea": [
+    { "attributes": { "alert_id": "WEA-2026-0420-001", "alert_type": "dam_failure_warning", "issued": "2026-04-20T08:15:00Z", "expires": "2026-04-21T08:15:00Z", "headline": "DAM FAILURE WARNING: Oroville Dam catastrophic failure imminent. EVACUATE IMMEDIATELY all areas along Feather River from Oroville Dam to Gridley. Move to high ground NOW." }, "geometry": { "x": -121.4850, "y": 39.5380, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "alert_id": "WEA-2026-0420-002", "alert_type": "flash_flood_emergency", "issued": "2026-04-20T08:20:00Z", "expires": "2026-04-21T08:20:00Z", "headline": "FLASH FLOOD EMERGENCY: Catastrophic flooding expected along Feather River corridor from Oroville to Sacramento Valley. Life-threatening floodwaters. EVACUATE NOW." }, "geometry": { "x": -121.5200, "y": 39.4800, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "alert_id": "WEA-2026-0420-003", "alert_type": "flash_flood_emergency", "issued": "2026-04-20T08:30:00Z", "expires": "2026-04-21T08:30:00Z", "headline": "FLASH FLOOD EMERGENCY for Thermalito and Palermo. Wall of water approaching. Move to high ground IMMEDIATELY. Do not attempt to drive through floodwaters." }, "geometry": { "x": -121.5080, "y": 39.5050, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "alert_id": "WEA-2026-0420-004", "alert_type": "flash_flood_emergency", "issued": "2026-04-20T09:00:00Z", "expires": "2026-04-21T09:00:00Z", "headline": "FLASH FLOOD EMERGENCY for Gridley and Biggs. Major flooding expected within 2-4 hours from dam failure upstream. EVACUATE to higher ground east of Hwy 99." }, "geometry": { "x": -121.6935, "y": 39.3635, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "alert_id": "WEA-2026-0420-005", "alert_type": "dam_failure_warning", "issued": "2026-04-20T08:45:00Z", "expires": "2026-04-21T08:45:00Z", "headline": "DAM FAILURE WARNING: Thermalito Afterbay Dam overtopping due to Oroville Dam failure. All residents south of Thermalito Afterbay evacuate immediately via Hwy 70 south." }, "geometry": { "x": -121.5680, "y": 39.4750, "spatialReference": { "wkid": 4326 } } }
+  ]
+}

@@ -216,6 +216,7 @@ export default function MapView({
               _featureType: featureType,
               _role: "icon",
               _displayLabel: displayLabel,
+              layer_label: inst.layer_label || "",
             },
             popupTemplate: popupTemplateForFeatureType(
               featureType,
@@ -234,6 +235,7 @@ export default function MapView({
                 _featureType: featureType,
                 _role: "label",
                 _displayLabel: displayLabel,
+                layer_label: inst.layer_label || "",
               },
             });
             graphicsLayerRef.current.add(labelGraphic);

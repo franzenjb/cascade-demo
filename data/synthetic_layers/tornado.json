@@ -1,0 +1,870 @@
+{
+  "infra_pharmacies": [
+    {
+      "attributes": {
+        "name": "CVS Pharmacy #4821",
+        "address": "102 Main St, Ridgeton, NC 28701",
+        "phone": "(828) 555-0142",
+        "operator": "CVS",
+        "rx_open_status": "closed"
+      },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Walgreens #11903",
+        "address": "450 Cascade Blvd, Ridgeton, NC 28701",
+        "phone": "(828) 555-0198",
+        "operator": "Walgreens",
+        "rx_open_status": "open"
+      },
+      "geometry": { "x": -81.47, "y": 36.05, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Ridgeton Family Pharmacy",
+        "address": "28 Court Square, Ridgeton, NC 28701",
+        "phone": "(828) 555-0167",
+        "operator": "independent",
+        "rx_open_status": "unknown"
+      },
+      "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Mountain Health Pharmacy",
+        "address": "1105 Valley Creek Rd, Cedar Falls, NC 28702",
+        "phone": "(828) 555-0211",
+        "operator": "independent",
+        "rx_open_status": "closed"
+      },
+      "geometry": { "x": -81.44, "y": 36.02, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Walmart Pharmacy",
+        "address": "2200 Cascade Blvd, Ridgeton, NC 28701",
+        "phone": "(828) 555-0233",
+        "operator": "Walmart",
+        "rx_open_status": "closed"
+      },
+      "geometry": { "x": -81.46, "y": 36.06, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_urgent_care": [
+    {
+      "attributes": {
+        "name": "Cascade County Urgent Care",
+        "address": "310 Hospital Dr, Ridgeton, NC 28701",
+        "phone": "(828) 555-0300",
+        "hours": "8am-8pm Mon-Sat",
+        "capabilities": ["suture", "xray", "lab"]
+      },
+      "geometry": { "x": -81.48, "y": 36.045, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "FastMed Clinic - Ridgeton",
+        "address": "455 Cascade Blvd Ste B, Ridgeton, NC 28701",
+        "phone": "(828) 555-0315",
+        "hours": "9am-7pm Mon-Fri, 10am-4pm Sat",
+        "capabilities": ["suture", "xray"]
+      },
+      "geometry": { "x": -81.47, "y": 36.05, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Valley Creek Walk-In Clinic",
+        "address": "88 Creekside Ln, Cedar Falls, NC 28702",
+        "phone": "(828) 555-0328",
+        "hours": "8am-5pm Mon-Fri",
+        "capabilities": ["suture"]
+      },
+      "geometry": { "x": -81.43, "y": 36.01, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_public_health": [
+    {
+      "attributes": {
+        "name": "Cascade County Health Department",
+        "address": "200 Government Center Dr, Ridgeton, NC 28701",
+        "phone": "(828) 555-0400",
+        "type": "county"
+      },
+      "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Mountain Community Health Center",
+        "address": "75 Appalachian Way, Pinewood, NC 28703",
+        "phone": "(828) 555-0418",
+        "type": "community health center"
+      },
+      "geometry": { "x": -81.52, "y": 36.07, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Ridgeton City Health Clinic",
+        "address": "15 Civic Center Pl, Ridgeton, NC 28701",
+        "phone": "(828) 555-0425",
+        "type": "city"
+      },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_private_schools": [
+    {
+      "attributes": {
+        "name": "Mountain View Academy",
+        "address": "400 Ridge Rd, Ridgeton, NC 28701",
+        "enrollment": 185,
+        "grades": "K-8",
+        "type": "independent"
+      },
+      "geometry": { "x": -81.50, "y": 36.05, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Cascade Christian School",
+        "address": "1200 Church St, Ridgeton, NC 28701",
+        "enrollment": 240,
+        "grades": "K-12",
+        "type": "parochial"
+      },
+      "geometry": { "x": -81.47, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Blue Ridge Montessori",
+        "address": "55 Laurel Ln, Mountain Brook, NC 28704",
+        "enrollment": 62,
+        "grades": "Pre-K-3",
+        "type": "independent"
+      },
+      "geometry": { "x": -81.45, "y": 36.06, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Pinewood Charter Academy",
+        "address": "330 Pine Hollow Rd, Pinewood, NC 28703",
+        "enrollment": 310,
+        "grades": "6-12",
+        "type": "charter"
+      },
+      "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "St. Patrick's Catholic School",
+        "address": "88 Oak Ave, Ridgeton, NC 28701",
+        "enrollment": 145,
+        "grades": "K-8",
+        "type": "parochial"
+      },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_colleges": [
+    {
+      "attributes": {
+        "name": "Cascade Valley Community College",
+        "address": "1000 College Dr, Ridgeton, NC 28701",
+        "enrollment": 3200,
+        "type": "community college",
+        "campus_shelter_capacity": 800
+      },
+      "geometry": { "x": -81.46, "y": 36.05, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Appalachian Bible College - Ridgeton Campus",
+        "address": "250 Seminary Hill Rd, Ridgeton, NC 28701",
+        "enrollment": 420,
+        "type": "university",
+        "campus_shelter_capacity": 200
+      },
+      "geometry": { "x": -81.50, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_worship": [
+    {
+      "attributes": {
+        "name": "First Baptist Church of Ridgeton",
+        "address": "100 Church St, Ridgeton, NC 28701",
+        "denomination": "Southern Baptist",
+        "seating_capacity": 600,
+        "has_kitchen": true,
+        "has_generator": true,
+        "shelter_agreement": "yes"
+      },
+      "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Ridgeton United Methodist Church",
+        "address": "220 Main St, Ridgeton, NC 28701",
+        "denomination": "United Methodist",
+        "seating_capacity": 350,
+        "has_kitchen": true,
+        "has_generator": false,
+        "shelter_agreement": "yes"
+      },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Cedar Falls Presbyterian Church",
+        "address": "45 Mill Rd, Cedar Falls, NC 28702",
+        "denomination": "Presbyterian (PCUSA)",
+        "seating_capacity": 180,
+        "has_kitchen": true,
+        "has_generator": false,
+        "shelter_agreement": "no"
+      },
+      "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Mountain Brook Missionary Baptist",
+        "address": "770 Holler Rd, Mountain Brook, NC 28704",
+        "denomination": "Missionary Baptist",
+        "seating_capacity": 120,
+        "has_kitchen": true,
+        "has_generator": false,
+        "shelter_agreement": "no"
+      },
+      "geometry": { "x": -81.44, "y": 36.07, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Grace Fellowship Church",
+        "address": "500 Cascade Blvd, Ridgeton, NC 28701",
+        "denomination": "Non-denominational",
+        "seating_capacity": 800,
+        "has_kitchen": true,
+        "has_generator": true,
+        "shelter_agreement": "yes"
+      },
+      "geometry": { "x": -81.47, "y": 36.05, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "South Fork Free Will Baptist Church",
+        "address": "1450 South Fork Rd, South Fork, NC 28705",
+        "denomination": "Free Will Baptist",
+        "seating_capacity": 150,
+        "has_kitchen": true,
+        "has_generator": false,
+        "shelter_agreement": "yes"
+      },
+      "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Pinewood AME Zion Church",
+        "address": "310 Pine St, Pinewood, NC 28703",
+        "denomination": "AME Zion",
+        "seating_capacity": 100,
+        "has_kitchen": true,
+        "has_generator": false,
+        "shelter_agreement": "no"
+      },
+      "geometry": { "x": -81.53, "y": 36.06, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "St. Patrick's Catholic Church",
+        "address": "90 Oak Ave, Ridgeton, NC 28701",
+        "denomination": "Roman Catholic",
+        "seating_capacity": 250,
+        "has_kitchen": true,
+        "has_generator": false,
+        "shelter_agreement": "yes"
+      },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Valley Creek Church of God",
+        "address": "200 Creek Bottom Rd, Cedar Falls, NC 28702",
+        "denomination": "Church of God (Cleveland)",
+        "seating_capacity": 200,
+        "has_kitchen": true,
+        "has_generator": true,
+        "shelter_agreement": "yes"
+      },
+      "geometry": { "x": -81.42, "y": 36.01, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Ridgeton Church of Christ",
+        "address": "615 Elm St, Ridgeton, NC 28701",
+        "denomination": "Church of Christ",
+        "seating_capacity": 130,
+        "has_kitchen": false,
+        "has_generator": false,
+        "shelter_agreement": "no"
+      },
+      "geometry": { "x": -81.50, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_snap": [
+    {
+      "attributes": {
+        "name": "Food Lion #1482",
+        "address": "600 Cascade Blvd, Ridgeton, NC 28701",
+        "type": "supermarket",
+        "accepts_ebt": "yes"
+      },
+      "geometry": { "x": -81.47, "y": 36.05, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Walmart Supercenter",
+        "address": "2200 Cascade Blvd, Ridgeton, NC 28701",
+        "type": "supermarket",
+        "accepts_ebt": "yes"
+      },
+      "geometry": { "x": -81.46, "y": 36.06, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Ingles Markets #247",
+        "address": "155 Main St, Ridgeton, NC 28701",
+        "type": "supermarket",
+        "accepts_ebt": "yes"
+      },
+      "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Dollar General #19844",
+        "address": "3300 Valley Creek Rd, Cedar Falls, NC 28702",
+        "type": "convenience",
+        "accepts_ebt": "yes"
+      },
+      "geometry": { "x": -81.43, "y": 36.01, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Cedar Falls General Store",
+        "address": "10 Main St, Cedar Falls, NC 28702",
+        "type": "grocery",
+        "accepts_ebt": "yes"
+      },
+      "geometry": { "x": -81.44, "y": 36.02, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Dollar General #20112",
+        "address": "890 South Fork Rd, South Fork, NC 28705",
+        "type": "convenience",
+        "accepts_ebt": "yes"
+      },
+      "geometry": { "x": -81.52, "y": 36.00, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Ridgeton Farmers Market Co-op",
+        "address": "35 Court Square, Ridgeton, NC 28701",
+        "type": "grocery",
+        "accepts_ebt": "yes"
+      },
+      "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_power_plants": [
+    {
+      "attributes": {
+        "name": "Cascade River Hydroelectric Station",
+        "address": "Cascade River Dam Rd",
+        "fuel_type": "hydroelectric",
+        "capacity_mw": 12.5,
+        "operator": "Duke Energy"
+      },
+      "geometry": { "x": -81.42, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "South Fork Solar Farm",
+        "address": "Off Hwy 221 South",
+        "fuel_type": "solar",
+        "capacity_mw": 5.0,
+        "operator": "Duke Energy Renewables"
+      },
+      "geometry": { "x": -81.54, "y": 36.00, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_landfills": [
+    {
+      "attributes": {
+        "name": "Cascade County Solid Waste Facility",
+        "address": "4500 Landfill Rd, Ridgeton, NC 28701",
+        "status": "active",
+        "type": "MSW",
+        "daily_capacity_tons": 250
+      },
+      "geometry": { "x": -81.54, "y": 36.02, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Mountain Construction Debris Landfill",
+        "address": "2800 Old Quarry Rd, Ridgeton, NC 28701",
+        "status": "active",
+        "type": "C&D",
+        "daily_capacity_tons": 100
+      },
+      "geometry": { "x": -81.55, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Cedar Falls Dump (closed)",
+        "address": "Off Creek Rd, Cedar Falls, NC 28702",
+        "status": "closed",
+        "type": "MSW",
+        "daily_capacity_tons": 0
+      },
+      "geometry": { "x": -81.42, "y": 36.00, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_dams": [
+    {
+      "attributes": {
+        "name": "Cascade River Dam",
+        "river": "Cascade River",
+        "height_ft": 95,
+        "hazard_class": "high",
+        "year_built": 1948,
+        "downstream_pop_at_risk": 3200
+      },
+      "geometry": { "x": -81.42, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "South Fork Reservoir Dam",
+        "river": "South Fork Creek",
+        "height_ft": 52,
+        "hazard_class": "significant",
+        "year_built": 1962,
+        "downstream_pop_at_risk": 850
+      },
+      "geometry": { "x": -81.52, "y": 35.99, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Mountain Lake Dam",
+        "river": "Valley Creek",
+        "height_ft": 38,
+        "hazard_class": "significant",
+        "year_built": 1955,
+        "downstream_pop_at_risk": 420
+      },
+      "geometry": { "x": -81.45, "y": 36.08, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "infra_prisons": [
+    {
+      "attributes": {
+        "name": "Cascade County Detention Center",
+        "address": "150 Justice Way, Ridgeton, NC 28701",
+        "type": "county jail",
+        "population": 142,
+        "security_level": "medium"
+      },
+      "geometry": { "x": -81.50, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "name": "Mountain View Correctional Institution",
+        "address": "6000 Prison Rd, Pinewood, NC 28703",
+        "type": "state",
+        "population": 680,
+        "security_level": "medium"
+      },
+      "geometry": { "x": -81.54, "y": 36.08, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "cr_no_hs_diploma": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_pop_25plus": 4820, "no_diploma_count": 578, "no_diploma_pct": 12.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_pop_25plus": 3150, "no_diploma_count": 536, "no_diploma_pct": 17.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_pop_25plus": 2890, "no_diploma_count": 549, "no_diploma_pct": 19.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_pop_25plus": 3420, "no_diploma_count": 581, "no_diploma_pct": 17.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_pop_25plus": 2680, "no_diploma_count": 536, "no_diploma_pct": 20.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_pop_25plus": 2540, "no_diploma_count": 457, "no_diploma_pct": 18.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_race_ethnicity": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_pop": 7250, "white_pct": 78.2, "black_pct": 10.5, "hispanic_pct": 7.8, "asian_pct": 1.2, "other_pct": 2.3 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_pop": 4800, "white_pct": 85.6, "black_pct": 5.2, "hispanic_pct": 6.1, "asian_pct": 0.4, "other_pct": 2.7 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_pop": 4200, "white_pct": 88.1, "black_pct": 3.8, "hispanic_pct": 5.4, "asian_pct": 0.3, "other_pct": 2.4 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_pop": 5100, "white_pct": 82.4, "black_pct": 7.1, "hispanic_pct": 7.2, "asian_pct": 0.6, "other_pct": 2.7 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_pop": 3900, "white_pct": 72.5, "black_pct": 15.8, "hispanic_pct": 8.2, "asian_pct": 0.5, "other_pct": 3.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_pop": 3650, "white_pct": 90.2, "black_pct": 2.8, "hispanic_pct": 4.5, "asian_pct": 0.2, "other_pct": 2.3 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_vehicle": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_households": 2950, "no_vehicle_count": 354, "no_vehicle_pct": 12.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_households": 1920, "no_vehicle_count": 173, "no_vehicle_pct": 9.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_households": 1680, "no_vehicle_count": 134, "no_vehicle_pct": 8.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_households": 2050, "no_vehicle_count": 205, "no_vehicle_pct": 10.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_households": 1540, "no_vehicle_count": 170, "no_vehicle_pct": 11.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_households": 1420, "no_vehicle_count": 114, "no_vehicle_pct": 8.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_single_parent": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "households_with_children": 820, "single_parent_count": 246, "single_parent_pct": 30.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "households_with_children": 540, "single_parent_count": 146, "single_parent_pct": 27.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "households_with_children": 480, "single_parent_count": 120, "single_parent_pct": 25.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "households_with_children": 590, "single_parent_count": 171, "single_parent_pct": 29.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "households_with_children": 420, "single_parent_count": 139, "single_parent_pct": 33.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "households_with_children": 380, "single_parent_count": 95, "single_parent_pct": 25.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_smartphone": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_households": 2950, "no_smartphone_count": 354, "no_smartphone_pct": 12.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_households": 1920, "no_smartphone_count": 326, "no_smartphone_pct": 17.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_households": 1680, "no_smartphone_count": 336, "no_smartphone_pct": 20.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_households": 2050, "no_smartphone_count": 308, "no_smartphone_pct": 15.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_households": 1540, "no_smartphone_count": 339, "no_smartphone_pct": 22.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_households": 1420, "no_smartphone_count": 270, "no_smartphone_pct": 19.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_no_broadband": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_households": 2950, "no_broadband_count": 413, "no_broadband_pct": 14.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_households": 1920, "no_broadband_count": 461, "no_broadband_pct": 24.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_households": 1680, "no_broadband_count": 487, "no_broadband_pct": 29.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_households": 2050, "no_broadband_count": 431, "no_broadband_pct": 21.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_households": 1540, "no_broadband_count": 462, "no_broadband_pct": 30.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_households": 1420, "no_broadband_count": 383, "no_broadband_pct": 27.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_mobile_homes_pct": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_housing_units": 3200, "mobile_home_count": 288, "mobile_home_pct": 9.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_housing_units": 2100, "mobile_home_count": 441, "mobile_home_pct": 21.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_housing_units": 1850, "mobile_home_count": 463, "mobile_home_pct": 25.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_housing_units": 2250, "mobile_home_count": 405, "mobile_home_pct": 18.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_housing_units": 1700, "mobile_home_count": 408, "mobile_home_pct": 24.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_housing_units": 1550, "mobile_home_count": 349, "mobile_home_pct": 22.5 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_owner_occupied": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_housing_units": 3200, "owner_occupied_count": 2080, "owner_occupied_pct": 65.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_housing_units": 2100, "owner_occupied_count": 1491, "owner_occupied_pct": 71.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_housing_units": 1850, "owner_occupied_count": 1388, "owner_occupied_pct": 75.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_housing_units": 2250, "owner_occupied_count": 1553, "owner_occupied_pct": 69.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_housing_units": 1700, "owner_occupied_count": 1156, "owner_occupied_pct": 68.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_housing_units": 1550, "owner_occupied_count": 1116, "owner_occupied_pct": 72.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_housing_costs": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "renter_households": 1030, "cost_burdened_count": 412, "cost_burdened_pct": 40.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "renter_households": 557, "cost_burdened_count": 200, "cost_burdened_pct": 36.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "renter_households": 420, "cost_burdened_count": 143, "cost_burdened_pct": 34.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "renter_households": 636, "cost_burdened_count": 241, "cost_burdened_pct": 38.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "renter_households": 493, "cost_burdened_count": 212, "cost_burdened_pct": 43.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "renter_households": 398, "cost_burdened_count": 139, "cost_burdened_pct": 35.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_flood_insurance": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "sfha_structures": 180, "insured_count": 72, "insured_pct": 40.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "sfha_structures": 320, "insured_count": 96, "insured_pct": 30.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "sfha_structures": 145, "insured_count": 36, "insured_pct": 25.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "sfha_structures": 280, "insured_count": 78, "insured_pct": 28.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "sfha_structures": 95, "insured_count": 21, "insured_pct": 22.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "sfha_structures": 210, "insured_count": 55, "insured_pct": 26.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_hospital_count": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "hospitals": 1, "pop_per_hospital": 7250 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "hospitals": 0, "pop_per_hospital": null }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_medical_capacity": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "primary_care_physicians": 12, "specialists": 8, "per_100k_rate": 276.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "primary_care_physicians": 2, "specialists": 0, "per_100k_rate": 42.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "primary_care_physicians": 1, "specialists": 0, "per_100k_rate": 24.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "primary_care_physicians": 3, "specialists": 1, "per_100k_rate": 78.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "primary_care_physicians": 1, "specialists": 0, "per_100k_rate": 26.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "primary_care_physicians": 1, "specialists": 0, "per_100k_rate": 27.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_uninsured": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_pop": 7250, "uninsured_count": 870, "uninsured_pct": 12.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_pop": 4800, "uninsured_count": 768, "uninsured_pct": 16.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_pop": 4200, "uninsured_count": 756, "uninsured_pct": 18.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_pop": 5100, "uninsured_count": 765, "uninsured_pct": 15.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_pop": 3900, "uninsured_count": 702, "uninsured_pct": 18.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_pop": 3650, "uninsured_count": 584, "uninsured_pct": 16.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_power_dependent": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "medicare_beneficiaries": 1450, "power_dependent_count": 45, "device_types": "oxygen concentrators, CPAP, ventilators" }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "medicare_beneficiaries": 1020, "power_dependent_count": 38, "device_types": "oxygen concentrators, CPAP" }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "medicare_beneficiaries": 980, "power_dependent_count": 42, "device_types": "oxygen concentrators, CPAP, dialysis" }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "medicare_beneficiaries": 1100, "power_dependent_count": 35, "device_types": "oxygen concentrators, CPAP" }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "medicare_beneficiaries": 850, "power_dependent_count": 32, "device_types": "oxygen concentrators, CPAP" }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "medicare_beneficiaries": 780, "power_dependent_count": 29, "device_types": "oxygen concentrators, CPAP" }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_unemployed": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "labor_force": 3580, "unemployed_count": 179, "unemployment_rate": 5.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "labor_force": 2280, "unemployed_count": 160, "unemployment_rate": 7.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "labor_force": 1950, "unemployed_count": 156, "unemployment_rate": 8.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "labor_force": 2450, "unemployed_count": 147, "unemployment_rate": 6.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "labor_force": 1780, "unemployed_count": 160, "unemployment_rate": 9.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "labor_force": 1680, "unemployed_count": 118, "unemployment_rate": 7.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_unemployed_women": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "female_labor_force": 1720, "unemployed_women": 95, "female_unemployment_rate": 5.5 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "female_labor_force": 1050, "unemployed_women": 84, "female_unemployment_rate": 8.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "female_labor_force": 890, "unemployed_women": 80, "female_unemployment_rate": 9.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "female_labor_force": 1150, "unemployed_women": 81, "female_unemployment_rate": 7.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "female_labor_force": 820, "unemployed_women": 82, "female_unemployment_rate": 10.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "female_labor_force": 770, "unemployed_women": 58, "female_unemployment_rate": 7.5 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_gini": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "gini_index": 0.42 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "gini_index": 0.45 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "gini_index": 0.47 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "gini_index": 0.44 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "gini_index": 0.48 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "gini_index": 0.46 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_predominant_sector": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "predominant_sector": "Health Care & Social Assistance", "sector_pct": 22.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "predominant_sector": "Manufacturing", "sector_pct": 28.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "predominant_sector": "Agriculture & Forestry", "sector_pct": 24.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "predominant_sector": "Manufacturing", "sector_pct": 25.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "predominant_sector": "Retail Trade", "sector_pct": 20.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "predominant_sector": "Agriculture & Forestry", "sector_pct": 30.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_civic_orgs": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "civic_org_count": 14, "per_10k_rate": 19.3 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "civic_org_count": 6, "per_10k_rate": 12.5 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "civic_org_count": 4, "per_10k_rate": 9.5 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "civic_org_count": 7, "per_10k_rate": 13.7 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "civic_org_count": 5, "per_10k_rate": 12.8 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "civic_org_count": 3, "per_10k_rate": 8.2 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_religious_affiliation": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "total_pop": 7250, "no_affiliation_count": 2175, "no_affiliation_pct": 30.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "total_pop": 4800, "no_affiliation_count": 1200, "no_affiliation_pct": 25.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "total_pop": 4200, "no_affiliation_count": 924, "no_affiliation_pct": 22.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "total_pop": 5100, "no_affiliation_count": 1326, "no_affiliation_pct": 26.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "total_pop": 3900, "no_affiliation_count": 1092, "no_affiliation_pct": 28.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "total_pop": 3650, "no_affiliation_count": 730, "no_affiliation_pct": 20.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_inactive_voters": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "registered_voters": 4850, "inactive_count": 485, "inactive_pct": 10.0 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "registered_voters": 3100, "inactive_count": 434, "inactive_pct": 14.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "registered_voters": 2650, "inactive_count": 424, "inactive_pct": 16.0 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "registered_voters": 3350, "inactive_count": 402, "inactive_pct": 12.0 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "registered_voters": 2400, "inactive_count": 408, "inactive_pct": 17.0 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "registered_voters": 2280, "inactive_count": 342, "inactive_pct": 15.0 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "cr_population_change": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "pop_2010": 6850, "pop_2020": 7250, "change_pct": 5.8 }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "pop_2010": 4950, "pop_2020": 4800, "change_pct": -3.0 }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "pop_2010": 4500, "pop_2020": 4200, "change_pct": -6.7 }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "pop_2010": 5200, "pop_2020": 5100, "change_pct": -1.9 }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "pop_2010": 3700, "pop_2020": 3900, "change_pct": 5.4 }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "pop_2010": 3800, "pop_2020": 3650, "change_pct": -3.9 }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_stream_gauges": [
+    {
+      "attributes": { "gauge_id": "03451200", "name": "Cascade River at Ridgeton", "river": "Cascade River", "current_level_ft": 8.2, "flood_stage_ft": 12.0, "status": "action" },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "03451250", "name": "Valley Creek near Cedar Falls", "river": "Valley Creek", "current_level_ft": 5.8, "flood_stage_ft": 9.0, "status": "normal" },
+      "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "03451300", "name": "South Fork Creek at South Fork", "river": "South Fork Creek", "current_level_ft": 6.1, "flood_stage_ft": 8.5, "status": "action" },
+      "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "03451180", "name": "Mountain Brook at Hwy 19", "river": "Mountain Brook", "current_level_ft": 3.4, "flood_stage_ft": 7.0, "status": "normal" },
+      "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "gauge_id": "03451350", "name": "Cascade River below dam", "river": "Cascade River", "current_level_ft": 10.5, "flood_stage_ft": 14.0, "status": "action" },
+      "geometry": { "x": -81.41, "y": 36.02, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_river_flooding": [
+    {
+      "attributes": { "name": "Cascade River at Ridgeton", "river": "Cascade River", "outlook": "possible", "valid_through": "2026-04-21T12:00:00Z" },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "South Fork Creek at South Fork", "river": "South Fork Creek", "outlook": "possible", "valid_through": "2026-04-21T12:00:00Z" },
+      "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Valley Creek near Cedar Falls", "river": "Valley Creek", "outlook": "no_flooding", "valid_through": "2026-04-21T12:00:00Z" },
+      "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "name": "Mountain Brook at Hwy 19", "river": "Mountain Brook", "outlook": "no_flooding", "valid_through": "2026-04-21T12:00:00Z" },
+      "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_severe_outlook": [
+    {
+      "attributes": { "area_name": "Cascade County", "risk_level": "moderate", "valid_date": "2026-04-20" },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "area_name": "Western NC Foothills", "risk_level": "enhanced", "valid_date": "2026-04-20" },
+      "geometry": { "x": -81.45, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_excessive_rainfall": [
+    {
+      "attributes": { "area_name": "Cascade County", "risk_level": "slight", "valid_date": "2026-04-20" },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "area_name": "Western NC Mountains", "risk_level": "marginal", "valid_date": "2026-04-21" },
+      "geometry": { "x": -81.50, "y": 36.06, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_tornado_tracks": [
+    {
+      "attributes": {
+        "event_id": "TOR-2026-0420-001",
+        "date": "2026-04-20",
+        "ef_scale": "EF2",
+        "length_miles": 6.8,
+        "width_yards": 300,
+        "injuries": 12,
+        "fatalities": 0,
+        "start_lat": 35.995,
+        "start_lon": -81.55,
+        "end_lat": 36.045,
+        "end_lon": -81.46
+      },
+      "geometry": { "x": -81.505, "y": 36.02, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "event_id": "TOR-2018-0312-014",
+        "date": "2018-03-12",
+        "ef_scale": "EF1",
+        "length_miles": 3.2,
+        "width_yards": 150,
+        "injuries": 2,
+        "fatalities": 0,
+        "start_lat": 36.05,
+        "start_lon": -81.50,
+        "end_lat": 36.075,
+        "end_lon": -81.44
+      },
+      "geometry": { "x": -81.47, "y": 36.0625, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "event_id": "TOR-2011-0427-038",
+        "date": "2011-04-27",
+        "ef_scale": "EF3",
+        "length_miles": 12.4,
+        "width_yards": 500,
+        "injuries": 45,
+        "fatalities": 3,
+        "start_lat": 35.98,
+        "start_lon": -81.60,
+        "end_lat": 36.08,
+        "end_lon": -81.40
+      },
+      "geometry": { "x": -81.50, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_seismic": [
+    {
+      "attributes": { "area_name": "Cascade County - Eastern", "pga_2pct_50yr": 0.08, "risk_level": "low" },
+      "geometry": { "x": -81.43, "y": 36.03, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": { "area_name": "Cascade County - Western", "pga_2pct_50yr": 0.06, "risk_level": "low" },
+      "geometry": { "x": -81.52, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_national_risk": [
+    { "attributes": { "tract_id": "37099000100", "tract_name": "Ridgeton Central", "composite_score": 42.5, "expected_annual_loss_usd": 1850000, "top_hazard": "Riverine Flooding" }, "geometry": { "x": -81.49, "y": 36.04, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000200", "tract_name": "Valley Creek", "composite_score": 55.2, "expected_annual_loss_usd": 2400000, "top_hazard": "Riverine Flooding" }, "geometry": { "x": -81.43, "y": 36.02, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000300", "tract_name": "Mountain Brook", "composite_score": 38.1, "expected_annual_loss_usd": 980000, "top_hazard": "Landslide" }, "geometry": { "x": -81.45, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000400", "tract_name": "Cedar Falls", "composite_score": 48.7, "expected_annual_loss_usd": 1620000, "top_hazard": "Tornado" }, "geometry": { "x": -81.44, "y": 36.01, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000500", "tract_name": "Pinewood", "composite_score": 35.4, "expected_annual_loss_usd": 720000, "top_hazard": "Strong Wind" }, "geometry": { "x": -81.53, "y": 36.07, "spatialReference": { "wkid": 4326 } } },
+    { "attributes": { "tract_id": "37099000600", "tract_name": "South Fork", "composite_score": 51.8, "expected_annual_loss_usd": 1980000, "top_hazard": "Riverine Flooding" }, "geometry": { "x": -81.51, "y": 36.00, "spatialReference": { "wkid": 4326 } } }
+  ],
+
+  "haz_climate_outlooks": [
+    {
+      "attributes": { "area_name": "Western North Carolina", "temp_outlook": "above normal", "precip_outlook": "above normal", "valid_period": "April 20-26, 2026" },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    }
+  ],
+
+  "haz_wea": [
+    {
+      "attributes": {
+        "alert_id": "WEA-2026-0420-TOR-001",
+        "alert_type": "tornado_warning",
+        "issued": "2026-04-20T14:32:00Z",
+        "expires": "2026-04-20T15:15:00Z",
+        "headline": "Tornado Warning for central Cascade County including Ridgeton until 3:15 PM EDT"
+      },
+      "geometry": { "x": -81.48, "y": 36.04, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "alert_id": "WEA-2026-0420-SVR-001",
+        "alert_type": "severe_thunderstorm",
+        "issued": "2026-04-20T13:45:00Z",
+        "expires": "2026-04-20T14:45:00Z",
+        "headline": "Severe Thunderstorm Warning for Cascade County - 70 mph winds, quarter size hail"
+      },
+      "geometry": { "x": -81.50, "y": 36.05, "spatialReference": { "wkid": 4326 } }
+    },
+    {
+      "attributes": {
+        "alert_id": "WEA-2026-0420-TOR-002",
+        "alert_type": "tornado_warning",
+        "issued": "2026-04-20T15:05:00Z",
+        "expires": "2026-04-20T15:45:00Z",
+        "headline": "Tornado Warning for southern Cascade County including Cedar Falls and South Fork until 3:45 PM EDT"
+      },
+      "geometry": { "x": -81.46, "y": 36.01, "spatialReference": { "wkid": 4326 } }
+    }
+  ]
+}
