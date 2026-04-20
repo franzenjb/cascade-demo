@@ -427,6 +427,211 @@ export function configFor(category: string, rows: FeatureRow[]): CategoryConfig 
       };
     }
 
+    case "dam_hospital": {
+      const beds = sum(attrs, "bed_count");
+      const er24h = attrs.filter((a) => a.has_er_24h === true).length;
+      const inZone = attrs.filter((a) => a.in_inundation_zone).length;
+      return {
+        title: "Hospitals",
+        summary: (
+          <Totals
+            items={[
+              { label: "Hospitals", value: String(rows.length) },
+              { label: "Beds", value: beds.toLocaleString() },
+              { label: "24h ER", value: String(er24h) },
+              ...(inZone > 0
+                ? [{ label: "In flood zone", value: String(inZone), warn: true }]
+                : []),
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Beds", value: a.bed_count },
+                { label: "Trauma", value: a.trauma_level },
+                { label: "24h ER", value: a.has_er_24h ? "Yes" : "No" },
+                a.in_inundation_zone && {
+                  label: "In flood zone",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
+    case "dam_nursing_home": {
+      const residents = sum(attrs, "current_residents");
+      const inZone = attrs.filter((a) => a.in_inundation_zone).length;
+      const mobilityPct = attrs.length > 0
+        ? Math.round(
+            attrs.reduce((s, a) => s + (Number(a.mobility_impaired_pct) || 0), 0) /
+              attrs.length *
+              100
+          )
+        : 0;
+      return {
+        title: "Nursing Homes",
+        summary: (
+          <Totals
+            items={[
+              { label: "Facilities", value: String(rows.length) },
+              { label: "Residents", value: residents.toLocaleString() },
+              { label: "Avg mobility-impaired", value: `${mobilityPct}%` },
+              ...(inZone > 0
+                ? [{ label: "In flood zone", value: String(inZone), warn: true }]
+                : []),
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Beds", value: a.bed_count },
+                { label: "Residents", value: a.current_residents },
+                {
+                  label: "Mobility-impaired",
+                  value: a.mobility_impaired_pct
+                    ? `${Math.round(a.mobility_impaired_pct * 100)}%`
+                    : "—",
+                },
+                a.in_inundation_zone && {
+                  label: "In flood zone",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
+    case "dam_school": {
+      const enrollment = sum(attrs, "enrollment");
+      const inZone = attrs.filter((a) => a.in_inundation_zone).length;
+      return {
+        title: "Schools",
+        summary: (
+          <Totals
+            items={[
+              { label: "Schools", value: String(rows.length) },
+              { label: "Students", value: enrollment.toLocaleString() },
+              ...(inZone > 0
+                ? [{ label: "In flood zone", value: String(inZone), warn: true }]
+                : []),
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Grades", value: a.grade_range },
+                { label: "Enrollment", value: a.enrollment },
+                a.in_inundation_zone && {
+                  label: "In flood zone",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
+    case "dam_shelter": {
+      const capacity = sum(attrs, "capacity");
+      const open = attrs.filter((a) => a.status === "open").length;
+      const standby = attrs.filter((a) => a.status === "standby").length;
+      const inZone = attrs.filter((a) => a.in_inundation_zone).length;
+      return {
+        title: "Red Cross Shelters",
+        summary: (
+          <Totals
+            items={[
+              { label: "Shelters", value: String(rows.length) },
+              { label: "Capacity", value: capacity.toLocaleString() },
+              { label: "Open", value: String(open) },
+              { label: "Standby", value: String(standby) },
+              ...(inZone > 0
+                ? [{ label: "In flood zone", value: String(inZone), warn: true }]
+                : []),
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Type", value: a.facility_type },
+                { label: "Capacity", value: a.capacity },
+                { label: "Status", value: a.status },
+                a.in_inundation_zone && {
+                  label: "In flood zone",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
+    case "dam_water_plant": {
+      const totalCapacity = sum(attrs, "capacity_mgd");
+      const servePop = sum(attrs, "serves_population");
+      const inZone = attrs.filter((a) => a.in_inundation_zone).length;
+      return {
+        title: "Water Treatment Plants",
+        summary: (
+          <Totals
+            items={[
+              { label: "Facilities", value: String(rows.length) },
+              { label: "Capacity", value: `${totalCapacity} MGD` },
+              { label: "Serves", value: servePop.toLocaleString() },
+              ...(inZone > 0
+                ? [{ label: "In flood zone", value: String(inZone), warn: true }]
+                : []),
+            ]}
+          />
+        ),
+        renderRow: (a) => (
+          <>
+            <RowHeader name={a.name} />
+            <RowAddress value={a.address} />
+            <RowTags
+              tags={[
+                { label: "Type", value: (a.facility_type || "").replace(/_/g, " ") },
+                { label: "Capacity", value: a.capacity_mgd ? `${a.capacity_mgd} MGD` : "—" },
+                { label: "Serves", value: a.serves_population?.toLocaleString() },
+                a.in_inundation_zone && {
+                  label: "In flood zone",
+                  value: "Yes",
+                  warn: true,
+                },
+              ]}
+            />
+          </>
+        ),
+      };
+    }
+
     default:
       return {
         title: category,
