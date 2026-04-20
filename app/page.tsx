@@ -8,7 +8,8 @@ import AssetPanel from "@/components/AssetPanel";
 import AllAssetsAccordion from "@/components/AllAssetsAccordion";
 import ThemeToggle from "@/components/ThemeToggle";
 import HelpModal from "@/components/HelpModal";
-import type { ChatMessage, FeatureRow, MapInstruction } from "@/lib/types";
+import type { ChatMessage, CatalogLayer, FeatureRow, MapInstruction } from "@/lib/types";
+import LayerDiscovery from "@/components/LayerDiscovery";
 
 type TornadoCategory =
   | "mobile_home_park"
@@ -233,7 +234,7 @@ const SCENARIO_CONFIG: Record<
   },
 };
 
-type RightTab = "conversation" | "drill";
+type RightTab = "conversation" | "drill" | "layers";
 
 interface FocusFeature {
   lon: number;
@@ -262,6 +263,7 @@ export default function HomePage() {
   const [scenarioId, setScenarioId] = useState<string | null>(null);
   const [warningType, setWarningType] = useState<WarningType | null>(null);
   const [focusFeature, setFocusFeature] = useState<FocusFeature | null>(null);
+  const [enabledLayers, setEnabledLayers] = useState<Set<string>>(new Set());
   const focusNonce = useRef(0);
   const [homeSignal, setHomeSignal] = useState(0);
   const [accordionResetSignal, setAccordionResetSignal] = useState(0);
@@ -499,6 +501,25 @@ export default function HomePage() {
     setRightTab("drill");
   };
 
+  const handleToggleLayer = (layerId: string, _layer: CatalogLayer) => {
+    setEnabledLayers((prev) => {
+      const next = new Set(prev);
+      if (next.has(layerId)) {
+        next.delete(layerId);
+        // Remove graphics for this layer
+        setMapInstructions((mi) => [
+          ...mi,
+          { action: "remove_by_label", layer_label: layerId },
+        ]);
+      } else {
+        next.add(layerId);
+        // Future: fetch features from AGOL and add to map
+        // For now, toggle state is tracked for the UI
+      }
+      return next;
+    });
+  };
+
   const handleHome = () => {
     setActiveCategory(null);
     setRightTab("drill");
@@ -534,8 +555,8 @@ export default function HomePage() {
     ];
     if (metrics) {
       lines.push(
-        `Population in warning footprint: ${metrics.pop.toLocaleString()} ` +
-          `(${fmtPct(metrics.pctOver65)} over 65, ${fmtPct(metrics.pctLep)} LEP, ` +
+        `Residents in perimeter: ${metrics.pop.toLocaleString()} ` +
+          `(${fmtPct(metrics.pctOver65)} over 65, ${fmtPct(metrics.pctLep)} limited English, ` +
           `${fmtPct(metrics.pctDisability)} with a disability)`
       );
       lines.push("");
@@ -603,12 +624,13 @@ export default function HomePage() {
           </div>
 
           {metrics && (
-            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-arc-cream/50 dark:bg-arc-black/40 px-3 py-1 flex items-center gap-4 text-[11px] font-data">
-              <span className="font-bold text-arc-black dark:text-arc-cream">{metrics.pop.toLocaleString()}</span>
-              <span className="text-arc-gray-500 dark:text-arc-cream/60">in footprint</span>
-              <span className="text-arc-gray-300 dark:text-arc-cream/30">|</span>
-              <span className="text-arc-gray-500 dark:text-arc-cream/60">65+ <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctOver65)}</strong></span>
-              <span className="text-arc-gray-500 dark:text-arc-cream/60">LEP <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctLep)}</strong></span>
+            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-arc-cream/50 dark:bg-arc-black/40 px-3 py-1.5 flex items-center justify-between text-[12px] font-data">
+              <span>
+                <span className="font-bold text-arc-black dark:text-arc-cream">{metrics.pop.toLocaleString()}</span>
+                <span className="text-arc-gray-500 dark:text-arc-cream/60 ml-1.5">residents in perimeter</span>
+              </span>
+              <span className="text-arc-gray-500 dark:text-arc-cream/60">Over 65 <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctOver65)}</strong></span>
+              <span className="text-arc-gray-500 dark:text-arc-cream/60">Limited English <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctLep)}</strong></span>
               <span className="text-arc-gray-500 dark:text-arc-cream/60">Disability <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctDisability)}</strong></span>
             </div>
           )}
@@ -683,6 +705,12 @@ export default function HomePage() {
                 }
               />
             )}
+            <TabButton
+              active={rightTab === "layers"}
+              onClick={() => setRightTab("layers")}
+              label="Layers"
+              count={enabledLayers.size > 0 ? enabledLayers.size : undefined}
+            />
           </div>
 
           <div
@@ -731,6 +759,17 @@ export default function HomePage() {
               )}
             </div>
           )}
+
+          <div
+            className="flex-1 flex flex-col min-h-0"
+            style={{ display: rightTab === "layers" ? "flex" : "none" }}
+          >
+            <LayerDiscovery
+              enabledLayers={enabledLayers}
+              onToggleLayer={handleToggleLayer}
+              warningType={warningType}
+            />
+          </div>
         </section>
       </main>
 

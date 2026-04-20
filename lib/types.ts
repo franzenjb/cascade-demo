@@ -110,7 +110,7 @@ export type TornadoScenario = Scenario;
 // ═══════════════════════════════════════════════════════════
 
 export interface MapInstruction {
-  action: "draw" | "clear" | "zoom_to" | "highlight";
+  action: "draw" | "clear" | "zoom_to" | "highlight" | "remove_by_label";
   geometry?: GeoJSONGeometry;
   style?: {
     color?: string;
@@ -119,6 +119,31 @@ export interface MapInstruction {
     scale?: number;
   };
   layer_label?: string;
+}
+
+// ═══════════════════════════════════════════════════════════
+// Layer Discovery Catalog Types
+// ═══════════════════════════════════════════════════════════
+
+export type LayerStatus = "live" | "demo" | "coming_soon";
+export type LayerCategory = "infrastructure" | "community_resilience" | "hazards_weather";
+
+export interface CatalogLayer {
+  id: string;
+  name: string;
+  description: string;
+  category: LayerCategory;
+  subcategory: string;
+  status: LayerStatus;
+  source: string;
+  aliases: string[];
+  scenario_layers?: Partial<Record<ScenarioWarningType, string>>;
+}
+
+export interface LayerCatalog {
+  version: string;
+  last_updated: string;
+  layers: CatalogLayer[];
 }
 
 // ═══════════════════════════════════════════════════════════

@@ -10,6 +10,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { getCatalogForSystemPrompt } from "./catalog";
+import { getCatalogSummaryForAI } from "./layer_discovery";
 
 let cachedBasePrompt: string | null = null;
 
@@ -47,6 +48,11 @@ export function buildSystemPrompt(): Array<{
     {
       type: "text",
       text: `\n\n## Live Semantic Catalog\n\nThe following is the current semantic catalog. Use this authoritative list to decide which layers to query.\n\n\`\`\`json\n${catalogJson}\n\`\`\``,
+      cache_control: { type: "ephemeral" },
+    },
+    {
+      type: "text",
+      text: `\n\n## Full Layer Discovery Catalog\n\nThe following catalog shows ALL layers available or planned in the system, matching FEMA RAPT coverage. Layers with status "demo" have synthetic data you can query. Layers with status "coming_soon" do not have data yet but are on the roadmap. When users ask about coming_soon layers, acknowledge they exist, explain what data they would provide (source, description), and note they are planned.\n\n\`\`\`json\n${getCatalogSummaryForAI()}\n\`\`\``,
       cache_control: { type: "ephemeral" },
     },
   ];

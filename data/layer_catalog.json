@@ -1,0 +1,769 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-04-20",
+  "layers": [
+    {
+      "id": "infra_hospitals",
+      "name": "Hospitals",
+      "description": "Trauma centers, ERs, and general hospitals with bed counts and helipad status",
+      "category": "infrastructure",
+      "subcategory": "Healthcare",
+      "status": "demo",
+      "source": "HIFLD",
+      "aliases": ["hospital", "trauma center", "ER", "emergency room", "medical center", "beds", "helipad"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Medical_Facilities",
+        "wildfire": "DEMO_FireArea_Hospitals",
+        "dam_break": "DEMO_DamBreak_Hospitals"
+      }
+    },
+    {
+      "id": "infra_nursing_homes",
+      "name": "Nursing Homes",
+      "description": "Skilled nursing facilities, assisted living, and long-term care with resident counts and mobility data",
+      "category": "infrastructure",
+      "subcategory": "Healthcare",
+      "status": "demo",
+      "source": "HIFLD",
+      "aliases": ["nursing home", "assisted living", "senior care", "SNF", "skilled nursing", "long-term care", "elderly care", "mobility impaired"],
+      "scenario_layers": {
+        "dam_break": "DEMO_DamBreak_Nursing_Homes"
+      }
+    },
+    {
+      "id": "infra_pharmacies",
+      "name": "Pharmacies",
+      "description": "Retail and hospital pharmacies with RxOpen operational status during disasters",
+      "category": "infrastructure",
+      "subcategory": "Healthcare",
+      "status": "coming_soon",
+      "source": "HIFLD / RxOpen",
+      "aliases": ["pharmacy", "drugstore", "CVS", "Walgreens", "prescription", "medication", "RxOpen"]
+    },
+    {
+      "id": "infra_urgent_care",
+      "name": "Urgent Care Facilities",
+      "description": "Walk-in clinics and urgent care centers with hours and capabilities",
+      "category": "infrastructure",
+      "subcategory": "Healthcare",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["urgent care", "walk-in clinic", "clinic", "immediate care"]
+    },
+    {
+      "id": "infra_dialysis",
+      "name": "Dialysis Centers",
+      "description": "Dialysis clinics with chair counts and home-patient rosters for evacuation planning",
+      "category": "infrastructure",
+      "subcategory": "Healthcare",
+      "status": "demo",
+      "source": "HIFLD",
+      "aliases": ["dialysis", "kidney", "renal", "DaVita", "Fresenius", "kidney care"],
+      "scenario_layers": {
+        "wildfire": "DEMO_FireArea_Dialysis_Clinics"
+      }
+    },
+    {
+      "id": "infra_public_health",
+      "name": "Public Health Departments",
+      "description": "County and city public health offices and community health centers",
+      "category": "infrastructure",
+      "subcategory": "Healthcare",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["public health", "health department", "community health", "county health"]
+    },
+    {
+      "id": "infra_fire_stations",
+      "name": "Fire Stations",
+      "description": "Municipal, volunteer, and CAL FIRE stations with apparatus type and staffing",
+      "category": "infrastructure",
+      "subcategory": "Emergency Services",
+      "status": "demo",
+      "source": "HIFLD",
+      "aliases": ["fire station", "fire department", "engine", "truck company", "rescue", "CAL FIRE", "RFD", "fire suppression", "first responders"],
+      "scenario_layers": {
+        "wildfire": "DEMO_FireArea_Fire_Stations"
+      }
+    },
+    {
+      "id": "infra_law_enforcement",
+      "name": "Law Enforcement",
+      "description": "Police stations, sheriff offices, and CHP posts with jurisdiction and staffing",
+      "category": "infrastructure",
+      "subcategory": "Emergency Services",
+      "status": "demo",
+      "source": "HIFLD",
+      "aliases": ["police", "sheriff", "law enforcement", "CHP", "police station", "patrol", "highway patrol"],
+      "scenario_layers": {
+        "wildfire": "DEMO_FireArea_Police_Stations"
+      }
+    },
+    {
+      "id": "infra_911_areas",
+      "name": "911 Service Area Boundaries",
+      "description": "PSAP service area boundaries for emergency call routing",
+      "category": "infrastructure",
+      "subcategory": "Emergency Services",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["911", "PSAP", "emergency call", "dispatch", "service area"]
+    },
+    {
+      "id": "infra_public_schools",
+      "name": "Public Schools",
+      "description": "K-12 public schools with enrollment, grade levels, and shelter agreements",
+      "category": "infrastructure",
+      "subcategory": "Education",
+      "status": "demo",
+      "source": "HIFLD",
+      "aliases": ["public school", "elementary", "middle school", "high school", "K-12", "students", "kids", "children", "enrollment"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Schools",
+        "dam_break": "DEMO_DamBreak_Schools"
+      }
+    },
+    {
+      "id": "infra_private_schools",
+      "name": "Private Schools",
+      "description": "Private and parochial K-12 schools with enrollment data",
+      "category": "infrastructure",
+      "subcategory": "Education",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["private school", "parochial", "charter school", "academy"]
+    },
+    {
+      "id": "infra_colleges",
+      "name": "Colleges & Universities",
+      "description": "Higher education institutions with enrollment and campus boundaries",
+      "category": "infrastructure",
+      "subcategory": "Education",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["college", "university", "campus", "higher education", "community college"]
+    },
+    {
+      "id": "infra_mobile_homes",
+      "name": "Mobile Home Parks",
+      "description": "Manufactured housing communities with unit counts — high wind vulnerability",
+      "category": "infrastructure",
+      "subcategory": "Community",
+      "status": "demo",
+      "source": "HIFLD",
+      "aliases": ["mobile home", "trailer park", "manufactured housing", "MHP", "mobile home park"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Mobile_Home_Parks"
+      }
+    },
+    {
+      "id": "infra_worship",
+      "name": "Places of Worship",
+      "description": "Churches, mosques, temples, and synagogues — often used as ad-hoc shelters",
+      "category": "infrastructure",
+      "subcategory": "Community",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["church", "mosque", "temple", "synagogue", "worship", "congregation", "faith-based"]
+    },
+    {
+      "id": "infra_snap",
+      "name": "SNAP Authorized Retailers",
+      "description": "Grocery stores and retailers accepting SNAP/EBT — food access during disasters",
+      "category": "infrastructure",
+      "subcategory": "Community",
+      "status": "coming_soon",
+      "source": "USDA",
+      "aliases": ["SNAP", "EBT", "food stamps", "grocery", "food access", "food desert"]
+    },
+    {
+      "id": "infra_power_plants",
+      "name": "Power Plants",
+      "description": "Electricity generation facilities by fuel type and capacity",
+      "category": "infrastructure",
+      "subcategory": "Energy & Utilities",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["power plant", "generator", "electricity", "energy", "power generation"]
+    },
+    {
+      "id": "infra_transmission",
+      "name": "Electric Transmission Lines",
+      "description": "High-voltage transmission line corridors — PSPS and wildfire exposure",
+      "category": "infrastructure",
+      "subcategory": "Energy & Utilities",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["transmission line", "power line", "high voltage", "electric grid", "PSPS"]
+    },
+    {
+      "id": "infra_wastewater",
+      "name": "Wastewater Treatment Plants",
+      "description": "Municipal wastewater and water treatment facilities with capacity",
+      "category": "infrastructure",
+      "subcategory": "Energy & Utilities",
+      "status": "demo",
+      "source": "HIFLD",
+      "aliases": ["wastewater", "sewage", "water treatment", "water plant", "pump station"],
+      "scenario_layers": {
+        "dam_break": "DEMO_DamBreak_Water_Plants"
+      }
+    },
+    {
+      "id": "infra_landfills",
+      "name": "Solid Waste Landfills",
+      "description": "Active and closed landfill sites — debris management during recovery",
+      "category": "infrastructure",
+      "subcategory": "Energy & Utilities",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["landfill", "dump", "solid waste", "debris", "waste management"]
+    },
+    {
+      "id": "infra_dams",
+      "name": "High-Hazard Dams",
+      "description": "NID-listed high-hazard dams with downstream population at risk",
+      "category": "infrastructure",
+      "subcategory": "Transportation & Water",
+      "status": "coming_soon",
+      "source": "NID / HIFLD",
+      "aliases": ["dam", "reservoir", "spillway", "dam break", "dam failure", "Oroville"]
+    },
+    {
+      "id": "infra_ports",
+      "name": "Principal Ports",
+      "description": "Major ports and harbors — maritime logistics and storm surge exposure",
+      "category": "infrastructure",
+      "subcategory": "Transportation & Water",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["port", "harbor", "maritime", "shipping", "dock"]
+    },
+    {
+      "id": "infra_prisons",
+      "name": "Prison Boundaries",
+      "description": "Federal and state correctional facilities with population — evacuation-complex sites",
+      "category": "infrastructure",
+      "subcategory": "Transportation & Water",
+      "status": "coming_soon",
+      "source": "HIFLD",
+      "aliases": ["prison", "jail", "correctional", "incarcerated", "detention"]
+    },
+
+    {
+      "id": "cr_no_hs_diploma",
+      "name": "No High School Diploma",
+      "description": "Population 25+ without a high school diploma or equivalent — communication barrier indicator",
+      "category": "community_resilience",
+      "subcategory": "Population",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["education", "no diploma", "high school", "literacy", "educational attainment"]
+    },
+    {
+      "id": "cr_over_65",
+      "name": "Population 65 and Older",
+      "description": "Percentage of population aged 65+ — mobility, medical dependency, and isolation risk",
+      "category": "community_resilience",
+      "subcategory": "Population",
+      "status": "demo",
+      "source": "ACS 5-Year",
+      "aliases": ["elderly", "seniors", "aging", "over 65", "65+", "older adults"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Census_Tracts",
+        "wildfire": "DEMO_FireArea_Census_Tracts",
+        "dam_break": "DEMO_DamBreak_Census_Tracts"
+      }
+    },
+    {
+      "id": "cr_disability",
+      "name": "Population with a Disability",
+      "description": "Civilian non-institutionalized population with any disability — access and functional needs",
+      "category": "community_resilience",
+      "subcategory": "Population",
+      "status": "demo",
+      "source": "ACS 5-Year",
+      "aliases": ["disability", "disabled", "ADA", "functional needs", "AFN", "access needs"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Census_Tracts",
+        "wildfire": "DEMO_FireArea_Census_Tracts",
+        "dam_break": "DEMO_DamBreak_Census_Tracts"
+      }
+    },
+    {
+      "id": "cr_race_ethnicity",
+      "name": "Race and Hispanic Origin",
+      "description": "Population by race and Hispanic/Latino origin — equity and outreach targeting",
+      "category": "community_resilience",
+      "subcategory": "Population",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["race", "ethnicity", "Hispanic", "Latino", "Black", "Asian", "minority", "demographics"]
+    },
+    {
+      "id": "cr_no_vehicle",
+      "name": "Households without a Vehicle",
+      "description": "Households with zero vehicles — evacuation transport dependency",
+      "category": "community_resilience",
+      "subcategory": "Household",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["no car", "no vehicle", "carless", "transportation", "transit dependent", "evacuation transport"]
+    },
+    {
+      "id": "cr_limited_english",
+      "name": "Limited English Proficiency",
+      "description": "Households where no one 14+ speaks English 'very well' — multilingual outreach needs",
+      "category": "community_resilience",
+      "subcategory": "Household",
+      "status": "demo",
+      "source": "ACS 5-Year",
+      "aliases": ["limited English", "LEP", "non-English", "language barrier", "ESL", "bilingual", "Spanish", "interpreter"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Census_Tracts",
+        "wildfire": "DEMO_FireArea_Census_Tracts",
+        "dam_break": "DEMO_DamBreak_Census_Tracts"
+      }
+    },
+    {
+      "id": "cr_single_parent",
+      "name": "Single-Parent Households",
+      "description": "Households with children under 18 and one parent — limited evacuation flexibility",
+      "category": "community_resilience",
+      "subcategory": "Household",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["single parent", "single mom", "single dad", "one parent", "lone parent"]
+    },
+    {
+      "id": "cr_no_smartphone",
+      "name": "Households without a Smartphone",
+      "description": "Households with no smartphone — limited WEA and app-based alert reach",
+      "category": "community_resilience",
+      "subcategory": "Household",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["no smartphone", "no phone", "no mobile", "digital divide", "WEA"]
+    },
+    {
+      "id": "cr_no_broadband",
+      "name": "Households without Broadband",
+      "description": "Households with no broadband internet subscription — digital communication gap",
+      "category": "community_resilience",
+      "subcategory": "Household",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["no broadband", "no internet", "offline", "digital divide", "connectivity"]
+    },
+    {
+      "id": "cr_mobile_homes_pct",
+      "name": "Mobile Homes as % of Housing",
+      "description": "Percentage of housing units that are mobile/manufactured — wind and flood vulnerability",
+      "category": "community_resilience",
+      "subcategory": "Housing",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["mobile home percentage", "manufactured housing", "trailer", "housing vulnerability"]
+    },
+    {
+      "id": "cr_owner_occupied",
+      "name": "Owner-Occupied Housing",
+      "description": "Percentage of housing units that are owner-occupied — recovery and insurance indicator",
+      "category": "community_resilience",
+      "subcategory": "Housing",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["homeowner", "owner occupied", "renters", "housing tenure"]
+    },
+    {
+      "id": "cr_housing_costs",
+      "name": "Housing Costs as % of Income",
+      "description": "Rental housing cost burden — ability to absorb displacement costs",
+      "category": "community_resilience",
+      "subcategory": "Housing",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["housing cost", "rent burden", "cost burden", "affordability", "housing stress"]
+    },
+    {
+      "id": "cr_flood_insurance",
+      "name": "Structures with Flood Insurance",
+      "description": "Residential structures in Special Flood Hazard Areas with active NFIP policies",
+      "category": "community_resilience",
+      "subcategory": "Housing",
+      "status": "coming_soon",
+      "source": "FEMA NFIP",
+      "aliases": ["flood insurance", "NFIP", "flood policy", "insured", "SFHA"]
+    },
+    {
+      "id": "cr_hospital_count",
+      "name": "Hospital Count per Capita",
+      "description": "Number of hospitals per 100,000 population — healthcare access indicator",
+      "category": "community_resilience",
+      "subcategory": "Healthcare Capacity",
+      "status": "coming_soon",
+      "source": "HIFLD / ACS",
+      "aliases": ["hospital access", "healthcare access", "hospital capacity", "medical access"]
+    },
+    {
+      "id": "cr_medical_capacity",
+      "name": "Medical Professional Capacity",
+      "description": "Primary care physicians and specialists per capita — surge capacity indicator",
+      "category": "community_resilience",
+      "subcategory": "Healthcare Capacity",
+      "status": "coming_soon",
+      "source": "HRSA",
+      "aliases": ["doctors", "physicians", "medical professionals", "healthcare workforce", "surge capacity"]
+    },
+    {
+      "id": "cr_uninsured",
+      "name": "Population without Health Insurance",
+      "description": "Percentage of population without health insurance — post-disaster care barrier",
+      "category": "community_resilience",
+      "subcategory": "Healthcare Capacity",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["uninsured", "no insurance", "no health insurance", "coverage gap"]
+    },
+    {
+      "id": "cr_power_dependent",
+      "name": "Medicare Recipients with Power-Dependent Devices",
+      "description": "Medicare beneficiaries relying on powered medical equipment — PSPS and outage risk",
+      "category": "community_resilience",
+      "subcategory": "Healthcare Capacity",
+      "status": "coming_soon",
+      "source": "CMS / HHS emPOWER",
+      "aliases": ["power dependent", "oxygen", "ventilator", "medical equipment", "emPOWER", "life support", "PSPS"]
+    },
+    {
+      "id": "cr_poverty",
+      "name": "Population Below Poverty Level",
+      "description": "Percentage of population below the federal poverty line — recovery capacity indicator",
+      "category": "community_resilience",
+      "subcategory": "Economic",
+      "status": "demo",
+      "source": "ACS 5-Year",
+      "aliases": ["poverty", "poor", "low income", "below poverty", "economic vulnerability"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Census_Tracts",
+        "wildfire": "DEMO_FireArea_Census_Tracts",
+        "dam_break": "DEMO_DamBreak_Census_Tracts"
+      }
+    },
+    {
+      "id": "cr_median_income",
+      "name": "Median Household Income",
+      "description": "Median household income by census tract — economic resilience baseline",
+      "category": "community_resilience",
+      "subcategory": "Economic",
+      "status": "demo",
+      "source": "ACS 5-Year",
+      "aliases": ["income", "median income", "household income", "wages", "earnings"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Census_Tracts",
+        "wildfire": "DEMO_FireArea_Census_Tracts",
+        "dam_break": "DEMO_DamBreak_Census_Tracts"
+      }
+    },
+    {
+      "id": "cr_unemployed",
+      "name": "Unemployed Labor Force",
+      "description": "Unemployment rate among civilian labor force — economic stress indicator",
+      "category": "community_resilience",
+      "subcategory": "Economic",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["unemployment", "unemployed", "jobless", "labor force"]
+    },
+    {
+      "id": "cr_unemployed_women",
+      "name": "Unemployed Women in Labor Force",
+      "description": "Female unemployment rate — gendered economic vulnerability",
+      "category": "community_resilience",
+      "subcategory": "Economic",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["women unemployed", "female unemployment", "gender", "women labor"]
+    },
+    {
+      "id": "cr_gini",
+      "name": "Income Inequality (Gini Index)",
+      "description": "Gini coefficient measuring income inequality — higher values = greater disparity",
+      "category": "community_resilience",
+      "subcategory": "Economic",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["gini", "inequality", "income gap", "wealth gap", "disparity"]
+    },
+    {
+      "id": "cr_predominant_sector",
+      "name": "Workforce in Predominant Sector",
+      "description": "Concentration of employment in a single industry — economic disruption risk",
+      "category": "community_resilience",
+      "subcategory": "Economic",
+      "status": "coming_soon",
+      "source": "ACS 5-Year",
+      "aliases": ["industry", "sector", "employment concentration", "economic diversity"]
+    },
+    {
+      "id": "cr_civic_orgs",
+      "name": "Civic and Social Organizations",
+      "description": "Density of civic organizations — social capital and volunteer mobilization potential",
+      "category": "community_resilience",
+      "subcategory": "Community Engagement",
+      "status": "coming_soon",
+      "source": "County Business Patterns",
+      "aliases": ["civic", "social organization", "nonprofit", "community group", "volunteer"]
+    },
+    {
+      "id": "cr_religious_affiliation",
+      "name": "Population without Religious Affiliation",
+      "description": "Percentage not affiliated with a religious congregation — social network indicator",
+      "category": "community_resilience",
+      "subcategory": "Community Engagement",
+      "status": "coming_soon",
+      "source": "ASARB",
+      "aliases": ["religious", "church membership", "congregation", "faith community"]
+    },
+    {
+      "id": "cr_inactive_voters",
+      "name": "Inactive Voters",
+      "description": "Percentage of registered voters who are inactive — civic engagement indicator",
+      "category": "community_resilience",
+      "subcategory": "Community Engagement",
+      "status": "coming_soon",
+      "source": "EAC",
+      "aliases": ["voters", "voting", "civic engagement", "election", "turnout"]
+    },
+    {
+      "id": "cr_population_change",
+      "name": "Population Change",
+      "description": "Rate of population change over the past decade — growth stress or decline indicator",
+      "category": "community_resilience",
+      "subcategory": "Community Engagement",
+      "status": "coming_soon",
+      "source": "Census Decennial",
+      "aliases": ["population change", "growth", "decline", "migration", "depopulation"]
+    },
+
+    {
+      "id": "haz_stream_gauges",
+      "name": "Live Stream Gauges",
+      "description": "USGS real-time stream gauge readings — river level monitoring and flood watch",
+      "category": "hazards_weather",
+      "subcategory": "Flood & Water",
+      "status": "coming_soon",
+      "source": "USGS",
+      "aliases": ["stream gauge", "river level", "water level", "flood gauge", "USGS"]
+    },
+    {
+      "id": "haz_flood_hazard",
+      "name": "FEMA Flood Hazard Zones",
+      "description": "National Flood Hazard Layer — 100-year and 500-year flood zones, floodways",
+      "category": "hazards_weather",
+      "subcategory": "Flood & Water",
+      "status": "coming_soon",
+      "source": "FEMA NFHL",
+      "aliases": ["flood zone", "floodplain", "100-year flood", "500-year flood", "NFHL", "floodway", "SFHA"]
+    },
+    {
+      "id": "haz_sea_level_rise",
+      "name": "Sea Level Rise Projections",
+      "description": "NOAA sea level rise inundation scenarios (1-6 ft.) — coastal planning",
+      "category": "hazards_weather",
+      "subcategory": "Flood & Water",
+      "status": "coming_soon",
+      "source": "NOAA",
+      "aliases": ["sea level", "sea level rise", "coastal flooding", "inundation", "SLR"]
+    },
+    {
+      "id": "haz_river_flooding",
+      "name": "River Flooding Outlook",
+      "description": "NWS significant river flooding forecast — next 5 days",
+      "category": "hazards_weather",
+      "subcategory": "Flood & Water",
+      "status": "coming_soon",
+      "source": "NWS",
+      "aliases": ["river flood", "river flooding", "flood forecast", "flood outlook"]
+    },
+    {
+      "id": "haz_nws_warnings",
+      "name": "NWS Watches & Warnings",
+      "description": "Active NWS watches, warnings, and advisories — real-time alert polygons",
+      "category": "hazards_weather",
+      "subcategory": "Severe Weather",
+      "status": "demo",
+      "source": "NWS",
+      "aliases": ["NWS", "watch", "warning", "advisory", "alert", "tornado warning", "severe thunderstorm"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Active_Warnings"
+      }
+    },
+    {
+      "id": "haz_severe_outlook",
+      "name": "Severe Weather Outlook",
+      "description": "SPC convective outlook — categorical risk areas for severe weather",
+      "category": "hazards_weather",
+      "subcategory": "Severe Weather",
+      "status": "coming_soon",
+      "source": "NWS / SPC",
+      "aliases": ["severe weather", "convective outlook", "SPC", "storm prediction", "risk area"]
+    },
+    {
+      "id": "haz_excessive_rainfall",
+      "name": "Excessive Rainfall Outlook",
+      "description": "WPC excessive rainfall outlook — flash flood risk areas",
+      "category": "hazards_weather",
+      "subcategory": "Severe Weather",
+      "status": "coming_soon",
+      "source": "NWS / WPC",
+      "aliases": ["excessive rainfall", "flash flood", "heavy rain", "rainfall outlook"]
+    },
+    {
+      "id": "haz_hurricane_tracks",
+      "name": "Historical Hurricane Tracks",
+      "description": "NOAA historical hurricane and tropical storm tracks since 1990",
+      "category": "hazards_weather",
+      "subcategory": "Severe Weather",
+      "status": "coming_soon",
+      "source": "NOAA",
+      "aliases": ["hurricane", "tropical storm", "hurricane track", "cyclone history"]
+    },
+    {
+      "id": "haz_tornado_tracks",
+      "name": "Historical Tornado Tracks",
+      "description": "SPC historical tornado paths with EF-scale ratings",
+      "category": "hazards_weather",
+      "subcategory": "Severe Weather",
+      "status": "coming_soon",
+      "source": "NOAA / SPC",
+      "aliases": ["tornado track", "tornado path", "tornado history", "EF scale", "twister"]
+    },
+    {
+      "id": "haz_wildfire_points",
+      "name": "Active Wildfires (Points)",
+      "description": "IRWIN active wildfire incident points — current fire locations nationwide",
+      "category": "hazards_weather",
+      "subcategory": "Fire",
+      "status": "coming_soon",
+      "source": "IRWIN / NIFC",
+      "aliases": ["wildfire", "active fire", "fire incident", "IRWIN", "fire location"]
+    },
+    {
+      "id": "haz_wildfire_perimeters",
+      "name": "Active Wildfire Perimeters",
+      "description": "NIFC active fire perimeters — real-time fire footprint polygons",
+      "category": "hazards_weather",
+      "subcategory": "Fire",
+      "status": "coming_soon",
+      "source": "NIFC",
+      "aliases": ["fire perimeter", "fire boundary", "burn area", "fire footprint", "NIFC perimeter"]
+    },
+    {
+      "id": "haz_fire_weather",
+      "name": "Fire Weather Outlook",
+      "description": "NWS fire weather forecasts — red flag warnings and critical fire conditions",
+      "category": "hazards_weather",
+      "subcategory": "Fire",
+      "status": "coming_soon",
+      "source": "NWS",
+      "aliases": ["fire weather", "red flag", "critical fire", "fire forecast", "fire danger"]
+    },
+    {
+      "id": "haz_seismic",
+      "name": "Seismic Hazard",
+      "description": "USGS seismic hazard map — probabilistic ground shaking intensity",
+      "category": "hazards_weather",
+      "subcategory": "Seismic & Risk",
+      "status": "coming_soon",
+      "source": "USGS",
+      "aliases": ["earthquake", "seismic", "fault line", "ground shaking", "earthquake risk"]
+    },
+    {
+      "id": "haz_national_risk",
+      "name": "National Risk Index",
+      "description": "FEMA NRI expected annual loss from 18 natural hazards — composite risk score",
+      "category": "hazards_weather",
+      "subcategory": "Seismic & Risk",
+      "status": "coming_soon",
+      "source": "FEMA NRI",
+      "aliases": ["national risk", "NRI", "risk index", "expected annual loss", "hazard risk"]
+    },
+    {
+      "id": "haz_storm_surge",
+      "name": "Storm Surge (Cat 1-5)",
+      "description": "NHC storm surge inundation zones by hurricane category",
+      "category": "hazards_weather",
+      "subcategory": "Seismic & Risk",
+      "status": "coming_soon",
+      "source": "NHC",
+      "aliases": ["storm surge", "surge zone", "coastal surge", "hurricane surge", "inundation"]
+    },
+    {
+      "id": "haz_climate_outlooks",
+      "name": "Climate Outlooks",
+      "description": "CPC long-range temperature and precipitation outlooks — 6-10 day and monthly",
+      "category": "hazards_weather",
+      "subcategory": "Climate & Radar",
+      "status": "coming_soon",
+      "source": "NWS / CPC",
+      "aliases": ["climate outlook", "temperature forecast", "precipitation forecast", "long range", "CPC"]
+    },
+    {
+      "id": "haz_nexrad",
+      "name": "NEXRAD Weather Radar",
+      "description": "Real-time NEXRAD composite reflectivity — live precipitation tracking",
+      "category": "hazards_weather",
+      "subcategory": "Climate & Radar",
+      "status": "coming_soon",
+      "source": "NWS",
+      "aliases": ["radar", "NEXRAD", "weather radar", "doppler", "precipitation", "rain"]
+    },
+    {
+      "id": "haz_tropical_atlantic",
+      "name": "Atlantic Tropical Cyclones",
+      "description": "NHC active Atlantic/Caribbean tropical cyclone tracks and forecast cones",
+      "category": "hazards_weather",
+      "subcategory": "Climate & Radar",
+      "status": "coming_soon",
+      "source": "NHC",
+      "aliases": ["tropical cyclone", "Atlantic hurricane", "Caribbean storm", "forecast cone"]
+    },
+    {
+      "id": "haz_tropical_pacific",
+      "name": "Eastern Pacific Tropical Cyclones",
+      "description": "NHC active Eastern Pacific tropical cyclone tracks and forecast cones",
+      "category": "hazards_weather",
+      "subcategory": "Climate & Radar",
+      "status": "coming_soon",
+      "source": "NHC",
+      "aliases": ["Pacific cyclone", "Pacific hurricane", "Pacific storm"]
+    },
+    {
+      "id": "haz_wea",
+      "name": "Wireless Emergency Alerts",
+      "description": "Recent FEMA WEA alerts with geographic targeting areas",
+      "category": "hazards_weather",
+      "subcategory": "Alerting",
+      "status": "coming_soon",
+      "source": "FEMA IPAWS",
+      "aliases": ["WEA", "wireless alert", "cell alert", "IPAWS", "emergency alert", "amber alert"]
+    },
+
+    {
+      "id": "infra_red_cross",
+      "name": "Red Cross Shelters & Assets",
+      "description": "Red Cross shelters, ERV depots, offices, and warehouses with capacity and status",
+      "category": "infrastructure",
+      "subcategory": "Emergency Services",
+      "status": "demo",
+      "source": "Red Cross",
+      "aliases": ["Red Cross", "shelter", "evacuation shelter", "ERV", "Emergency Response Vehicle", "cots", "supplies"],
+      "scenario_layers": {
+        "tornado": "DEMO_Cascade_Red_Cross_Assets",
+        "wildfire": "DEMO_FireArea_Red_Cross_Shelters",
+        "dam_break": "DEMO_DamBreak_Red_Cross_Shelters"
+      }
+    }
+  ]
+}

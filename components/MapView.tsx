@@ -170,6 +170,13 @@ export default function MapView({
           graphicsLayerRef.current.removeAll();
           continue;
         }
+        if (inst.action === "remove_by_label" && inst.layer_label) {
+          const toRemove = graphicsLayerRef.current.graphics.filter(
+            (g: any) => g.attributes?.layer_label === inst.layer_label
+          );
+          toRemove.forEach((g: any) => graphicsLayerRef.current.remove(g));
+          continue;
+        }
         if (inst.action !== "draw" || !inst.geometry) continue;
 
         const color = inst.style?.color || "#ED1B2E";
