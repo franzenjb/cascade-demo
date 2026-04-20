@@ -557,26 +557,21 @@ export default function HomePage() {
 
   return (
     <div className="h-screen flex flex-col bg-arc-cream dark:bg-arc-black overflow-hidden">
-      <header className="bg-white dark:bg-arc-gray-900 border-b-[3px] border-arc-black dark:border-arc-cream py-3 print:border-b">
-        <div className="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <svg viewBox="0 0 32 32" width="32" height="32">
+      <header className="bg-white dark:bg-arc-gray-900 border-b-2 border-arc-black dark:border-arc-cream px-4 py-1.5 print:border-b flex-shrink-0">
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <svg viewBox="0 0 32 32" width="22" height="22" className="flex-shrink-0">
               <rect x="12" y="4" width="8" height="24" fill="#ED1B2E" />
               <rect x="4" y="12" width="24" height="8" fill="#ED1B2E" />
             </svg>
-            <div>
-              <div className="text-[11px] font-semibold uppercase tracking-widest text-arc-red">
-                Project Cascade · Demo
-              </div>
-              <h1 className="font-headline text-lg font-bold text-arc-black dark:text-arc-cream mt-0.5">
-                Before You Even Ask
-              </h1>
-              <div className="text-sm text-arc-gray-500 dark:text-arc-gray-300 italic">
-                Conversational, Anticipatory Mapping for the Non-GIS Responder
-              </div>
-            </div>
+            <h1 className="font-headline text-sm font-bold text-arc-black dark:text-arc-cream">
+              Project Cascade
+            </h1>
+            <span className="text-[10px] text-arc-gray-500 dark:text-arc-gray-400 italic hidden sm:inline">
+              Anticipatory Mapping for Emergency Response
+            </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <HelpModal />
             <ThemeToggle />
             <TriggerButton onFired={handleTriggerFired} />
@@ -588,47 +583,38 @@ export default function HomePage() {
         <section
           className="flex-[2] bg-white dark:bg-arc-gray-900 border border-arc-gray-100 dark:border-arc-gray-700 flex flex-col min-h-0"
         >
-          <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-4 py-2">
-            <div className="red-rule mb-1"></div>
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h2 className="font-headline text-lg font-bold text-arc-black dark:text-arc-cream">
-                  {warningType === "wildfire"
-                    ? "Shasta County, CA"
-                    : warningType === "dam_break"
-                    ? "Butte County, CA"
-                    : "Cascade County"}
-                </h2>
-                <p className="text-xs text-arc-gray-500 dark:text-arc-gray-300 font-data uppercase tracking-wider mt-1">
-                  {warningType === "wildfire"
-                    ? "Real Shasta-area place names · synthetic operational numbers"
-                    : warningType === "dam_break"
-                    ? "Real Oroville-area place names · synthetic operational numbers"
-                    : "Synthetic demonstration data"}
-                </p>
-              </div>
-              {eventId && (
-                <div className="text-right">
-                  <div className="text-[10px] font-data uppercase tracking-widest text-arc-gray-500 dark:text-arc-gray-300">
-                    Event
-                  </div>
-                  <div className="text-xs font-data text-arc-black dark:text-arc-cream">{eventId}</div>
-                </div>
-              )}
+          <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-3 py-1.5 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <div className="w-1 h-4 bg-arc-red flex-shrink-0"></div>
+              <h2 className="font-headline text-sm font-bold text-arc-black dark:text-arc-cream">
+                {warningType === "wildfire"
+                  ? "Shasta County, CA"
+                  : warningType === "dam_break"
+                  ? "Butte County, CA"
+                  : "Cascade County"}
+              </h2>
+              <span className="text-[9px] text-arc-gray-400 dark:text-arc-gray-500 font-data uppercase tracking-wider">
+                Synthetic data
+              </span>
             </div>
+            {eventId && (
+              <span className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-400 tracking-wider">{eventId}</span>
+            )}
           </div>
 
           {metrics && (
-            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-arc-cream/50 dark:bg-arc-black/40 px-4 py-2 grid grid-cols-4 gap-3">
-              <Metric label="In footprint" value={metrics.pop.toLocaleString()} suffix="residents" />
-              <Metric label="Age 65+" value={fmtPct(metrics.pctOver65)} />
-              <Metric label="Limited English" value={fmtPct(metrics.pctLep)} />
-              <Metric label="With disability" value={fmtPct(metrics.pctDisability)} />
+            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-arc-cream/50 dark:bg-arc-black/40 px-3 py-1 flex items-center gap-4 text-[11px] font-data">
+              <span className="font-bold text-arc-black dark:text-arc-cream">{metrics.pop.toLocaleString()}</span>
+              <span className="text-arc-gray-500 dark:text-arc-gray-400">in footprint</span>
+              <span className="text-arc-gray-300 dark:text-arc-gray-600">|</span>
+              <span className="text-arc-gray-500 dark:text-arc-gray-400">65+ <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctOver65)}</strong></span>
+              <span className="text-arc-gray-500 dark:text-arc-gray-400">LEP <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctLep)}</strong></span>
+              <span className="text-arc-gray-500 dark:text-arc-gray-400">Disability <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctDisability)}</strong></span>
             </div>
           )}
 
           {totalAssetCount > 0 && (
-            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-4 py-2 flex gap-2 flex-wrap">
+            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-3 py-1 flex gap-1.5 flex-wrap">
               {currentSections.map((section) => (
                 <Chip
                   key={section.id}
@@ -657,7 +643,7 @@ export default function HomePage() {
         </section>
 
         <section className="flex-1 bg-white dark:bg-arc-gray-900 border border-arc-gray-100 dark:border-arc-gray-700 flex flex-col min-h-0 max-w-md">
-          <div className="px-4 pt-4 pb-2 flex items-center justify-between gap-2">
+          <div className="px-3 pt-2 pb-1 flex items-center justify-between gap-2">
             <div className="red-rule flex-1"></div>
             <div className="flex gap-1 print:hidden">
               <button
@@ -748,18 +734,6 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="bg-white dark:bg-arc-gray-900 border-t-[3px] border-arc-black dark:border-arc-cream py-6 mt-6 print:hidden">
-        <div className="max-w-[1400px] mx-auto px-6 text-sm text-arc-gray-500 dark:text-arc-gray-300">
-          <div className="font-headline font-bold text-arc-black dark:text-arc-cream mb-1">
-            Project Cascade
-          </div>
-          <p>
-            A working demo companion to the strategic white paper by Jeff Franzen.
-            All data is synthetic; no real individuals, facilities, or locations are represented.
-            Full paper forthcoming.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
@@ -804,7 +778,7 @@ function TabButton({
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-2.5 text-sm font-semibold border-b-2 transition-colors -mb-[1px] ${
+      className={`px-3 py-1.5 text-xs font-semibold border-b-2 transition-colors -mb-[1px] ${
         active
           ? "border-arc-red text-arc-black dark:text-arc-cream"
           : "border-transparent text-arc-gray-500 dark:text-arc-gray-300 hover:text-arc-black dark:hover:text-arc-cream"
@@ -840,7 +814,7 @@ function Chip({
   dot: string;
 }) {
   const base =
-    "flex items-center gap-2 px-3 py-1.5 text-xs font-semibold border transition-colors";
+    "flex items-center gap-1.5 px-2 py-1 text-[11px] font-semibold border transition-colors";
   const styles = active
     ? "bg-arc-black text-white border-arc-black dark:bg-arc-cream dark:text-arc-black dark:border-arc-cream"
     : "bg-white dark:bg-arc-gray-900 text-arc-gray-900 dark:text-arc-cream border-arc-gray-300 dark:border-arc-gray-700 hover:border-arc-black dark:hover:border-arc-cream";
