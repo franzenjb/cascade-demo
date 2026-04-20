@@ -587,6 +587,50 @@ function svgForType(featureType: string, theme: Theme = "light"): string {
   <rect x="13.25" y="20.25" width="5.5" height="2" fill="#ED1B2E"/>
 </svg>`.trim();
 
+    // ── Dam Break scenario icons ──────────────────────────
+
+    case "dam_hospital":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#1B6EC2" stroke="#ffffff" stroke-width="2"/>
+  <path d="M10.5 8.5 L13.5 8.5 L13.5 14.5 L18.5 14.5 L18.5 8.5 L21.5 8.5 L21.5 23.5 L18.5 23.5 L18.5 17.5 L13.5 17.5 L13.5 23.5 L10.5 23.5 Z" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "dam_nursing_home":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#1B6EC2" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="16" cy="10" r="2.5" fill="#ffffff"/>
+  <path d="M12 24 L12 18 C12 15.5 13.5 14 16 14 C18.5 14 20 15.5 20 18 L20 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="10" y1="19" x2="22" y2="19" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+</svg>`.trim();
+
+    case "dam_school":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#E85D04" stroke="#ffffff" stroke-width="2"/>
+  <path d="M6 14 L16 9 L26 14 L16 19 Z" fill="#ffffff"/>
+  <path d="M10 16 L10 20 C10 22 13 23 16 23 C19 23 22 22 22 20 L22 16" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="14" x2="24" y2="19" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+</svg>`.trim();
+
+    case "dam_shelter":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#ED1B2E" stroke="#ffffff" stroke-width="2"/>
+  <path d="M8.5 18 L16 10 L23.5 18 L23.5 24 L8.5 24 Z" fill="#ffffff"/>
+  <rect x="15" y="18.5" width="2" height="5.5" fill="#ED1B2E"/>
+  <rect x="13.25" y="20.25" width="5.5" height="2" fill="#ED1B2E"/>
+</svg>`.trim();
+
+    case "dam_water_plant":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#1E4A6D" stroke="#ffffff" stroke-width="2"/>
+  <path d="M16 8 C16 8 10 14 10 18 C10 21.3 12.7 24 16 24 C19.3 24 22 21.3 22 18 C22 14 16 8 16 8 Z" fill="#ffffff"/>
+  <path d="M13 18 Q14.5 16 16 18 Q17.5 20 19 18" fill="none" stroke="#1E4A6D" stroke-width="1.5" stroke-linecap="round"/>
+</svg>`.trim();
+
     default:
       return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
@@ -690,6 +734,50 @@ function popupTemplateForFeatureType(
           "<b>Facility type:</b> {facility_type}<br>" +
           "<b>Capacity:</b> {capacity}<br>" +
           "<b>Status:</b> {status}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "dam_hospital":
+      return {
+        title: "{name}",
+        content:
+          "<b>Beds:</b> {bed_count}<br>" +
+          "<b>Trauma level:</b> {trauma_level}<br>" +
+          "<b>24h ER:</b> {has_er_24h}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "dam_nursing_home":
+      return {
+        title: "{name}",
+        content:
+          "<b>Beds:</b> {bed_count}<br>" +
+          "<b>Residents:</b> {current_residents}<br>" +
+          "<b>Mobility-impaired:</b> {mobility_impaired_pct}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "dam_school":
+      return {
+        title: "{name}",
+        content:
+          "<b>Grades:</b> {grade_range}<br>" +
+          "<b>Enrollment:</b> {enrollment}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "dam_shelter":
+      return {
+        title: "{name}",
+        content:
+          "<b>Facility type:</b> {facility_type}<br>" +
+          "<b>Capacity:</b> {capacity}<br>" +
+          "<b>Status:</b> {status}<br>" +
+          "<b>Address:</b> {address}",
+      };
+    case "dam_water_plant":
+      return {
+        title: "{name}",
+        content:
+          "<b>Type:</b> {facility_type}<br>" +
+          "<b>Capacity:</b> {capacity_mgd} MGD<br>" +
+          "<b>Serves:</b> {serves_population}<br>" +
           "<b>Address:</b> {address}",
       };
     default:
