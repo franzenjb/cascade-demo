@@ -23,9 +23,16 @@ type FireCategory =
   | "dialysis"
   | "shelter";
 
-type CategoryId = TornadoCategory | FireCategory;
+type DamBreakCategory =
+  | "dam_hospital"
+  | "dam_nursing_home"
+  | "dam_school"
+  | "dam_shelter"
+  | "dam_water_plant";
 
-type WarningType = "tornado" | "wildfire";
+type CategoryId = TornadoCategory | FireCategory | DamBreakCategory;
+
+type WarningType = "tornado" | "wildfire" | "dam_break";
 
 interface Metrics {
   pop: number;
@@ -49,6 +56,11 @@ const EMPTY_COUNTS: CategoryCounts = {
   hospital: 0,
   dialysis: 0,
   shelter: 0,
+  dam_hospital: 0,
+  dam_nursing_home: 0,
+  dam_school: 0,
+  dam_shelter: 0,
+  dam_water_plant: 0,
 };
 
 const EMPTY_FEATURES: FeaturesByCategory = {
@@ -61,6 +73,11 @@ const EMPTY_FEATURES: FeaturesByCategory = {
   hospital: [],
   dialysis: [],
   shelter: [],
+  dam_hospital: [],
+  dam_nursing_home: [],
+  dam_school: [],
+  dam_shelter: [],
+  dam_water_plant: [],
 };
 
 const CATEGORY_LABELS: Record<CategoryId, string> = {
@@ -73,6 +90,11 @@ const CATEGORY_LABELS: Record<CategoryId, string> = {
   hospital: "Hospitals",
   dialysis: "Dialysis Clinics",
   shelter: "Red Cross Shelters",
+  dam_hospital: "Hospitals",
+  dam_nursing_home: "Nursing Homes",
+  dam_school: "Schools",
+  dam_shelter: "Shelters",
+  dam_water_plant: "Water Plants",
 };
 
 interface ScenarioSection {
@@ -152,6 +174,44 @@ const FIRE_SECTIONS: ScenarioSection[] = [
   },
 ];
 
+const DAM_BREAK_SECTIONS: ScenarioSection[] = [
+  {
+    id: "dam_nursing_home",
+    label: "Nursing Homes",
+    dot: "#1B6EC2",
+    layerId: "DEMO_DamBreak_Nursing_Homes",
+    mapLabel: "Nursing Home",
+  },
+  {
+    id: "dam_school",
+    label: "Schools",
+    dot: "#E85D04",
+    layerId: "DEMO_DamBreak_Schools",
+    mapLabel: "School",
+  },
+  {
+    id: "dam_hospital",
+    label: "Hospitals",
+    dot: "#2D2D2D",
+    layerId: "DEMO_DamBreak_Hospitals",
+    mapLabel: "Hospital",
+  },
+  {
+    id: "dam_shelter",
+    label: "Shelters",
+    dot: "#ED1B2E",
+    layerId: "DEMO_DamBreak_Red_Cross_Shelters",
+    mapLabel: "Red Cross Shelter",
+  },
+  {
+    id: "dam_water_plant",
+    label: "Water Plants",
+    dot: "#1E4A6D",
+    layerId: "DEMO_DamBreak_Water_Plants",
+    mapLabel: "Water Plant",
+  },
+];
+
 const SCENARIO_CONFIG: Record<
   WarningType,
   { sections: ScenarioSection[]; tractLayerId: string; spatialOnly: boolean }
@@ -159,18 +219,16 @@ const SCENARIO_CONFIG: Record<
   tornado: {
     sections: TORNADO_SECTIONS,
     tractLayerId: "DEMO_Cascade_Census_Tracts",
-    // Cascade mobile home parks / schools / medical query spatially;
-    // red-cross assets query unbounded (the tornado scene shows regional assets).
     spatialOnly: false,
   },
   wildfire: {
     sections: FIRE_SECTIONS,
     tractLayerId: "DEMO_FireArea_Census_Tracts",
-    // Fire perimeter is tight around Whiskeytown; point assets (stations,
-    // hospitals, shelters) sit in Redding proper. Query them unbounded so
-    // the responder sees the regional fire-response inventory, not just
-    // what's literally burning. Census tracts still query spatially for
-    // in-footprint population math.
+    spatialOnly: false,
+  },
+  dam_break: {
+    sections: DAM_BREAK_SECTIONS,
+    tractLayerId: "DEMO_DamBreak_Census_Tracts",
     spatialOnly: false,
   },
 };
@@ -247,6 +305,13 @@ export default function HomePage() {
             label: "Fire Perimeter",
             scale: 150000,
           }
+        : wt === "dam_break"
+        ? {
+            color: "#1B6EC2",
+            opacity: 0.20,
+            label: "Inundation Zone",
+            scale: 250000,
+          }
         : {
             color: "#ED1B2E",
             opacity: 0.15,
@@ -254,7 +319,11 @@ export default function HomePage() {
             scale: 150000,
           };
     const layerLabel =
-      wt === "wildfire" ? "Fire Perimeter" : "Tornado Warning";
+      wt === "wildfire"
+        ? "Fire Perimeter"
+        : wt === "dam_break"
+        ? "Inundation Zone"
+        : "Tornado Warning";
 
     setMapInstructions((prev) => [
       ...prev,
@@ -320,6 +389,8 @@ export default function HomePage() {
       // Wildfire scene: fire perimeter hugs Whiskeytown but the responder
       // needs Redding-area fire stations/hospitals/shelters visible, so all
       // fire-area point layers query unbounded (they're already regionally scoped).
+      // Tornado: spatial for most layers, unbounded for Red Cross.
+      // Wildfire/dam_break: unbounded — assets are regionally scoped already.
       const useGeometry = wt === "tornado" && section.id !== "red_cross";
 
       try {
@@ -519,11 +590,17 @@ export default function HomePage() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="font-headline text-lg font-bold text-arc-black dark:text-arc-cream">
-                  {warningType === "wildfire" ? "Shasta County, CA" : "Cascade County"}
+                  {warningType === "wildfire"
+                    ? "Shasta County, CA"
+                    : warningType === "dam_break"
+                    ? "Butte County, CA"
+                    : "Cascade County"}
                 </h2>
                 <p className="text-xs text-arc-gray-500 dark:text-arc-gray-300 font-data uppercase tracking-wider mt-1">
                   {warningType === "wildfire"
                     ? "Real Shasta-area place names · synthetic operational numbers"
+                    : warningType === "dam_break"
+                    ? "Real Oroville-area place names · synthetic operational numbers"
                     : "Synthetic demonstration data"}
                 </p>
               </div>

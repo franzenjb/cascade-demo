@@ -565,6 +565,225 @@
       "access_tier": "internal",
       "data_vintage": "2026-Q1 synthetic (real facility names, fictional capacity and status)",
       "known_limitations": "Status is a snapshot, not a live feed. Capacity is design capacity, not real-time occupancy."
+    },
+    {
+      "id": "DEMO_DamBreak_Census_Tracts",
+      "service_url_env": "AGOL_DAM_CENSUS_TRACTS_URL",
+      "display_name": "Butte County Census Tracts",
+      "aliases": [
+        "butte census tracts",
+        "butte demographics",
+        "oroville population",
+        "dam break demographics",
+        "inundation zone demographics",
+        "residents in flood zone"
+      ],
+      "disaster_relevance": {
+        "tornado": "none",
+        "hurricane": "none",
+        "wildfire": "low",
+        "flood": "high",
+        "earthquake": "low",
+        "winter_storm": "low",
+        "psps": "low"
+      },
+      "why_it_matters": "Foundational demographic layer for the Oroville Dam break scenario. Population, age, disability, and poverty data drive evacuation prioritization.",
+      "schema": {
+        "tract_id": "string",
+        "pop": "integer",
+        "pct_over_65": "number",
+        "pct_under_18": "number",
+        "pct_lep": "number (limited English proficiency)",
+        "pct_poverty": "number",
+        "pct_disability": "number",
+        "median_income": "integer",
+        "crci_score": "number (Community Resilience Challenges Index, 0-1)",
+        "crci_top_drivers": "string (comma-separated)"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (patterns applied to real Butte County geography)",
+      "known_limitations": "Tract geometry is stylized for demo purposes. Fields mirror the Cascade tract schema."
+    },
+    {
+      "id": "DEMO_DamBreak_Hospitals",
+      "service_url_env": "AGOL_DAM_HOSPITALS_URL",
+      "display_name": "Butte County Hospitals",
+      "aliases": [
+        "hospitals",
+        "hospital",
+        "Oroville Hospital",
+        "Enloe Medical",
+        "Feather River Hospital",
+        "ER",
+        "emergency department",
+        "trauma center"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "high"
+      },
+      "why_it_matters": "Hospitals in or near the inundation zone may need evacuation. Downstream hospitals receive flood casualties; bed count and trauma capability determine capacity.",
+      "schema": {
+        "facility_id": "string",
+        "name": "string",
+        "bed_count": "integer",
+        "trauma_level": "string (trauma_I|trauma_II|none)",
+        "has_er_24h": "boolean",
+        "address": "string",
+        "in_inundation_zone": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (real hospitals, fictional bed counts)",
+      "known_limitations": "Bed counts and trauma designations are approximate."
+    },
+    {
+      "id": "DEMO_DamBreak_Nursing_Homes",
+      "service_url_env": "AGOL_DAM_NURSING_HOMES_URL",
+      "display_name": "Butte County Nursing Homes & Assisted Living",
+      "aliases": [
+        "nursing homes",
+        "assisted living",
+        "senior care",
+        "skilled nursing",
+        "SNF",
+        "mobility impaired",
+        "elderly care",
+        "post-acute"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "high"
+      },
+      "why_it_matters": "Nursing home residents are among the hardest to evacuate — many are mobility-impaired and require ambulance transport. In a dam break, lead time is critical. Facilities in the inundation zone need immediate priority.",
+      "schema": {
+        "facility_id": "string",
+        "name": "string",
+        "bed_count": "integer",
+        "current_residents": "integer",
+        "mobility_impaired_pct": "number",
+        "address": "string",
+        "in_inundation_zone": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (real facility names, fictional resident counts)",
+      "known_limitations": "Resident counts are a snapshot estimate, not a real-time census."
+    },
+    {
+      "id": "DEMO_DamBreak_Schools",
+      "service_url_env": "AGOL_DAM_SCHOOLS_URL",
+      "display_name": "Oroville Area Schools",
+      "aliases": [
+        "schools",
+        "school",
+        "elementary school",
+        "middle school",
+        "high school",
+        "students",
+        "children",
+        "enrollment"
+      ],
+      "disaster_relevance": {
+        "tornado": "high",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "medium",
+        "psps": "medium"
+      },
+      "why_it_matters": "Schools in the inundation zone may need immediate evacuation during school hours. Enrollment numbers drive bus and transport requirements.",
+      "schema": {
+        "school_id": "string",
+        "name": "string",
+        "enrollment": "integer",
+        "grade_range": "string",
+        "address": "string",
+        "in_inundation_zone": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (real school names, fictional enrollment)",
+      "known_limitations": "Enrollment is a design figure, not real-time attendance."
+    },
+    {
+      "id": "DEMO_DamBreak_Red_Cross_Shelters",
+      "service_url_env": "AGOL_DAM_SHELTERS_URL",
+      "display_name": "Butte County Red Cross Shelters",
+      "aliases": [
+        "shelters",
+        "evacuation shelters",
+        "Red Cross shelters",
+        "shelter capacity",
+        "standby shelter",
+        "emergency shelter"
+      ],
+      "disaster_relevance": {
+        "tornado": "medium",
+        "hurricane": "high",
+        "wildfire": "high",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "high",
+        "psps": "medium"
+      },
+      "why_it_matters": "Shelters must be OUTSIDE the inundation zone. Capacity and readiness status determine how many evacuees can be received.",
+      "schema": {
+        "shelter_id": "string",
+        "name": "string",
+        "facility_type": "string (school|church|rec_center)",
+        "capacity": "integer",
+        "status": "string (open|standby)",
+        "address": "string",
+        "in_inundation_zone": "boolean"
+      },
+      "access_tier": "internal",
+      "data_vintage": "2026-Q1 synthetic (real facility names, fictional capacity and status)",
+      "known_limitations": "Status is a snapshot, not a live feed."
+    },
+    {
+      "id": "DEMO_DamBreak_Water_Plants",
+      "service_url_env": "AGOL_DAM_WATER_PLANTS_URL",
+      "display_name": "Oroville Area Water Treatment Plants",
+      "aliases": [
+        "water treatment",
+        "water plant",
+        "wastewater",
+        "pump station",
+        "water infrastructure",
+        "water supply",
+        "water district"
+      ],
+      "disaster_relevance": {
+        "tornado": "low",
+        "hurricane": "medium",
+        "wildfire": "low",
+        "flood": "high",
+        "earthquake": "high",
+        "winter_storm": "low",
+        "psps": "medium"
+      },
+      "why_it_matters": "Water treatment plants in the inundation zone will be knocked offline. Loss of water supply compounds the humanitarian crisis — drives bottled water requirements and public health response.",
+      "schema": {
+        "facility_id": "string",
+        "name": "string",
+        "facility_type": "string (water_treatment|wastewater|pump_station)",
+        "capacity_mgd": "number (million gallons per day)",
+        "serves_population": "integer",
+        "address": "string",
+        "in_inundation_zone": "boolean"
+      },
+      "access_tier": "public",
+      "data_vintage": "2026-Q1 synthetic (real utility names, fictional capacity)",
+      "known_limitations": "Capacity and service population are estimates."
     }
   ],
   "disaster_playbooks": {
@@ -625,6 +844,27 @@
         "DEMO_Cascade_Roads",
         "DEMO_Cascade_Medical_Facilities",
         "DEMO_Cascade_Mobile_Home_Parks"
+      ]
+    },
+    "dam_break": {
+      "default_layers": [
+        "DEMO_Cascade_Active_Warnings",
+        "DEMO_DamBreak_Census_Tracts",
+        "DEMO_DamBreak_Hospitals",
+        "DEMO_DamBreak_Nursing_Homes",
+        "DEMO_DamBreak_Schools",
+        "DEMO_DamBreak_Red_Cross_Shelters",
+        "DEMO_DamBreak_Water_Plants"
+      ],
+      "narrative_structure": [
+        "dam_failure_specifics",
+        "population_in_inundation_zone",
+        "nursing_homes_and_mobility_impaired",
+        "schools_and_children",
+        "hospital_status",
+        "water_infrastructure_impact",
+        "shelter_capacity_and_readiness",
+        "offer_next_step"
       ]
     }
   }

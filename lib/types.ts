@@ -87,7 +87,7 @@ export interface ToolResult {
 // Scenario Types
 // ═══════════════════════════════════════════════════════════
 
-export type ScenarioWarningType = "tornado" | "wildfire";
+export type ScenarioWarningType = "tornado" | "wildfire" | "dam_break";
 
 export interface Scenario {
   id: string;

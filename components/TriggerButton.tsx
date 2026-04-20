@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type WarningType = "tornado" | "wildfire";
+type WarningType = "tornado" | "wildfire" | "dam_break";
 
 interface ScenarioOption {
   id: string;
@@ -36,6 +36,17 @@ const SCENARIOS: ScenarioOption[] = [
     iconPath:
       "M12 2 C8 6 8 10 10 12 C9 9 11 8 12 10 C13 7 16 8 16 12 C18 10 18 6 12 2 Z M8 14 C7 16 8 19 12 22 C16 19 17 16 16 14 C15 16 13 17 12 15 C11 17 9 16 8 14 Z",
     warningType: "wildfire",
+  },
+  {
+    id: "dam_oroville_break",
+    label: "Dam Break Inundation",
+    headline: "Butte County · Oroville Dam",
+    summary:
+      "Catastrophic dam failure — inundation zone along the Feather River through Oroville.",
+    accent: "#1B6EC2",
+    iconPath:
+      "M2 20 L6 12 L10 16 L14 8 L18 14 L22 6 L22 20 Z M4 18 Q8 14 12 18 Q16 14 20 18 Z",
+    warningType: "dam_break",
   },
 ];
 

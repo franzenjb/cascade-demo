@@ -69,6 +69,51 @@
       },
       "trigger_directive": "[SYSTEM EVENT] An evacuation warning has just been issued for an active wildfire in western Shasta County, California, northwest of Redding. The active warning layer now shows the current fire perimeter. Produce the proactive situational briefing for this event following your wildfire playbook. Under 120 words. Use tool calls for every number — population inside the perimeter (DEMO_FireArea_Census_Tracts), fire stations (DEMO_FireArea_Fire_Stations), police stations (DEMO_FireArea_Police_Stations), hospitals (DEMO_FireArea_Hospitals), dialysis clinics (DEMO_FireArea_Dialysis_Clinics), and Red Cross shelters (DEMO_FireArea_Red_Cross_Shelters).",
       "narrative_notes": "Numbers are not baked. The perimeter sits in western Shasta County CA, entirely separate from the Cascade County tornado scenario. Fire-scenario layers (DEMO_FireArea_*) have real facility names — Mercy Medical Center Redding, Shasta Regional, DaVita dialysis, etc. — to support a concrete briefing."
+    },
+    {
+      "id": "dam_oroville_break",
+      "name": "Oroville Dam · Dam Break Inundation",
+      "description": "Catastrophic dam failure at Oroville Dam, Butte County, California. Inundation zone follows the Feather River downstream through Oroville and Thermalito. Based on the real 2017 spillway crisis geography.",
+      "warning_type": "dam_break",
+      "nws_event_id": "DEMO-DAM-2026-0001",
+      "issued_offset_seconds": 0,
+      "expires_offset_seconds": 43200,
+      "polygon_geojson": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-121.510, 39.555],
+            [-121.490, 39.540],
+            [-121.480, 39.520],
+            [-121.485, 39.495],
+            [-121.490, 39.470],
+            [-121.500, 39.440],
+            [-121.520, 39.420],
+            [-121.570, 39.420],
+            [-121.590, 39.440],
+            [-121.600, 39.470],
+            [-121.595, 39.495],
+            [-121.580, 39.520],
+            [-121.560, 39.540],
+            [-121.540, 39.555],
+            [-121.510, 39.555]
+          ]
+        ]
+      },
+      "trigger_directive": "[SYSTEM EVENT] A catastrophic dam failure has been reported at Oroville Dam, Butte County, California. The inundation zone follows the Feather River downstream through Oroville and Thermalito. Produce the proactive situational briefing for this event following your dam break playbook. Under 150 words. Use tool calls for every number — population inside the inundation zone (DEMO_DamBreak_Census_Tracts), hospitals (DEMO_DamBreak_Hospitals), nursing homes and assisted living (DEMO_DamBreak_Nursing_Homes), schools (DEMO_DamBreak_Schools), Red Cross shelters (DEMO_DamBreak_Red_Cross_Shelters), and water treatment plants (DEMO_DamBreak_Water_Plants).",
+      "expected_impact_numbers": {
+        "total_population_in_polygon": 8420,
+        "pct_over_65": 24,
+        "pct_limited_english": 10,
+        "nursing_homes_in_zone": 4,
+        "nursing_home_residents_at_risk": 195,
+        "schools_in_zone": 8,
+        "school_enrollment_at_risk": 3400,
+        "hospitals_in_zone": 1,
+        "water_plants_in_zone": 4,
+        "shelters_outside_zone": 5
+      },
+      "narrative_notes": "Oroville Dam is the tallest dam in the United States. In February 2017, damage to its main and emergency spillways forced the evacuation of 188,000 people downstream. This scenario uses the same geography with synthetic population and facility data. Asset layers (DEMO_DamBreak_*) have real facility names from the Oroville/Butte County area."
     }
   ]
 }
