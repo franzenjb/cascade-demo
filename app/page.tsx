@@ -539,10 +539,43 @@ export default function HomePage() {
       const data = await res.json();
       const features = data.features || [];
 
-      // Convert features to map instructions
-      const color = layer.category === "infrastructure" ? "#1e4a6d"
-        : layer.category === "hazards_weather" ? "#ED1B2E"
-        : "#b8860b";
+      // Map layer IDs to icon feature types
+      const LAYER_ICON_MAP: Record<string, string> = {
+        infra_pharmacies: "pharmacy",
+        infra_urgent_care: "urgent_care",
+        infra_public_health: "public_health",
+        infra_hospitals: "hospital",
+        infra_nursing_homes: "dam_nursing_home",
+        infra_dialysis: "dialysis",
+        infra_fire_stations: "fire_station",
+        infra_law_enforcement: "police",
+        infra_public_schools: "school",
+        infra_private_schools: "school",
+        infra_colleges: "college",
+        infra_mobile_homes: "mobile_home_park",
+        infra_worship: "church",
+        infra_snap: "grocery",
+        infra_power_plants: "power_plant",
+        infra_landfills: "landfill",
+        infra_dams: "dam",
+        infra_prisons: "prison",
+        infra_wastewater: "dam_water_plant",
+        infra_red_cross: "shelter",
+        haz_stream_gauges: "stream_gauge",
+        haz_river_flooding: "stream_gauge",
+        haz_wildfire_points: "wildfire_point",
+        haz_fire_weather: "wildfire_point",
+        haz_tornado_tracks: "tornado_track",
+        haz_seismic: "seismic",
+        haz_national_risk: "census_tract",
+        haz_wea: "weather_alert",
+        haz_severe_outlook: "weather_alert",
+        haz_excessive_rainfall: "weather_alert",
+        haz_climate_outlooks: "weather_alert",
+      };
+
+      const featureType = LAYER_ICON_MAP[layerId] ||
+        (layer.category === "community_resilience" ? "census_tract" : "medical");
 
       const newInstructions = features
         .filter((f: any) => f.geometry)
@@ -553,8 +586,8 @@ export default function HomePage() {
             coordinates: [f.geometry.x, f.geometry.y],
           },
           layer_label: layerId,
-          style: { color, label: f.attributes?.name || layer.name },
-          featureType: "generic",
+          style: { color: "#1e4a6d", label: f.attributes?.name || layer.name },
+          featureType,
           displayLabel: f.attributes?.name || f.attributes?.tract_name || layer.name,
           attributes: f.attributes,
         }));

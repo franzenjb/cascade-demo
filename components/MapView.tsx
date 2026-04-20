@@ -640,10 +640,150 @@ function svgForType(featureType: string, theme: Theme = "light"): string {
   <path d="M13 18 Q14.5 16 16 18 Q17.5 20 19 18" fill="none" stroke="#0891B2" stroke-width="1.5" stroke-linecap="round"/>
 </svg>`.trim();
 
+    case "pharmacy":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#059669" stroke="#ffffff" stroke-width="2"/>
+  <text x="16" y="21.5" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold" font-family="serif">℞</text>
+</svg>`.trim();
+
+    case "urgent_care":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#059669" stroke="#ffffff" stroke-width="2"/>
+  <rect x="14" y="9" width="4" height="14" fill="#ffffff"/>
+  <rect x="9" y="13" width="14" height="4" fill="#ffffff"/>
+  <circle cx="22" cy="10" r="4" fill="#ED1B2E"/>
+  <text x="22" y="13" text-anchor="middle" fill="#ffffff" font-size="7" font-weight="bold">!</text>
+</svg>`.trim();
+
+    case "public_health":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#059669" stroke="#ffffff" stroke-width="2"/>
+  <path d="M16 8 L16 24 M11 11 L21 21 M11 21 L21 11" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="16" cy="16" r="3" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "church":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#7C3AED" stroke="#ffffff" stroke-width="2"/>
+  <rect x="14.5" y="7" width="3" height="13" fill="#ffffff"/>
+  <rect x="12" y="10" width="8" height="3" fill="#ffffff"/>
+  <path d="M10 20 L16 14 L22 20 L22 25 L10 25 Z" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "grocery":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#D97706" stroke="#ffffff" stroke-width="2"/>
+  <path d="M9 10 L11 10 L13 20 L23 20 L24 13 L12 13" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="14" cy="23" r="1.5" fill="#ffffff"/>
+  <circle cx="21" cy="23" r="1.5" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "power_plant":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#F59E0B" stroke="#ffffff" stroke-width="2"/>
+  <path d="M17 7 L12 16 L15 16 L14 25 L21 14 L17 14 Z" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "dam":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#1B6EC2" stroke="#ffffff" stroke-width="2"/>
+  <path d="M7 14 Q10 11 13 14 Q16 17 19 14 Q22 11 25 14" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <path d="M7 19 Q10 16 13 19 Q16 22 19 19 Q22 16 25 19" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="9" y="22" width="14" height="3" fill="#ffffff" rx="1"/>
+</svg>`.trim();
+
+    case "prison":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#6B7280" stroke="#ffffff" stroke-width="2"/>
+  <rect x="10" y="9" width="12" height="14" fill="none" stroke="#ffffff" stroke-width="2" rx="1"/>
+  <line x1="13" y1="9" x2="13" y2="23" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="16" y1="9" x2="16" y2="23" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="19" y1="9" x2="19" y2="23" stroke="#ffffff" stroke-width="1.5"/>
+</svg>`.trim();
+
+    case "college":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#E85D04" stroke="#ffffff" stroke-width="2"/>
+  <path d="M6 14 L16 9 L26 14 L16 19 Z" fill="#ffffff"/>
+  <path d="M10 16 L10 21 C10 23 13 24 16 24 C19 24 22 23 22 21 L22 16" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="23" y="14" width="2" height="7" fill="#ffffff"/>
+  <circle cx="24" cy="22" r="1.5" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "landfill":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#78716C" stroke="#ffffff" stroke-width="2"/>
+  <path d="M8 22 L12 14 L16 18 L20 12 L24 22 Z" fill="#ffffff"/>
+  <path d="M10 22 L22 22" stroke="#ffffff" stroke-width="2"/>
+</svg>`.trim();
+
+    case "stream_gauge":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#0891B2" stroke="#ffffff" stroke-width="2"/>
+  <rect x="14" y="8" width="4" height="16" fill="#ffffff" rx="1"/>
+  <line x1="12" y1="12" x2="14" y2="12" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="12" y1="16" x2="14" y2="16" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="12" y1="20" x2="14" y2="20" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="18" y1="14" x2="20" y2="14" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="18" y1="18" x2="20" y2="18" stroke="#ffffff" stroke-width="1.5"/>
+</svg>`.trim();
+
+    case "weather_alert":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#DC2626" stroke="#ffffff" stroke-width="2"/>
+  <path d="M16 8 L25 24 L7 24 Z" fill="#ffffff"/>
+  <rect x="15" y="13" width="2" height="6" fill="#DC2626"/>
+  <circle cx="16" cy="21.5" r="1.2" fill="#DC2626"/>
+</svg>`.trim();
+
+    case "wildfire_point":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#DC2626" stroke="#ffffff" stroke-width="2"/>
+  <path d="M16 7 C17.5 10 21 12 21 16.5 C21 17.5 20.5 18 19.5 18.5 C20 17.5 19.5 16.5 18.5 16 C18.5 18 17.5 19 16 19 C14.5 19 13.5 18.5 13.5 17 C13.5 18 12.5 19 12 19.5 C11.5 18.5 11 17.5 11 16.5 C11 13.5 13.5 12 14.5 10 C14.5 11.5 15 12.5 16 12.5 C16 11 16 9 16 7 Z" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "census_tract":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#B8860B" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="13" cy="12" r="2.5" fill="#ffffff"/>
+  <circle cx="19" cy="12" r="2.5" fill="#ffffff"/>
+  <circle cx="16" cy="18" r="2.5" fill="#ffffff"/>
+  <path d="M10 23 C10 20.5 12.5 19 16 19 C19.5 19 22 20.5 22 23" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>`.trim();
+
+    case "tornado_track":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#7C3AED" stroke="#ffffff" stroke-width="2"/>
+  <path d="M12 8 L20 8 L18 12 L20 12 L14 24 L16 16 L13 16 Z" fill="#ffffff"/>
+</svg>`.trim();
+
+    case "seismic":
+      return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="14" fill="#92400E" stroke="#ffffff" stroke-width="2"/>
+  <path d="M7 16 L11 16 L13 10 L15 22 L17 11 L19 20 L21 16 L25 16" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`.trim();
+
     default:
       return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <circle cx="16" cy="16" r="10" fill="#666" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="16" cy="16" r="14" fill="#1e4a6d" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="16" cy="16" r="4" fill="#ffffff"/>
 </svg>`.trim();
   }
 }
