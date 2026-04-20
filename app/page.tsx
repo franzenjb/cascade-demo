@@ -684,39 +684,55 @@ export default function HomePage() {
         <section
           className="flex-[2] bg-white dark:bg-arc-gray-900 border border-arc-gray-100 dark:border-arc-gray-700 flex flex-col min-h-0"
         >
-          <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-3 py-1.5 flex items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <div className="w-1 h-4 bg-arc-red flex-shrink-0"></div>
-              <h2 className="font-headline text-sm font-bold text-arc-black dark:text-arc-cream">
-                {warningType === "wildfire"
-                  ? "Shasta County, CA"
-                  : warningType === "dam_break"
-                  ? "Butte County, CA"
-                  : "Cascade County"}
-              </h2>
-              <span className="text-[9px] text-arc-gray-400 dark:text-arc-gray-300 font-data uppercase tracking-wider">
-                Synthetic data
-              </span>
+          {/* ── Emergency Dashboard Header ── */}
+          <div className="border-b-2 border-arc-red bg-arc-black dark:bg-arc-black px-4 py-2 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-1.5 h-8 bg-arc-red flex-shrink-0 rounded-sm"></div>
+              <div>
+                <h2 className="font-headline text-base font-bold text-white tracking-wide uppercase">
+                  {warningType === "wildfire"
+                    ? "Shasta County, CA"
+                    : warningType === "dam_break"
+                    ? "Butte County, CA"
+                    : "Cascade County"}
+                </h2>
+                <span className="text-[9px] text-arc-gray-400 font-data uppercase tracking-widest">
+                  {warningType === "tornado" ? "Tornado Warning" : warningType === "wildfire" ? "Wildfire Evacuation" : warningType === "dam_break" ? "Dam Failure Alert" : "Active Event"} — Synthetic Data
+                </span>
+              </div>
             </div>
             {eventId && (
-              <span className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 tracking-wider">{eventId}</span>
+              <span className="text-[10px] font-data text-arc-gray-400 tracking-wider bg-arc-gray-800 px-2 py-1 rounded">{eventId}</span>
             )}
           </div>
 
+          {/* ── KPI Cards ── */}
           {metrics && (
-            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-arc-cream/50 dark:bg-arc-black/40 px-3 py-1.5 flex items-center justify-between text-[12px] font-data">
-              <span>
-                <span className="font-bold text-arc-black dark:text-arc-cream">{metrics.pop.toLocaleString()}</span>
-                <span className="text-arc-gray-500 dark:text-arc-cream/60 ml-1.5">residents in perimeter</span>
-              </span>
-              <span className="text-arc-gray-500 dark:text-arc-cream/60">Over 65 <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctOver65)}</strong></span>
-              <span className="text-arc-gray-500 dark:text-arc-cream/60">Limited English <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctLep)}</strong></span>
-              <span className="text-arc-gray-500 dark:text-arc-cream/60">Disability <strong className="text-arc-black dark:text-arc-cream">{fmtPct(metrics.pctDisability)}</strong></span>
+            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-gradient-to-r from-arc-red/5 to-transparent dark:from-arc-red/10 dark:to-transparent px-3 py-2.5">
+              <div className="grid grid-cols-4 gap-2">
+                <div className="bg-white dark:bg-arc-gray-800 border border-arc-gray-200 dark:border-arc-gray-600 rounded px-3 py-2 text-center shadow-sm">
+                  <div className="text-2xl font-headline font-black text-arc-red leading-none">{metrics.pop.toLocaleString()}</div>
+                  <div className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider mt-1">Residents at Risk</div>
+                </div>
+                <div className="bg-white dark:bg-arc-gray-800 border border-arc-gray-200 dark:border-arc-gray-600 rounded px-3 py-2 text-center shadow-sm">
+                  <div className="text-2xl font-headline font-black text-arc-black dark:text-arc-cream leading-none">{fmtPct(metrics.pctOver65)}</div>
+                  <div className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider mt-1">Over 65</div>
+                </div>
+                <div className="bg-white dark:bg-arc-gray-800 border border-arc-gray-200 dark:border-arc-gray-600 rounded px-3 py-2 text-center shadow-sm">
+                  <div className="text-2xl font-headline font-black text-arc-black dark:text-arc-cream leading-none">{fmtPct(metrics.pctLep)}</div>
+                  <div className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider mt-1">Limited English</div>
+                </div>
+                <div className="bg-white dark:bg-arc-gray-800 border border-arc-gray-200 dark:border-arc-gray-600 rounded px-3 py-2 text-center shadow-sm">
+                  <div className="text-2xl font-headline font-black text-arc-black dark:text-arc-cream leading-none">{fmtPct(metrics.pctDisability)}</div>
+                  <div className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider mt-1">Disability</div>
+                </div>
+              </div>
             </div>
           )}
 
+          {/* ── Asset Category Buttons ── */}
           {totalAssetCount > 0 && (
-            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-3 py-1 flex gap-1.5 flex-wrap">
+            <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-3 py-1.5 flex gap-1.5 flex-wrap">
               {currentSections.map((section) => (
                 <Chip
                   key={section.id}
