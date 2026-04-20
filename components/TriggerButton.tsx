@@ -65,7 +65,7 @@ export default function TriggerButton({ onFired }: TriggerButtonProps) {
     null
   );
   const [fired, setFired] = useState(false);
-  const [showPicker, setShowPicker] = useState(false);
+  const [showPicker, setShowPicker] = useState(true);
 
   const showButton = process.env.NEXT_PUBLIC_SHOW_TRIGGER_BUTTON !== "false";
   if (!showButton) return null;
