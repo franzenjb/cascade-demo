@@ -54,22 +54,29 @@ const BOUNDS = { west: -122.10, east: -121.10, south: 39.30, north: 40.00 };
 // ─── Inundation zone — downstream from Oroville Dam ────────
 // Follows the Feather River corridor from the dam through Oroville,
 // Thermalito, and south toward Gridley. ~20km long, 5-8km wide.
+// Realistic inundation corridor: follows the Feather River ~25km south
+// from the dam through Oroville, Thermalito, past Honcut, to Gridley.
+// Narrow at the dam, widens through the floodplain, 3-5km wide.
 const INUNDATION_ZONE: [number, number][] = [
-  [-121.510, 39.555],   // NE — just below dam
-  [-121.490, 39.540],   // dam outlet area
-  [-121.480, 39.520],   // downstream east bank
-  [-121.485, 39.495],   // Oroville east
-  [-121.490, 39.470],   // south of Oroville east
-  [-121.500, 39.440],   // approaching Gridley east
-  [-121.520, 39.420],   // south end east
-  [-121.570, 39.420],   // south end west
-  [-121.590, 39.440],   // Thermalito south
-  [-121.600, 39.470],   // Thermalito west
-  [-121.595, 39.495],   // Oroville west
-  [-121.580, 39.520],   // upstream west bank
-  [-121.560, 39.540],   // NW — west bank above Oroville
-  [-121.540, 39.555],   // close back to NE
-  [-121.510, 39.555],
+  // East bank, north to south
+  [-121.475, 39.545],   // dam outlet east
+  [-121.490, 39.525],   // below dam
+  [-121.520, 39.505],   // east Oroville
+  [-121.535, 39.480],   // south Oroville
+  [-121.560, 39.450],   // agricultural flats east
+  [-121.600, 39.410],   // Honcut area east
+  [-121.650, 39.370],   // approaching Gridley east
+  [-121.680, 39.345],   // south end east
+  // West bank, south to north
+  [-121.720, 39.345],   // south end west
+  [-121.700, 39.370],   // Gridley west
+  [-121.660, 39.410],   // Honcut area west
+  [-121.620, 39.450],   // agricultural flats west
+  [-121.595, 39.480],   // Thermalito
+  [-121.575, 39.505],   // west Oroville
+  [-121.555, 39.530],   // north Oroville west
+  [-121.530, 39.550],   // above dam west
+  [-121.475, 39.545],   // close
 ];
 
 function pointInPolygon(pt: [number, number], poly: [number, number][]): boolean {
@@ -137,11 +144,13 @@ function censusTracts(): FC {
     pop: number; over65: number; lep: number; disab: number; pov: number;
     cx: number; cy: number;
   }> = [
-    { pop: 2340, over65: 0.22, lep: 0.12, disab: 0.14, pov: 0.21, cx: -121.555, cy: 39.512 }, // Oroville downtown
-    { pop: 1890, over65: 0.26, lep: 0.08, disab: 0.16, pov: 0.24, cx: -121.580, cy: 39.495 }, // Thermalito
-    { pop: 1640, over65: 0.19, lep: 0.15, disab: 0.11, pov: 0.18, cx: -121.535, cy: 39.480 }, // South Oroville
-    { pop: 1430, over65: 0.31, lep: 0.06, disab: 0.20, pov: 0.28, cx: -121.550, cy: 39.450 }, // Rural south
-    { pop: 1120, over65: 0.24, lep: 0.10, disab: 0.15, pov: 0.19, cx: -121.520, cy: 39.535 }, // Below dam
+    { pop: 2340, over65: 0.22, lep: 0.12, disab: 0.14, pov: 0.21, cx: -121.545, cy: 39.510 }, // Oroville downtown
+    { pop: 1890, over65: 0.26, lep: 0.08, disab: 0.16, pov: 0.24, cx: -121.585, cy: 39.490 }, // Thermalito
+    { pop: 1640, over65: 0.19, lep: 0.15, disab: 0.11, pov: 0.18, cx: -121.555, cy: 39.470 }, // South Oroville
+    { pop: 1430, over65: 0.31, lep: 0.06, disab: 0.20, pov: 0.28, cx: -121.590, cy: 39.440 }, // Honcut area
+    { pop: 1120, over65: 0.24, lep: 0.10, disab: 0.15, pov: 0.19, cx: -121.510, cy: 39.530 }, // Below dam
+    { pop: 2180, over65: 0.20, lep: 0.14, disab: 0.12, pov: 0.19, cx: -121.670, cy: 39.365 }, // Gridley
+    { pop: 980, over65: 0.28, lep: 0.09, disab: 0.17, pov: 0.23, cx: -121.630, cy: 39.415 }, // Rural midpoint
   ];
   floodTracts.forEach((t, i) => {
     features.push(
@@ -202,11 +211,11 @@ function hospitalsData(): FC {
     has_er_24h: boolean; address: string;
     cx: number; cy: number;
   }> = [
-    { name: "Oroville Hospital", beds: 133, trauma_level: "none", has_er_24h: true, address: "2767 Olive Hwy, Oroville", cx: -121.524, cy: 39.518 },
+    { name: "Oroville Hospital", beds: 133, trauma_level: "none", has_er_24h: true, address: "2767 Olive Hwy, Oroville", cx: -121.540, cy: 39.510 },
     { name: "Enloe Medical Center", beds: 298, trauma_level: "trauma_II", has_er_24h: true, address: "1531 Esplanade, Chico", cx: -121.838, cy: 39.734 },
-    { name: "Orchard Hospital", beds: 46, trauma_level: "none", has_er_24h: true, address: "240 Spruce St, Gridley", cx: -121.693, cy: 39.363 },
+    { name: "Orchard Hospital", beds: 46, trauma_level: "none", has_er_24h: true, address: "240 Spruce St, Gridley", cx: -121.680, cy: 39.360 },
     { name: "Feather River Hospital (Adventist)", beds: 100, trauma_level: "none", has_er_24h: true, address: "5974 Pentz Rd, Paradise", cx: -121.608, cy: 39.760 },
-    { name: "Biggs-Gridley Memorial Hospital", beds: 32, trauma_level: "none", has_er_24h: false, address: "225 W Spruce St, Biggs", cx: -121.713, cy: 39.413 },
+    { name: "Biggs-Gridley Memorial Hospital", beds: 32, trauma_level: "none", has_er_24h: false, address: "225 W Spruce St, Biggs", cx: -121.700, cy: 39.410 },
   ];
   return fc(
     list.map((h, i) =>
@@ -229,12 +238,12 @@ function nursingHomes(): FC {
     mobility_impaired_pct: number; address: string;
     cx: number; cy: number;
   }> = [
-    { name: "Oroville Healthcare & Rehab", beds: 99, residents: 82, mobility_impaired_pct: 0.68, address: "2800 Olive Hwy, Oroville", cx: -121.530, cy: 39.515 },
-    { name: "Country Crest Post-Acute", beds: 59, residents: 45, mobility_impaired_pct: 0.72, address: "1655 12th St, Oroville", cx: -121.553, cy: 39.507 },
-    { name: "Thermalito Gardens Assisted Living", beds: 42, residents: 38, mobility_impaired_pct: 0.55, address: "2960 Grand Ave, Thermalito", cx: -121.585, cy: 39.500 },
-    { name: "Sierra View Senior Living", beds: 36, residents: 30, mobility_impaired_pct: 0.50, address: "125 Table Mountain Blvd, Oroville", cx: -121.545, cy: 39.525 },
+    { name: "Oroville Healthcare & Rehab", beds: 99, residents: 82, mobility_impaired_pct: 0.68, address: "2800 Olive Hwy, Oroville", cx: -121.540, cy: 39.505 },
+    { name: "Country Crest Post-Acute", beds: 59, residents: 45, mobility_impaired_pct: 0.72, address: "1655 12th St, Oroville", cx: -121.550, cy: 39.495 },
+    { name: "Thermalito Gardens Assisted Living", beds: 42, residents: 38, mobility_impaired_pct: 0.55, address: "2960 Grand Ave, Thermalito", cx: -121.585, cy: 39.488 },
+    { name: "Sierra View Senior Living", beds: 36, residents: 30, mobility_impaired_pct: 0.50, address: "125 Table Mountain Blvd, Oroville", cx: -121.530, cy: 39.515 },
     { name: "Chico Creek Lodge", beds: 78, residents: 65, mobility_impaired_pct: 0.60, address: "587 Rio Lindo Ave, Chico", cx: -121.822, cy: 39.720 },
-    { name: "Gridley Post-Acute Center", beds: 40, residents: 34, mobility_impaired_pct: 0.65, address: "246 Spruce St, Gridley", cx: -121.694, cy: 39.365 },
+    { name: "Gridley Post-Acute Center", beds: 40, residents: 34, mobility_impaired_pct: 0.65, address: "246 Spruce St, Gridley", cx: -121.685, cy: 39.360 },
   ];
   return fc(
     list.map((n, i) =>
@@ -256,14 +265,14 @@ function schools(): FC {
     name: string; enrollment: number; grade_range: string;
     address: string; cx: number; cy: number;
   }> = [
-    { name: "Oroville High School", enrollment: 820, grade_range: "9-12", address: "2211 Washington Ave, Oroville", cx: -121.548, cy: 39.515 },
-    { name: "Central Middle School", enrollment: 410, grade_range: "6-8", address: "2255 5th Ave, Oroville", cx: -121.555, cy: 39.510 },
-    { name: "Bird Street Elementary", enrollment: 290, grade_range: "K-5", address: "1421 Bird St, Oroville", cx: -121.553, cy: 39.518 },
-    { name: "Thermalito Union Elementary", enrollment: 380, grade_range: "K-5", address: "400 Grand Ave, Thermalito", cx: -121.583, cy: 39.503 },
-    { name: "Poplar Avenue Elementary", enrollment: 260, grade_range: "K-5", address: "1725 Poplar Ave, Oroville", cx: -121.543, cy: 39.498 },
-    { name: "Nelson Avenue Middle School", enrollment: 340, grade_range: "6-8", address: "985 Nelson Ave, Oroville", cx: -121.560, cy: 39.490 },
-    { name: "Las Plumas High School", enrollment: 680, grade_range: "9-12", address: "2380 Las Plumas Ave, Oroville", cx: -121.570, cy: 39.485 },
-    { name: "Stanford Avenue Elementary", enrollment: 220, grade_range: "K-5", address: "1850 Stanford Ave, Oroville", cx: -121.537, cy: 39.505 },
+    { name: "Oroville High School", enrollment: 820, grade_range: "9-12", address: "2211 Washington Ave, Oroville", cx: -121.545, cy: 39.508 },
+    { name: "Central Middle School", enrollment: 410, grade_range: "6-8", address: "2255 5th Ave, Oroville", cx: -121.550, cy: 39.500 },
+    { name: "Bird Street Elementary", enrollment: 290, grade_range: "K-5", address: "1421 Bird St, Oroville", cx: -121.540, cy: 39.512 },
+    { name: "Thermalito Union Elementary", enrollment: 380, grade_range: "K-5", address: "400 Grand Ave, Thermalito", cx: -121.583, cy: 39.492 },
+    { name: "Poplar Avenue Elementary", enrollment: 260, grade_range: "K-5", address: "1725 Poplar Ave, Oroville", cx: -121.555, cy: 39.475 },
+    { name: "Nelson Avenue Middle School", enrollment: 340, grade_range: "6-8", address: "985 Nelson Ave, Oroville", cx: -121.575, cy: 39.465 },
+    { name: "Las Plumas High School", enrollment: 680, grade_range: "9-12", address: "2380 Las Plumas Ave, Oroville", cx: -121.590, cy: 39.455 },
+    { name: "Gridley High School", enrollment: 520, grade_range: "9-12", address: "300 E Spruce St, Gridley", cx: -121.680, cy: 39.365 },
   ];
   return fc(
     list.map((s, i) =>
@@ -314,10 +323,10 @@ function waterPlants(): FC {
     capacity_mgd: number; serves_population: number;
     address: string; cx: number; cy: number;
   }> = [
-    { name: "Oroville Water Treatment Plant", type: "water_treatment", capacity_mgd: 12, serves_population: 18000, address: "2290 Feather River Blvd, Oroville", cx: -121.530, cy: 39.508 },
-    { name: "Thermalito Water & Sewer District", type: "wastewater", capacity_mgd: 4, serves_population: 8500, address: "410 Grand Ave, Thermalito", cx: -121.588, cy: 39.498 },
-    { name: "South Feather Water & Power", type: "pump_station", capacity_mgd: 8, serves_population: 14000, address: "6588 Miners Ranch Rd, Oroville", cx: -121.495, cy: 39.490 },
-    { name: "Cal Water — Oroville District", type: "water_treatment", capacity_mgd: 6, serves_population: 11000, address: "1833 Mitchell Ave, Oroville", cx: -121.545, cy: 39.520 },
+    { name: "Oroville Water Treatment Plant", type: "water_treatment", capacity_mgd: 12, serves_population: 18000, address: "2290 Feather River Blvd, Oroville", cx: -121.540, cy: 39.502 },
+    { name: "Thermalito Water & Sewer District", type: "wastewater", capacity_mgd: 4, serves_population: 8500, address: "410 Grand Ave, Thermalito", cx: -121.585, cy: 39.485 },
+    { name: "South Feather Water & Power", type: "pump_station", capacity_mgd: 8, serves_population: 14000, address: "6588 Miners Ranch Rd, Oroville", cx: -121.560, cy: 39.460 },
+    { name: "Cal Water — Oroville District", type: "water_treatment", capacity_mgd: 6, serves_population: 11000, address: "1833 Mitchell Ave, Oroville", cx: -121.530, cy: 39.515 },
   ];
   return fc(
     list.map((w, i) =>
