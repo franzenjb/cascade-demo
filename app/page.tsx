@@ -268,6 +268,7 @@ export default function HomePage() {
   const [focusFeature, setFocusFeature] = useState<FocusFeature | null>(null);
   const [enabledLayers, setEnabledLayers] = useState<Set<string>>(new Set());
   const [enabledLayerInfo, setEnabledLayerInfo] = useState<Map<string, CatalogLayer>>(new Map());
+  const [extraMetrics, setExtraMetrics] = useState<Map<string, { label: string; value: string }>>(new Map());
   const focusNonce = useRef(0);
   const [homeSignal, setHomeSignal] = useState(0);
   const [accordionResetSignal, setAccordionResetSignal] = useState(0);
@@ -292,6 +293,9 @@ export default function HomePage() {
     setRightTab("drill");
     setFocusFeature(null);
     setHighlightedFeature(null);
+    setEnabledLayers(new Set());
+    setEnabledLayerInfo(new Map());
+    setExtraMetrics(new Map());
     setScenarioId(sid);
     setWarningType(wt);
     setEventId(
@@ -540,50 +544,48 @@ export default function HomePage() {
     haz_climate_outlooks: "weather_alert",
   };
 
+  // Map community resilience layer IDs to their percentage/value field and short label
+  const CR_METRIC_CONFIG: Record<string, { field: string; label: string; fmt: "pct" | "num" | "dollar" | "idx" }> = {
+    cr_no_hs_diploma: { field: "no_diploma_pct", label: "No Diploma", fmt: "pct" },
+    cr_race_ethnicity: { field: "hispanic_pct", label: "Hispanic", fmt: "pct" },
+    cr_no_vehicle: { field: "no_vehicle_pct", label: "No Vehicle", fmt: "pct" },
+    cr_single_parent: { field: "single_parent_pct", label: "Single Parent", fmt: "pct" },
+    cr_no_smartphone: { field: "no_smartphone_pct", label: "No Smartphone", fmt: "pct" },
+    cr_no_broadband: { field: "no_broadband_pct", label: "No Broadband", fmt: "pct" },
+    cr_mobile_homes_pct: { field: "mobile_home_pct", label: "Mobile Homes", fmt: "pct" },
+    cr_owner_occupied: { field: "owner_occupied_pct", label: "Owner Occupied", fmt: "pct" },
+    cr_housing_costs: { field: "cost_burdened_pct", label: "Cost Burdened", fmt: "pct" },
+    cr_flood_insurance: { field: "insured_pct", label: "Flood Insured", fmt: "pct" },
+    cr_hospital_count: { field: "pop_per_hospital", label: "Pop/Hospital", fmt: "num" },
+    cr_medical_capacity: { field: "per_100k_rate", label: "Providers/100K", fmt: "num" },
+    cr_uninsured: { field: "uninsured_pct", label: "Uninsured", fmt: "pct" },
+    cr_power_dependent: { field: "power_dependent_count", label: "Power Dependent", fmt: "num" },
+    cr_unemployed: { field: "unemployment_rate", label: "Unemployed", fmt: "pct" },
+    cr_unemployed_women: { field: "female_unemployment_rate", label: "Women Unemployed", fmt: "pct" },
+    cr_gini: { field: "gini_index", label: "Gini Index", fmt: "idx" },
+    cr_predominant_sector: { field: "sector_pct", label: "Top Sector", fmt: "pct" },
+    cr_civic_orgs: { field: "per_10k_rate", label: "Civic Orgs/10K", fmt: "num" },
+    cr_religious_affiliation: { field: "no_affiliation_pct", label: "No Affiliation", fmt: "pct" },
+    cr_inactive_voters: { field: "inactive_pct", label: "Inactive Voters", fmt: "pct" },
+    cr_population_change: { field: "change_pct", label: "Pop Change", fmt: "pct" },
+  };
+
   const handleToggleLayer = async (layerId: string, layer: CatalogLayer) => {
     if (enabledLayers.has(layerId)) {
-      // Toggle OFF — remove from map, features, counts
-      setEnabledLayers((prev) => {
-        const next = new Set(prev);
-        next.delete(layerId);
-        return next;
-      });
-      setEnabledLayerInfo((prev) => {
-        const next = new Map(prev);
-        next.delete(layerId);
-        return next;
-      });
-      setMapInstructions((mi) => [
-        ...mi,
-        { action: "remove_by_label", layer_label: layerId },
-      ]);
-      setCounts((c) => {
-        const next = { ...c };
-        delete next[layerId];
-        return next;
-      });
-      setFeatures((f) => {
-        const next = { ...f };
-        delete next[layerId];
-        return next;
-      });
-      if (activeCategory === layerId) {
-        setActiveCategory(null);
-      }
+      // Toggle OFF
+      setEnabledLayers((prev) => { const n = new Set(prev); n.delete(layerId); return n; });
+      setEnabledLayerInfo((prev) => { const n = new Map(prev); n.delete(layerId); return n; });
+      setExtraMetrics((prev) => { const n = new Map(prev); n.delete(layerId); return n; });
+      setMapInstructions((mi) => [...mi, { action: "remove_by_label", layer_label: layerId }]);
+      setCounts((c) => { const n = { ...c }; delete n[layerId]; return n; });
+      setFeatures((f) => { const n = { ...f }; delete n[layerId]; return n; });
+      if (activeCategory === layerId) setActiveCategory(null);
       return;
     }
 
     // Toggle ON
-    setEnabledLayers((prev) => {
-      const next = new Set(prev);
-      next.add(layerId);
-      return next;
-    });
-    setEnabledLayerInfo((prev) => {
-      const next = new Map(prev);
-      next.set(layerId, layer);
-      return next;
-    });
+    setEnabledLayers((prev) => { const n = new Set(prev); n.add(layerId); return n; });
+    setEnabledLayerInfo((prev) => { const n = new Map(prev); n.set(layerId, layer); return n; });
 
     const scenario = warningType || "tornado";
     const agolLayerId = layer.scenario_layers?.[scenario];
@@ -592,20 +594,38 @@ export default function HomePage() {
       const res = await fetch("/api/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          layer_id: agolLayerId || layerId,
-          scenario,
-        }),
+        body: JSON.stringify({ layer_id: agolLayerId || layerId, scenario }),
       });
-
       if (!res.ok) return;
       const data = await res.json();
       const fetchedFeatures = data.features || [];
 
-      const iconType = LAYER_ICON_MAP[layerId] ||
-        (layer.category === "community_resilience" ? "census_tract" : "medical");
+      // Community Resilience layers → KPI metric card, not map points
+      const crConfig = CR_METRIC_CONFIG[layerId];
+      if (layer.category === "community_resilience" && crConfig) {
+        const values = fetchedFeatures
+          .map((f: any) => Number(f.attributes?.[crConfig.field]))
+          .filter((v: number) => !isNaN(v));
+        if (values.length > 0) {
+          const avg = values.reduce((s: number, v: number) => s + v, 0) / values.length;
+          let formatted: string;
+          if (crConfig.fmt === "pct") formatted = `${Math.round(avg)}%`;
+          else if (crConfig.fmt === "dollar") formatted = `$${Math.round(avg).toLocaleString()}`;
+          else if (crConfig.fmt === "idx") formatted = avg.toFixed(2);
+          else formatted = Math.round(avg).toLocaleString();
 
-      // Store as FeatureRows for drill panel
+          setExtraMetrics((prev) => {
+            const n = new Map(prev);
+            n.set(layerId, { label: crConfig.label, value: formatted });
+            return n;
+          });
+        }
+        return;
+      }
+
+      // Infrastructure + Hazards → point features on map
+      const iconType = LAYER_ICON_MAP[layerId] || "medical";
+
       const featureRows: FeatureRow[] = fetchedFeatures
         .filter((f: any) => f.geometry)
         .map((f: any) => ({
@@ -619,13 +639,9 @@ export default function HomePage() {
       setCounts((c) => ({ ...c, [layerId]: featureRows.length }));
       setFeatures((f) => ({ ...f, [layerId]: featureRows }));
 
-      // Draw on map — use layerId as featureType so map filtering works
       const newInstructions: MapInstruction[] = featureRows.map((fr) => ({
         action: "draw" as const,
-        geometry: {
-          type: "Point" as const,
-          coordinates: [fr.geometry!.lon, fr.geometry!.lat],
-        },
+        geometry: { type: "Point" as const, coordinates: [fr.geometry!.lon, fr.geometry!.lat] },
         layer_label: layerId,
         style: { color: "#1e4a6d", label: fr.attributes.name },
         featureType: layerId,
@@ -751,7 +767,7 @@ export default function HomePage() {
           {/* ── KPI Cards ── */}
           {metrics && (
             <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-gradient-to-r from-arc-red/5 to-transparent dark:from-arc-red/10 dark:to-transparent px-3 py-2.5">
-              <div className="grid grid-cols-4 gap-2">
+              <div className={`grid gap-2 ${extraMetrics.size > 0 ? "grid-cols-4 sm:grid-cols-4" : "grid-cols-4"}`}>
                 <div className="bg-arc-red rounded px-3 py-2 text-center shadow-sm">
                   <div className="text-2xl font-headline font-black text-white leading-none">{metrics.pop.toLocaleString()}</div>
                   <div className="text-[10px] font-data text-white/90 uppercase tracking-wider mt-1 font-bold">Residents at Risk</div>
@@ -768,6 +784,12 @@ export default function HomePage() {
                   <div className="text-2xl font-headline font-black text-white leading-none">{fmtPct(metrics.pctDisability)}</div>
                   <div className="text-[10px] font-data text-white/80 uppercase tracking-wider mt-1 font-bold">Disability</div>
                 </div>
+                {Array.from(extraMetrics.entries()).map(([id, m]) => (
+                  <div key={id} className="bg-arc-black dark:bg-arc-gray-800 rounded px-3 py-2 text-center shadow-sm">
+                    <div className="text-2xl font-headline font-black text-white leading-none">{m.value}</div>
+                    <div className="text-[10px] font-data text-white/80 uppercase tracking-wider mt-1 font-bold">{m.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
