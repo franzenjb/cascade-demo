@@ -289,7 +289,7 @@ export default function HomePage() {
     setFeatures(EMPTY_FEATURES);
     setMetrics(null);
     setActiveCategory(null);
-    setRightTab("drill");
+    setRightTab("conversation");
     setFocusFeature(null);
     setHighlightedFeature(null);
     setEnabledLayers(new Set());
@@ -300,9 +300,9 @@ export default function HomePage() {
     setEventId(
       nwsEventId || `DEMO-${wt.toUpperCase()}-${new Date().getFullYear()}-0001`
     );
-    // Demo trigger goes straight to the assets — skip the Claude narrative.
-    // The conversation tab is still available for typed questions.
-    void directive;
+    // Fire the AI briefing — the "Buncombe scene" moment.
+    // ChatPanel auto-sends the proactive briefing when triggerDirective is set.
+    setTriggerDirective(directive);
 
     if (!polygon) return;
 

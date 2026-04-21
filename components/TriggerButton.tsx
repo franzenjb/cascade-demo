@@ -145,7 +145,7 @@ export default function TriggerButton({ onFired }: TriggerButtonProps) {
             <p className="text-sm text-arc-gray-900 dark:text-arc-cream leading-relaxed mb-5">
               Each scenario simulates what would occur if a real alert were
               triggered — the application responds proactively with a live
-              situational briefing built from Cascade County layers.
+              situational briefing built from local community data layers.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3 mb-5">

@@ -11,6 +11,7 @@
 import { NextRequest } from "next/server";
 import { getLayerServiceUrl, getLayerById } from "@/lib/catalog";
 import { getSyntheticFeatures } from "@/lib/synthetic_data";
+import { getLayerCatalog } from "@/lib/layer_discovery";
 import * as agol from "@/lib/agol";
 
 export const runtime = "nodejs";
@@ -96,9 +97,26 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Fall back to synthetic data for layers without AGOL services
+  // Fall back to synthetic data for layers without AGOL services.
+  // Synthetic files are keyed by catalog ID (e.g. "infra_hospitals") but the
+  // frontend may pass AGOL IDs (e.g. "DEMO_FireArea_Hospitals"). Try both.
   const scenario = body.scenario || "tornado";
-  const features = getSyntheticFeatures(body.layer_id, scenario);
+  let features = getSyntheticFeatures(body.layer_id, scenario);
+
+  if (!features) {
+    // Reverse lookup: find the catalog layer whose scenario_layers[*] matches
+    const discovCatalog = getLayerCatalog();
+    for (const cl of discovCatalog.layers) {
+      if (!cl.scenario_layers) continue;
+      for (const [sc, agolId] of Object.entries(cl.scenario_layers)) {
+        if (agolId === body.layer_id) {
+          features = getSyntheticFeatures(cl.id, sc);
+          if (features) break;
+        }
+      }
+      if (features) break;
+    }
+  }
 
   if (features) {
     return new Response(
