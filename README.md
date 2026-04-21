@@ -8,7 +8,7 @@ When a tornado warning fires over fictional Cascade County, the system generates
 
 ```bash
 git clone <repo-url>
-cd cascade-demo
+cd cascade1
 npm install
 cp .env.example .env.local  # then fill in values
 npm run dev

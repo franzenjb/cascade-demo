@@ -51,8 +51,8 @@ If you're ready to start immediately, this is the fastest path to seeing somethi
 ```bash
 # 1. Clone/copy this starter repo into your workspace
 cd ~/code
-cp -r /path/to/cascade-demo ./cascade-demo
-cd cascade-demo
+cp -r /path/to/cascade1 ./cascade1
+cd cascade1
 
 # 2. Install dependencies
 npm install
@@ -102,7 +102,7 @@ If after 90 minutes you see your fictional Cascade County boundary rendering on 
 ## Repository Structure
 
 ```
-cascade-demo/
+cascade1/
 ├── README.md                      # Quick overview for anyone cloning
 ├── BUILD.md                       # This file — the master build doc
 ├── .env.example                   # Template for environment variables
@@ -167,8 +167,8 @@ cascade-demo/
 **Goal by end of week:** A live web URL that renders the Cascade County boundary from your AGOL org. No AI yet. No conversational UI yet. Just proof that Next.js + AGOL + Vercel work together.
 
 **Day 1 (Monday)**
-- Create GitHub repo `cascade-demo`
-- Scaffold Next.js app: `npx create-next-app@latest cascade-demo --typescript --tailwind --app --src-dir=false`
+- Create GitHub repo `cascade1`
+- Scaffold Next.js app: `npx create-next-app@latest cascade1 --typescript --tailwind --app --src-dir=false`
 - Copy this starter repo's files over the scaffold
 - `npm install` and verify it runs locally
 - Link to Vercel, verify first deploy succeeds
