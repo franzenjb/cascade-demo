@@ -710,21 +710,21 @@ export default function HomePage() {
           {metrics && (
             <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 bg-gradient-to-r from-arc-red/5 to-transparent dark:from-arc-red/10 dark:to-transparent px-3 py-2.5">
               <div className="grid grid-cols-4 gap-2">
-                <div className="bg-white dark:bg-arc-gray-800 border border-arc-gray-200 dark:border-arc-gray-600 rounded px-3 py-2 text-center shadow-sm">
-                  <div className="text-2xl font-headline font-black text-arc-red leading-none">{metrics.pop.toLocaleString()}</div>
-                  <div className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider mt-1">Residents at Risk</div>
+                <div className="bg-arc-red rounded px-3 py-2 text-center shadow-sm">
+                  <div className="text-2xl font-headline font-black text-white leading-none">{metrics.pop.toLocaleString()}</div>
+                  <div className="text-[10px] font-data text-white/90 uppercase tracking-wider mt-1 font-bold">Residents at Risk</div>
                 </div>
-                <div className="bg-white dark:bg-arc-gray-800 border border-arc-gray-200 dark:border-arc-gray-600 rounded px-3 py-2 text-center shadow-sm">
-                  <div className="text-2xl font-headline font-black text-arc-black dark:text-arc-cream leading-none">{fmtPct(metrics.pctOver65)}</div>
-                  <div className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider mt-1">Over 65</div>
+                <div className="bg-arc-black dark:bg-arc-gray-800 rounded px-3 py-2 text-center shadow-sm">
+                  <div className="text-2xl font-headline font-black text-white leading-none">{fmtPct(metrics.pctOver65)}</div>
+                  <div className="text-[10px] font-data text-white/80 uppercase tracking-wider mt-1 font-bold">Over 65</div>
                 </div>
-                <div className="bg-white dark:bg-arc-gray-800 border border-arc-gray-200 dark:border-arc-gray-600 rounded px-3 py-2 text-center shadow-sm">
-                  <div className="text-2xl font-headline font-black text-arc-black dark:text-arc-cream leading-none">{fmtPct(metrics.pctLep)}</div>
-                  <div className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider mt-1">Limited English</div>
+                <div className="bg-arc-black dark:bg-arc-gray-800 rounded px-3 py-2 text-center shadow-sm">
+                  <div className="text-2xl font-headline font-black text-white leading-none">{fmtPct(metrics.pctLep)}</div>
+                  <div className="text-[10px] font-data text-white/80 uppercase tracking-wider mt-1 font-bold">Limited English</div>
                 </div>
-                <div className="bg-white dark:bg-arc-gray-800 border border-arc-gray-200 dark:border-arc-gray-600 rounded px-3 py-2 text-center shadow-sm">
-                  <div className="text-2xl font-headline font-black text-arc-black dark:text-arc-cream leading-none">{fmtPct(metrics.pctDisability)}</div>
-                  <div className="text-[10px] font-data text-arc-gray-500 dark:text-arc-gray-300 uppercase tracking-wider mt-1">Disability</div>
+                <div className="bg-arc-black dark:bg-arc-gray-800 rounded px-3 py-2 text-center shadow-sm">
+                  <div className="text-2xl font-headline font-black text-white leading-none">{fmtPct(metrics.pctDisability)}</div>
+                  <div className="text-[10px] font-data text-white/80 uppercase tracking-wider mt-1 font-bold">Disability</div>
                 </div>
               </div>
             </div>
