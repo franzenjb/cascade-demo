@@ -635,8 +635,28 @@ export function configFor(category: string, rows: FeatureRow[]): CategoryConfig 
     default:
       return {
         title: category,
-        summary: null,
-        renderRow: (a) => <pre>{JSON.stringify(a, null, 2)}</pre>,
+        summary: (
+          <Totals items={[{ label: "Features", value: String(rows.length) }]} />
+        ),
+        renderRow: (a) => {
+          const name = a.name || a.park_name || a.tract_name || a.fire_name || a.gauge_id || "Feature";
+          const addr = a.address;
+          const skip = new Set(["name", "address", "park_name", "tract_name", "OBJECTID", "FID"]);
+          const tags = Object.entries(a)
+            .filter(([k, v]) => !skip.has(k) && v != null && v !== "")
+            .slice(0, 4)
+            .map(([k, v]) => ({
+              label: k.replace(/_/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()),
+              value: v,
+            }));
+          return (
+            <>
+              <RowHeader name={String(name)} />
+              {addr && <RowAddress value={addr} />}
+              {tags.length > 0 && <RowTags tags={tags} />}
+            </>
+          );
+        },
       };
   }
 }

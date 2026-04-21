@@ -33,6 +33,9 @@ type DamBreakCategory =
 
 type CategoryId = TornadoCategory | FireCategory | DamBreakCategory;
 
+// Extended category allows dynamic layer IDs alongside built-in scenario categories
+type ExtCategoryId = CategoryId | string;
+
 type WarningType = "tornado" | "wildfire" | "dam_break";
 
 interface Metrics {
@@ -43,9 +46,9 @@ interface Metrics {
   tractCount: number;
 }
 
-type CategoryCounts = Record<CategoryId, number>;
+type CategoryCounts = Record<string, number>;
 
-type FeaturesByCategory = Record<CategoryId, FeatureRow[]>;
+type FeaturesByCategory = Record<string, FeatureRow[]>;
 
 const EMPTY_COUNTS: CategoryCounts = {
   mobile_home_park: 0,
@@ -81,7 +84,7 @@ const EMPTY_FEATURES: FeaturesByCategory = {
   dam_water_plant: [],
 };
 
-const CATEGORY_LABELS: Record<CategoryId, string> = {
+const CATEGORY_LABELS: Record<string, string> = {
   mobile_home_park: "Mobile Home Parks",
   school: "Schools",
   medical: "Medical",
@@ -243,7 +246,7 @@ interface FocusFeature {
 }
 
 interface HighlightedFeature {
-  featureType: CategoryId;
+  featureType: string;
   lon: number;
   lat: number;
   n: number;
@@ -257,7 +260,7 @@ export default function HomePage() {
   const [metrics, setMetrics] = useState<Metrics | null>(null);
   const [counts, setCounts] = useState<CategoryCounts>(EMPTY_COUNTS);
   const [features, setFeatures] = useState<FeaturesByCategory>(EMPTY_FEATURES);
-  const [activeCategory, setActiveCategory] = useState<CategoryId | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [rightTab, setRightTab] = useState<RightTab>("conversation");
   const [eventId, setEventId] = useState<string | null>(null);
   const [scenarioId, setScenarioId] = useState<string | null>(null);
@@ -460,7 +463,7 @@ export default function HomePage() {
     setMapInstructions((prev) => [...prev, instruction]);
   };
 
-  const toggleCategory = (cat: CategoryId) => {
+  const toggleCategory = (cat: string) => {
     setActiveCategory((prev) => {
       const next = prev === cat ? null : cat;
       setRightTab("drill");
@@ -475,8 +478,8 @@ export default function HomePage() {
     lon: number;
     lat: number;
   }) => {
-    const ft = info.featureType as CategoryId;
-    if (!CATEGORY_LABELS[ft]) return;
+    const ft = info.featureType;
+    if (!CATEGORY_LABELS[ft] && !enabledLayerInfo.has(ft)) return;
     highlightNonce.current += 1;
     setActiveCategory(ft);
     setRightTab("drill");
@@ -502,8 +505,44 @@ export default function HomePage() {
     setRightTab("drill");
   };
 
+  // Map layer IDs to icon SVG types
+  const LAYER_ICON_MAP: Record<string, string> = {
+    infra_pharmacies: "pharmacy",
+    infra_urgent_care: "urgent_care",
+    infra_public_health: "public_health",
+    infra_hospitals: "hospital",
+    infra_nursing_homes: "dam_nursing_home",
+    infra_dialysis: "dialysis",
+    infra_fire_stations: "fire_station",
+    infra_law_enforcement: "police",
+    infra_public_schools: "school",
+    infra_private_schools: "school",
+    infra_colleges: "college",
+    infra_mobile_homes: "mobile_home_park",
+    infra_worship: "church",
+    infra_snap: "grocery",
+    infra_power_plants: "power_plant",
+    infra_landfills: "landfill",
+    infra_dams: "dam",
+    infra_prisons: "prison",
+    infra_wastewater: "dam_water_plant",
+    infra_red_cross: "shelter",
+    haz_stream_gauges: "stream_gauge",
+    haz_river_flooding: "stream_gauge",
+    haz_wildfire_points: "wildfire_point",
+    haz_fire_weather: "wildfire_point",
+    haz_tornado_tracks: "tornado_track",
+    haz_seismic: "seismic",
+    haz_national_risk: "census_tract",
+    haz_wea: "weather_alert",
+    haz_severe_outlook: "weather_alert",
+    haz_excessive_rainfall: "weather_alert",
+    haz_climate_outlooks: "weather_alert",
+  };
+
   const handleToggleLayer = async (layerId: string, layer: CatalogLayer) => {
     if (enabledLayers.has(layerId)) {
+      // Toggle OFF — remove from map, features, counts
       setEnabledLayers((prev) => {
         const next = new Set(prev);
         next.delete(layerId);
@@ -518,9 +557,23 @@ export default function HomePage() {
         ...mi,
         { action: "remove_by_label", layer_label: layerId },
       ]);
+      setCounts((c) => {
+        const next = { ...c };
+        delete next[layerId];
+        return next;
+      });
+      setFeatures((f) => {
+        const next = { ...f };
+        delete next[layerId];
+        return next;
+      });
+      if (activeCategory === layerId) {
+        setActiveCategory(null);
+      }
       return;
     }
 
+    // Toggle ON
     setEnabledLayers((prev) => {
       const next = new Set(prev);
       next.add(layerId);
@@ -532,7 +585,6 @@ export default function HomePage() {
       return next;
     });
 
-    // Resolve which AGOL layer to query, or fall back to synthetic data
     const scenario = warningType || "tornado";
     const agolLayerId = layer.scenario_layers?.[scenario];
 
@@ -548,66 +600,45 @@ export default function HomePage() {
 
       if (!res.ok) return;
       const data = await res.json();
-      const features = data.features || [];
+      const fetchedFeatures = data.features || [];
 
-      // Map layer IDs to icon feature types
-      const LAYER_ICON_MAP: Record<string, string> = {
-        infra_pharmacies: "pharmacy",
-        infra_urgent_care: "urgent_care",
-        infra_public_health: "public_health",
-        infra_hospitals: "hospital",
-        infra_nursing_homes: "dam_nursing_home",
-        infra_dialysis: "dialysis",
-        infra_fire_stations: "fire_station",
-        infra_law_enforcement: "police",
-        infra_public_schools: "school",
-        infra_private_schools: "school",
-        infra_colleges: "college",
-        infra_mobile_homes: "mobile_home_park",
-        infra_worship: "church",
-        infra_snap: "grocery",
-        infra_power_plants: "power_plant",
-        infra_landfills: "landfill",
-        infra_dams: "dam",
-        infra_prisons: "prison",
-        infra_wastewater: "dam_water_plant",
-        infra_red_cross: "shelter",
-        haz_stream_gauges: "stream_gauge",
-        haz_river_flooding: "stream_gauge",
-        haz_wildfire_points: "wildfire_point",
-        haz_fire_weather: "wildfire_point",
-        haz_tornado_tracks: "tornado_track",
-        haz_seismic: "seismic",
-        haz_national_risk: "census_tract",
-        haz_wea: "weather_alert",
-        haz_severe_outlook: "weather_alert",
-        haz_excessive_rainfall: "weather_alert",
-        haz_climate_outlooks: "weather_alert",
-      };
-
-      const featureType = LAYER_ICON_MAP[layerId] ||
+      const iconType = LAYER_ICON_MAP[layerId] ||
         (layer.category === "community_resilience" ? "census_tract" : "medical");
 
-      const newInstructions = features
+      // Store as FeatureRows for drill panel
+      const featureRows: FeatureRow[] = fetchedFeatures
         .filter((f: any) => f.geometry)
         .map((f: any) => ({
-          action: "draw" as const,
-          geometry: {
-            type: "Point" as const,
-            coordinates: [f.geometry.x, f.geometry.y],
+          attributes: {
+            ...f.attributes,
+            name: f.attributes?.name || f.attributes?.tract_name || layer.name,
           },
-          layer_label: layerId,
-          style: { color: "#1e4a6d", label: f.attributes?.name || layer.name },
-          featureType,
-          displayLabel: f.attributes?.name || f.attributes?.tract_name || layer.name,
-          attributes: f.attributes,
+          geometry: { lon: f.geometry.x, lat: f.geometry.y },
         }));
+
+      setCounts((c) => ({ ...c, [layerId]: featureRows.length }));
+      setFeatures((f) => ({ ...f, [layerId]: featureRows }));
+
+      // Draw on map — use layerId as featureType so map filtering works
+      const newInstructions: MapInstruction[] = featureRows.map((fr) => ({
+        action: "draw" as const,
+        geometry: {
+          type: "Point" as const,
+          coordinates: [fr.geometry!.lon, fr.geometry!.lat],
+        },
+        layer_label: layerId,
+        style: { color: "#1e4a6d", label: fr.attributes.name },
+        featureType: layerId,
+        displayLabel: fr.attributes.name,
+        attributes: fr.attributes,
+        iconType,
+      } as MapInstruction));
 
       if (newInstructions.length > 0) {
         setMapInstructions((mi) => [...mi, ...newInstructions]);
       }
     } catch {
-      // Silently fail — layer toggle stays on visually
+      // Silently fail
     }
   };
 
@@ -757,9 +788,10 @@ export default function HomePage() {
               {Array.from(enabledLayerInfo.entries()).map(([id, layer]) => (
                 <Chip
                   key={`layer-${id}`}
-                  active={true}
-                  onClick={() => handleToggleLayer(id, layer)}
+                  active={activeCategory === id}
+                  onClick={() => toggleCategory(id)}
                   label={layer.name}
+                  count={counts[id]}
                   dot={layer.category === "infrastructure" ? "#1e4a6d" : layer.category === "hazards_weather" ? "#DC2626" : "#B8860B"}
                 />
               ))}
@@ -809,12 +841,14 @@ export default function HomePage() {
               onClick={() => setRightTab("conversation")}
               label="Conversation"
             />
-            {drillTabAvailable && (
+            {(drillTabAvailable || enabledLayerInfo.size > 0) && (
               <TabButton
                 active={rightTab === "drill"}
                 onClick={() => setRightTab("drill")}
                 label={
-                  activeCategory ? CATEGORY_LABELS[activeCategory] : "Assets"
+                  activeCategory
+                    ? (CATEGORY_LABELS[activeCategory] || enabledLayerInfo.get(activeCategory)?.name || activeCategory)
+                    : "Assets"
                 }
                 count={
                   activeCategory ? counts[activeCategory] : totalAssetCount
@@ -844,7 +878,7 @@ export default function HomePage() {
             />
           </div>
 
-          {drillTabAvailable && (
+          {(drillTabAvailable || enabledLayerInfo.size > 0) && (
             <div
               className="flex-1 flex flex-col min-h-0"
               style={{ display: rightTab === "drill" ? "flex" : "none" }}
@@ -852,7 +886,7 @@ export default function HomePage() {
               {activeCategory ? (
                 <AssetPanel
                   category={activeCategory}
-                  features={features[activeCategory]}
+                  features={features[activeCategory] || []}
                   onSelect={handleSelectFeature}
                   highlighted={
                     highlightedFeature &&

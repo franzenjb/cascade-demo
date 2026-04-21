@@ -182,6 +182,7 @@ export default function MapView({
         const color = inst.style?.color || "#ED1B2E";
         const label = inst.style?.label || inst.layer_label || "";
         const featureType = (inst as any).featureType || "generic";
+        const iconType = (inst as any).iconType || featureType;
         const displayLabel = (inst as any).displayLabel || label;
 
         if (inst.geometry.type === "Polygon") {
@@ -210,10 +211,11 @@ export default function MapView({
 
           const iconGraphic = new Graphic.default({
             geometry: pt,
-            symbol: iconSymbol(featureType, "normal", themeRef.current),
+            symbol: iconSymbol(iconType, "normal", themeRef.current),
             attributes: {
               ...((inst as any).attributes || {}),
               _featureType: featureType,
+              _iconType: iconType,
               _role: "icon",
               _displayLabel: displayLabel,
               layer_label: inst.layer_label || "",
@@ -257,18 +259,19 @@ export default function MapView({
       const attrs = g.attributes || {};
       const role = attrs._role;
       const ft = attrs._featureType;
+      const it = attrs._iconType || ft;
       if (!role || role === "warning") return;
 
       if (role === "icon") {
         if (!activeCategory) {
-          g.symbol = iconSymbol(ft, "normal", themeRef.current);
+          g.symbol = iconSymbol(it, "normal", themeRef.current);
           g.visible = true;
         } else if (ft === activeCategory) {
-          g.symbol = iconSymbol(ft, "highlight", themeRef.current);
+          g.symbol = iconSymbol(it, "highlight", themeRef.current);
           g.visible = true;
           matchingIcons.push(g);
         } else {
-          g.symbol = iconSymbol(ft, "dim", themeRef.current);
+          g.symbol = iconSymbol(it, "dim", themeRef.current);
           g.visible = true;
         }
       } else if (role === "label") {
@@ -350,10 +353,11 @@ export default function MapView({
       const attrs = g.attributes || {};
       if (attrs._role === "icon") {
         const ft = attrs._featureType || "generic";
+        const it = attrs._iconType || ft;
         const isActive = !activeCategory || ft === activeCategory;
         const isDimmed = activeCategory && ft !== activeCategory;
         const mode = isDimmed ? "dim" : isActive && activeCategory ? "highlight" : "normal";
-        g.symbol = iconSymbol(ft, mode, theme);
+        g.symbol = iconSymbol(it, mode, theme);
       } else if (attrs._role === "label") {
         const displayLabel = attrs._displayLabel || "";
         const isActive = activeCategory && attrs._featureType === activeCategory;
