@@ -39,8 +39,8 @@ export default function LayerDiscovery({
   const [query, setQuery] = useState("");
   const [openCats, setOpenCats] = useState<Record<string, boolean>>({
     infrastructure: true,
-    community_resilience: false,
-    hazards_weather: false,
+    community_resilience: true,
+    hazards_weather: true,
   });
   const [openSubs, setOpenSubs] = useState<Record<string, boolean>>({});
 
@@ -168,7 +168,7 @@ export default function LayerDiscovery({
                     <div className="border-t border-arc-gray-100 dark:border-arc-gray-700">
                       {Object.entries(subs).map(([subName, layers]) => {
                         const subKey = `${catKey}__${subName}`;
-                        const subOpen = openSubs[subKey] !== false; // default open
+                        const subOpen = openSubs[subKey] === true; // default collapsed
                         return (
                           <div key={subKey}>
                             <button
