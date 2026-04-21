@@ -7,7 +7,6 @@ import TriggerButton from "@/components/TriggerButton";
 import AssetPanel from "@/components/AssetPanel";
 import AllAssetsAccordion from "@/components/AllAssetsAccordion";
 import ThemeToggle from "@/components/ThemeToggle";
-import HelpModal from "@/components/HelpModal";
 import type { ChatMessage, CatalogLayer, FeatureRow, MapInstruction } from "@/lib/types";
 import LayerDiscovery from "@/components/LayerDiscovery";
 
@@ -675,44 +674,6 @@ export default function HomePage() {
   );
   const drillTabAvailable = totalAssetCount > 0;
 
-  const handlePrint = () => {
-    window.print();
-  };
-
-  const handleCopy = async () => {
-    const assistantText = messages
-      .filter((m) => m.role === "assistant")
-      .map((m) => m.content)
-      .join("\n\n");
-
-    const lines = [
-      "PROJECT CASCADE — DEMO BRIEFING",
-      eventId ? `Event: ${eventId}` : "",
-      `Issued: ${new Date().toLocaleString()}`,
-      "",
-    ];
-    if (metrics) {
-      lines.push(
-        `Residents in perimeter: ${metrics.pop.toLocaleString()} ` +
-          `(${fmtPct(metrics.pctOver65)} over 65, ${fmtPct(metrics.pctLep)} limited English, ` +
-          `${fmtPct(metrics.pctDisability)} with a disability)`
-      );
-      lines.push("");
-    }
-    if (assistantText) {
-      lines.push(assistantText);
-      lines.push("");
-    }
-    lines.push(`Map: ${window.location.href}`);
-
-    const text = lines.filter((l) => l !== null && l !== undefined).join("\n");
-
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch (err) {
-      console.error("Copy failed:", err);
-    }
-  };
 
   return (
     <div className="h-screen flex flex-col bg-arc-cream dark:bg-arc-black overflow-hidden">
@@ -731,7 +692,6 @@ export default function HomePage() {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <HelpModal />
             <ThemeToggle />
             <TriggerButton onFired={handleTriggerFired} />
           </div>
@@ -795,7 +755,7 @@ export default function HomePage() {
           )}
 
           {/* ── Asset Category Buttons ── */}
-          {(totalAssetCount > 0 || enabledLayerInfo.size > 0) && (
+          {(totalAssetCount > 0 || Array.from(enabledLayerInfo.values()).some(l => l.category !== "community_resilience")) && (
             <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-3 py-1.5 flex gap-1.5 flex-wrap">
               {currentSections.map((section) => (
                 <Chip
@@ -807,14 +767,16 @@ export default function HomePage() {
                   dot={section.dot}
                 />
               ))}
-              {Array.from(enabledLayerInfo.entries()).map(([id, layer]) => (
+              {Array.from(enabledLayerInfo.entries())
+                .filter(([, layer]) => layer.category !== "community_resilience")
+                .map(([id, layer]) => (
                 <Chip
                   key={`layer-${id}`}
                   active={activeCategory === id}
                   onClick={() => toggleCategory(id)}
                   label={layer.name}
                   count={counts[id]}
-                  dot={layer.category === "infrastructure" ? "#1e4a6d" : layer.category === "hazards_weather" ? "#DC2626" : "#B8860B"}
+                  dot={layer.category === "infrastructure" ? "#1e4a6d" : "#DC2626"}
                 />
               ))}
             </div>
@@ -835,26 +797,8 @@ export default function HomePage() {
         </section>
 
         <section className="flex-1 bg-white dark:bg-arc-gray-900 border border-arc-gray-100 dark:border-arc-gray-700 flex flex-col min-h-0 max-w-md">
-          <div className="px-3 pt-2 pb-1 flex items-center justify-between gap-2">
-            <div className="red-rule flex-1"></div>
-            <div className="flex gap-1 print:hidden">
-              <button
-                onClick={handleCopy}
-                disabled={messages.length === 0}
-                className="text-[10px] uppercase tracking-wider font-semibold px-2 py-1 border border-arc-gray-300 dark:border-arc-gray-700 text-arc-gray-900 dark:text-arc-cream hover:bg-arc-black hover:text-white hover:border-arc-black dark:hover:bg-arc-cream dark:hover:text-arc-black dark:hover:border-arc-cream disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                title="Copy briefing as text for email or SMS"
-              >
-                Copy
-              </button>
-              <button
-                onClick={handlePrint}
-                disabled={messages.length === 0}
-                className="text-[10px] uppercase tracking-wider font-semibold px-2 py-1 border border-arc-gray-300 dark:border-arc-gray-700 text-arc-gray-900 dark:text-arc-cream hover:bg-arc-black hover:text-white hover:border-arc-black dark:hover:bg-arc-cream dark:hover:text-arc-black dark:hover:border-arc-cream disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                title="Print the current briefing"
-              >
-                Print
-              </button>
-            </div>
+          <div className="px-3 pt-2 pb-1">
+            <div className="red-rule"></div>
           </div>
 
           <div className="flex border-b border-arc-gray-100 dark:border-arc-gray-700 px-2">
