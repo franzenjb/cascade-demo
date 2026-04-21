@@ -264,6 +264,7 @@ export default function HomePage() {
   const [warningType, setWarningType] = useState<WarningType | null>(null);
   const [focusFeature, setFocusFeature] = useState<FocusFeature | null>(null);
   const [enabledLayers, setEnabledLayers] = useState<Set<string>>(new Set());
+  const [enabledLayerInfo, setEnabledLayerInfo] = useState<Map<string, CatalogLayer>>(new Map());
   const focusNonce = useRef(0);
   const [homeSignal, setHomeSignal] = useState(0);
   const [accordionResetSignal, setAccordionResetSignal] = useState(0);
@@ -508,6 +509,11 @@ export default function HomePage() {
         next.delete(layerId);
         return next;
       });
+      setEnabledLayerInfo((prev) => {
+        const next = new Map(prev);
+        next.delete(layerId);
+        return next;
+      });
       setMapInstructions((mi) => [
         ...mi,
         { action: "remove_by_label", layer_label: layerId },
@@ -518,6 +524,11 @@ export default function HomePage() {
     setEnabledLayers((prev) => {
       const next = new Set(prev);
       next.add(layerId);
+      return next;
+    });
+    setEnabledLayerInfo((prev) => {
+      const next = new Map(prev);
+      next.set(layerId, layer);
       return next;
     });
 
@@ -731,7 +742,7 @@ export default function HomePage() {
           )}
 
           {/* ── Asset Category Buttons ── */}
-          {totalAssetCount > 0 && (
+          {(totalAssetCount > 0 || enabledLayerInfo.size > 0) && (
             <div className="border-b border-arc-gray-100 dark:border-arc-gray-700 px-3 py-1.5 flex gap-1.5 flex-wrap">
               {currentSections.map((section) => (
                 <Chip
@@ -741,6 +752,15 @@ export default function HomePage() {
                   label={section.label}
                   count={counts[section.id]}
                   dot={section.dot}
+                />
+              ))}
+              {Array.from(enabledLayerInfo.entries()).map(([id, layer]) => (
+                <Chip
+                  key={`layer-${id}`}
+                  active={true}
+                  onClick={() => handleToggleLayer(id, layer)}
+                  label={layer.name}
+                  dot={layer.category === "infrastructure" ? "#1e4a6d" : layer.category === "hazards_weather" ? "#DC2626" : "#B8860B"}
                 />
               ))}
             </div>
@@ -945,8 +965,8 @@ function Chip({
   active: boolean;
   onClick: () => void;
   label: string;
-  count: number;
-  dot: string;
+  count?: number;
+  dot?: string;
 }) {
   const base =
     "flex items-center gap-1.5 px-2 py-1 text-[11px] font-semibold border transition-colors";
@@ -955,20 +975,24 @@ function Chip({
     : "bg-white dark:bg-arc-gray-900 text-arc-gray-900 dark:text-arc-cream border-arc-gray-300 dark:border-arc-gray-700 hover:border-arc-black dark:hover:border-arc-cream";
   return (
     <button onClick={onClick} className={`${base} ${styles}`}>
-      <span
-        className="inline-block w-2.5 h-2.5 rounded-full"
-        style={{ backgroundColor: dot }}
-      />
+      {dot && (
+        <span
+          className="inline-block w-2.5 h-2.5 rounded-full"
+          style={{ backgroundColor: dot }}
+        />
+      )}
       <span>{label}</span>
-      <span
-        className={`text-[11px] font-data px-1.5 py-0.5 ${
-          active
-            ? "bg-white/20 text-white dark:bg-arc-black/20 dark:text-arc-black"
-            : "bg-arc-cream dark:bg-arc-black text-arc-gray-900 dark:text-arc-cream"
-        }`}
-      >
-        {count}
-      </span>
+      {count !== undefined && (
+        <span
+          className={`text-[11px] font-data px-1.5 py-0.5 ${
+            active
+              ? "bg-white/20 text-white dark:bg-arc-black/20 dark:text-arc-black"
+              : "bg-arc-cream dark:bg-arc-black text-arc-gray-900 dark:text-arc-cream"
+          }`}
+        >
+          {count}
+        </span>
+      )}
     </button>
   );
 }
